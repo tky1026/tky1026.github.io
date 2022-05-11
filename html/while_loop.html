@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ while Loops</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ while and do...while Loop</h1>
+      <p>In this tutorial, we will learn the use of while and do...while loops in C++.</p>
+    </div>
+
+    <div class="content">
+      <div class="intro">
+        <p>In computer programming, loops are used to repeat a block of code.</p>
+        <p>For example, let's say we want to show a message 100 times. Then instead of writing the print statement 100 times, we can use a loop.</p>
+        <p>That was just a simple example; we can achieve much more efficiency and sophistication in our programs by making effective use of loops.</p>
+        <p>There are <strong>3</strong> types of loops in C++:</p>
+        <ol>
+          <li><code>while</code> loop</li>
+          <li><code>do...while</code> loop</li>
+          <li><code>for</code> loop</li>
+        </ol>
+        <p>We will cover <code>while</code> and <code>do...while</code> loops in this tutorial and <a href="./for_loop.html" target="_blank">for loop</a> in the next tutorial.</p>
+      </div>
+
+      <hr>
+
+      <div class="while">
+        <h2 id="while">while Loop</h2>
+        <p>The syntax of <code>while</code> loop is:</p>
+        <pre><code>
+          <keyword>while</keyword> (condition) {
+            <comment>// body of the loop</comment>
+          }
+        </code></pre>
+        <p>Here,</p>
+        <ul>
+          <li>A <code>while</code> loop evaluates the <code>condition</code></li>
+          <li>If the <code>condition</code> evaluates to <code>true</code>, the code inside the <code>while</code> loop is executed</li>
+          <li>The <code>condition is evaluated again</code></li>
+          <li>This process continues until the <code>condition</code> is <code>false</code></li>
+          <li>When the <code>condition</code> evaluates to <code>false</code>, the loop terminates</li>
+        </ul>
+        <img src="./asset/while_flow.png" alt="C++ while loop flow" class="imagecenter" style="width:50%;">
+        <br>
+        <h3 id="example1">Example 1: Display Numbers from 1 to 5</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+
+            <keyword>int</keyword> i = <variable>1</variable>;
+
+            <keyword>while</keyword> (i <= <variable>5</variable>) {
+              <std>cout</std> << i << <string>" "</string>;
+              i++;
+            }
+
+            <std>cout</std> << <std>endl</std>;
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          1 2 3 4 5 
+        </code></pre>
+        <p>Here is how the program works</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>Iteration</th>
+              <th>Variable</th>
+              <th>i <= 5</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><code>i</code> = 1</td>
+              <td><code>true</code></td>
+              <td><code>1</code> is printed and <code>i</code> is increased to <code>2</code></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><code>i</code> = 2</td>
+              <td><code>true</code></td>
+              <td><code>2</code> is printed and <code>i</code> is increased to <code>3</code></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><code>i</code> = 3</td>
+              <td><code>true</code></td>
+              <td><code>3</code> is printed and <code>i</code> is increased to <code>4</code></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><code>i</code> = 4</td>
+              <td><code>true</code></td>
+              <td><code>4</code> is printed and <code>i</code> is increased to <code>5</code></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><code>i</code> = 5</td>
+              <td><code>true</code></td>
+              <td><code>5</code> is printed and <code>i</code> is increased to <code>6</code></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><code>i</code> = 6</td>
+              <td><code>false</code></td>
+              <td>Loop terminated</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+        <h3>Example 2: Sum positive number only</h3>
+        <pre><code>
+          <comment>// program to find the sum of positive numbers</comment>
+          <comment>// if the user enters a negative number, the loop ends</comment>
+          <comment>// the negative number entered is not added to the sum</comment>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+            <keyword>int</keyword> number;
+            <keyword>int</keyword> sum = <variable>0</variable>;
+            
+            <std>cout</std> << <string>"Enter an number: "</string>;
+            <std>cin</std> >> number;
+
+            <keyword>while</keyword> (number >= <variable>0</variable>) {
+              <comment>// add all positive number</comment>
+              sum += number;
+
+              <comment>// prompt to take input again</comment>
+              <std>cout</std> << <string>"Enter an number: "</string>;
+              <std>cin</std> >> number;
+            }
+
+            <comment>// display the sum</comment>
+            <std>cout</std> << <string>"\nThe sum is "</string> << sum << <std>endl</std>;
+
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Enter a number: 6
+          Enter a number: 12
+          Enter a number: 0
+          Enter a number: -3
+
+          The sum is 18
+        </code></pre>
+        <p>In this program,</p>
+        <ul>
+          <li>The user is prompted to enter a number, which is stored in the variable <code>number</code>.</li>
+          <li>In order to store the sum of the numbers, we declare a variable <code>sum</code> and initialize it to the value of <code>0</code>.</li>
+          <li>If the user entered a positive number, the number is added to the <code>sum</code> inside <code>while</code> loop. Then the code prompts the user to enter a number again that is stored to the same variable <code>number</code>.</li>
+          <li>The <code>while</code> loop continues until the user enters a negative number. During each iteration, the number entered by the user is added to the <code>sum</code> variable.</li>
+          <li>When the user enters a negative number, the loop terminates. Finally, the total sum is displayed.</li>
+        </ul>
+        
+        <p class="note-tip"><strong>Note:</strong> It is extremely important that the <code>condition</code> exists to possibility to evaluate to <code>false</code>, such that the loop is able to terminate at some point, this is referred as <strong>stopping condition</strong>. Otherwise, the loop will run for infinite times. Learn more at <a href="#infinite_loop">infinite loop</a>.</p>
+      </div>
+
+      <hr>
+      <div class="dowhile">
+        <h2 id="do_while">do...while Loop</h2>
+        <p>The <code>do...while</code> loop is a variant of the <code>while</code> loop with one important difference: the body of <code>do...while</code> loop is executed once before the <code>condition</code> is checked.</p>
+        <p>The syntax is:</p>
+        <pre><code>
+          <keyword>do</keyword> {
+            <comment>// body of loop</comment>
+          } <keyword>while</keyword> (condition)
+        </code></pre>
+        <p>Here,</p>
+        <ul>
+          <li>The body of the loop is executed at first. Then the <code>condition</code> is evaluated.</li>
+          <li>If the <code>condition</code> evaluates to true, the body of the loop inside the <code>do</code> statement is executed again.</li>
+          <li>The <code>condition</code> is evaluated once again.</li>
+          <li>This process continues until the <code>condition</code> evaluates to <code>false</code>. Then the loop stops.</li>
+        </ul>
+        <img src="./asset/dowhile_flow.png" alt="C++ do while loop flow" class="imagecenter" style="width:50%;">
+
+        <br>
+        <h3>Example 3: Display Numbers from 1 to 5</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+
+            <keyword>int</keyword> i = <variable>1</variable>;
+
+            <keyword>do</keyword> {
+              <std>cout</std> << i << <string>" "</string>;
+              ++i;
+            } <keyword>while</keyword> (i < <variable>6</variable>)
+
+            <std>cout</std> << <std>endl</std>;
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          1 2 3 4 5 
+        </code></pre>
+        <p>Here is how the program works</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>Iteration</th>
+              <th>Variable</th>
+              <th>i < 6</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td><code>i</code> = 1</td>
+              <td>not checked</td>
+              <td><code>1</code> is printed and <code>i</code> is increased to <code>2</code></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><code>i</code> = 2</td>
+              <td><code>true</code></td>
+              <td><code>2</code> is printed and <code>i</code> is increased to <code>3</code></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><code>i</code> = 3</td>
+              <td><code>true</code></td>
+              <td><code>3</code> is printed and <code>i</code> is increased to <code>4</code></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><code>i</code> = 4</td>
+              <td><code>true</code></td>
+              <td><code>4</code> is printed and <code>i</code> is increased to <code>5</code></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><code>i</code> = 5</td>
+              <td><code>true</code></td>
+              <td><code>5</code> is printed and <code>i</code> is increased to <code>6</code></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><code>i</code> = 6</td>
+              <td><code>false</code></td>
+              <td>Loop terminated</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note-tip"><strong>Note: </strong> A quick note here the condition <code>i < 6</code> is effectively having the same meaning as <code>i <= 5</code> in <a href="#example1">Example 1</a>.</p>
+        <br>
+        <h3>Example 4: Sum positive number only</h3>
+        <pre><code>
+          <comment>// program to find the sum of positive numbers</comment>
+          <comment>// if the user enters a negative number, the loop ends</comment>
+          <comment>// the negative number entered is not added to the sum</comment>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+            <keyword>int</keyword> number = <variable>0</variable>;
+            <keyword>int</keyword> sum = <variable>0</variable>;
+
+            <keyword>do</keyword> {
+              sum += number;
+
+              <comment>// take input from the user</comment>
+              <std>cout</std> << <string>"Enter an number: "</string>;
+              <std>cin</std> >> number;
+            } <keyword>while</keyword> (number >= <variable>0</variable>)
+
+            <comment>// display the sum</comment>
+            <std>cout</std> << <string>"\nThe sum is "</string> << sum << <std>endl</std>;
+
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output 1</strong>
+        <pre><code>
+          Enter a number: 6
+          Enter a number: 12
+          Enter a number: 0
+          Enter a number: -3
+
+          The sum is 18
+        </code></pre>
+        <p>Here, the <code>do...while</code> loop continues until the user enters a negative number. When the number is negative, the loop terminates; the negative number is not added to the <code>sum</code> variable.</p>
+        <strong>Output 2</strong>
+        <pre><code>
+          Enter a number: -6
+
+          The sum is 0
+        </code></pre>
+        <p>The body of the <code>do...while</code> loop runs only once if the user enters a negative number.</p>
+      </div>
+
+      <hr>
+      <div class="infinite">
+        <h2 id="infinite_loop">Infinite Loop</h2>
+        <p>If the <code>condition</code> of a loop is always <code>true</code>, the loop runs for infinite times (until the memory is full). For example,</p>
+        <pre><code>
+          <keyword>while</keyword> (<boolean>true</boolean>) {
+            <comment>// body of the loop</comment>
+          }
+        </code></pre>
+        <p>Here is an example of an infinite <code>do...while</code> loop.</p>
+        <pre><code>
+          <keyword>int</keyword> count = <variable>1</variable>;
+          <keyword>do</keyword> {
+            <comment>// do something</comment>
+          } <keyword>while</keyword> (count == <variable>1</variable>)
+        </code></pre>
+        <p>In the above programs, the condition is always <code>true</code>. Hence, the loop body will run for infinite times.</p>
+        <p>Having a loop to run infinitely is also a common careless mistake made by programmers as it is extremely dangerous and could lead to fatal error. Hence, it is always important to introduce proper <strong>stopping condition</strong> to loops.</p>
+      </div>
+
+      <hr>
+      <div class="nested">
+        <h2>Nested Loop</h2>
+        <p>Inside the body of a <code>while</code> loop, we can have another <code>while</code> loop, this is called <strong>"nested"</strong> loops.</p>
+        <br>
+        <h3>Example 5: Nested while Loop</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>()
+          {
+            <keyword>int</keyword> i = <variable>1</variable>;
+            <keyword>while</keyword> (i < <variable>4</variable>)
+            {
+              <keyword>int</keyword> j = <variable>1</variable>;
+              <keyword>while</keyword> (j < <variable>4</variable>)
+              {                 
+                <std>cout</std> << <string>"i = "</string> << i << <string>", j = "</string> << j << <std>endl</std>;
+                j++;
+              }
+              i++;
+              <std>cout</std> << <string>"<variable>\n</variable>"</string>;
+            }
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          i = 1, j = 1
+          i = 1, j = 2
+          i = 1, j = 3
+
+          i = 2, j = 1
+          i = 2, j = 2
+          i = 2, j = 3
+
+          i = 3, j = 1
+          i = 3, j = 2
+          i = 3, j = 3
+        </code></pre>
+        <table>
+          <tbody>
+            <tr>
+              <th>Outer iteration</th>
+              <th>Inner iteration</th>
+              <th><code>i</code></th>
+              <th><code>j</code></th>
+            </tr>
+            <tr><td>1</td><td>1</td><td><code>1</code></td><td><code>1</code></td></tr>
+            <tr><td></td><td>2</td><td><code>1</code></td><td><code>2</code></td></tr>
+            <tr><td></td><td>3</td><td><code>1</code></td><td><code>3</code></td></tr>
+            <tr><td>2</td><td>1</td><td><code>2</code></td><td><code>1</code></td></tr>
+            <tr><td></td><td>2</td><td><code>2</code></td><td><code>2</code></td></tr>
+            <tr><td></td><td>3</td><td><code>2</code></td><td><code>3</code></td></tr>
+            <tr><td>3</td><td>1</td><td><code>3</code></td><td><code>1</code></td></tr>
+            <tr><td></td><td>2</td><td><code>3</code></td><td><code>2</code></td></tr>
+            <tr><td></td><td>3</td><td><code>3</code></td><td><code>3</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./switch.html" class="previous">&laquo; Previous</a>
+      <a href="./for_loop.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

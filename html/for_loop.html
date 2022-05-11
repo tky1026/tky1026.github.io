@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ for Loop</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ for Loop</h1>
+      <p>In this tutorial, we will learn about the C++ for loop.</p>
+    </div>
+
+    <div class="content">
+      <div class="for loop">
+        <p>In the previous tutorial, we have learnt about <a href="./while_loop.html#while" target="_blank">while</a> and <a href="./while_loop.html#do_while" target="_blank">do...while</a> loops.</p>
+        <hr>
+        <h2>for Loop</h2>
+        <p>The syntax of <code>for loop</code> is:</p>
+        <pre><code>
+          <keyword>for</keyword> (initialization; condition; update) {
+            <comment>// body of for loop</comment>
+          }
+        </code></pre>
+        <p>Here,</p>
+        <ul>
+          <li><code>initialization</code> - initializes variables (iterables) and is executed only once</li>
+          <li><code>condition</code> - if <code>true</code>, the body of <code>for</code> loop is executed; if <code>false</code>, then the loop is terminated</li>
+          <li><code>update</code> - updates the value of initialized variables (iterables) and again checks the condition</li>
+        </ul>
+        <img src="./asset/for_flow.png" alt="C++ for loop flow" class="imagecenter" style="width:50%;">
+        <p class="note-tip"><strong>Note:</strong> The iterable variable must only be integer types that are <strong>"iterable"</strong>, i.e. <code>int</code>, <code>short</code>, etc.</p>
+        <br>
+        <h3>Example 1: Display text 5 times</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+            <keyword>for</keyword> (<keyword>int</keyword> i = <variable>0</variable>; i < <variable>5</variable>; i++) {
+              <std>cout</std> << <string>"Hello World"</string> << <std>endl</std>;
+            }
+
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Hello World
+          Hello World
+          Hello World
+          Hello World
+          Hello World
+        </code></pre>
+        <p>Here is how the program works</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>Iteration</th>
+              <th>Variable</th>
+              <th><code>i < 5</code></th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><code>i</code> = 0</td>
+              <td><code>true</code></td>
+              <td><code>Hello World</code> is printed and <code>i</code> is increased to <code>1</code></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><code>i</code> = 1</td>
+              <td><code>true</code></td>
+              <td><code>Hello World</code> is printed and <code>i</code> is increased to <code>2</code></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><code>i</code> = 2</td>
+              <td><code>true</code></td>
+              <td><code>Hello World</code> is printed and <code>i</code> is increased to <code>3</code></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><code>i</code> = 3</td>
+              <td><code>true</code></td>
+              <td><code>Hello World</code> is printed and <code>i</code> is increased to <code>4</code></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><code>i</code> = 4</td>
+              <td><code>true</code></td>
+              <td><code>Hello World</code> is printed and <code>i</code> is increased to <code>5</code></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><code>i</code> = 5</td>
+              <td><code>false</code></td>
+              <td>Loop terminated</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <h3>Example 2: Display Numbers from 1 to 5</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+
+            <keyword>for</keyword> (<keyword>int</keyword> i = <variable>1</variable>; i <= <variable>5</variable>; i++) {
+              <std>cout</std> << i << <string>" "</string>;
+            }
+
+            <std>cout</std> << <std>endl</std>;
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          1 2 3 4 5 
+        </code></pre>
+        <p>Here is how the program works</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>Iteration</th>
+              <th>Variable</th>
+              <th><code>i <= 5</code></th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><code>i</code> = 1</td>
+              <td><code>true</code></td>
+              <td><code>1</code> is printed and <code>i</code> is increased to <code>2</code></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><code>i</code> = 2</td>
+              <td><code>true</code></td>
+              <td><code>2</code> is printed and <code>i</code> is increased to <code>3</code></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><code>i</code> = 3</td>
+              <td><code>true</code></td>
+              <td><code>3</code> is printed and <code>i</code> is increased to <code>4</code></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><code>i</code> = 4</td>
+              <td><code>true</code></td>
+              <td><code>4</code> is printed and <code>i</code> is increased to <code>5</code></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><code>i</code> = 5</td>
+              <td><code>true</code></td>
+              <td><code>5</code> is printed and <code>i</code> is increased to <code>6</code></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><code>i</code> = 6</td>
+              <td><code>false</code></td>
+              <td>Loop terminated</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note-tip">
+          <p><strong>Note: </strong> Notice that in Example 2, the iterable <code>i</code> exists only within <code>for</code> loop. It is not accessible from outside the loop. In order to have an iterable accessible outside of the <code>for</code> loop scope, we can write our code similar to the following: </p>
+          <pre><code>
+            <keyword>int</keyword> j;
+            <keyword>for</keyword> (j = <variable>5</variable>; j < <variable>10</variable>; j++) {
+              <std>cout</std> << j << <string>" "</string>;
+            }
+
+            <comment>// print final j value</comment>
+            <std>cout</std> << <string>"<variable>\n</variable>j = "</string> << j << <std>endl</std>;  <comment>// prints: j = 10</comment>
+
+          </code></pre>
+          <strong>Output</strong>
+          <pre><code>
+            5 6 7 8 9 
+            j = 10
+          </code></pre>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="range">
+        <h2>Ranged Based for Loop</h2>
+        <p>In C++11, a new range-based <code>for</code> loop was introduced to work with collections such as <strong>arrays</strong> and <strong>vectors</strong>. Its syntax is:</p>
+        <pre><code>
+          <keyword>for</keyword> (variable : collection) {
+            <comment>// body of loop</comment>
+          }
+        </code></pre>
+        <p>Here, for every value in the <code>collection</code>, it is assigned to the <code>variable</code> and the body of the loop is executed.</p>
+        <h3>Example 3: Ranged Based for Loop</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>int</keyword> <function>main</function>()
+          {
+            <keyword>int</keyword> num_array[] = {<variable>1</variable>, <variable>2</variable>, <variable>3</variable>, <variable>4</variable>, <variable>5</variable>}
+  
+            <keyword>for</keyword> (<keyword>int</keyword> n : num_array) {
+              <std>cout</std> << n << <string>" "</string>;
+            }
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          1 2 3 4 5 
+        </code></pre>
+        <p>In the program above, we have declared and initialized and <code>int</code> array named <code>num_array</code> which has 5 elements.</p>
+        <p>Then we use a range-based <code>for</code> loop to iterate through all the items in the array.</p>
+      </div>
+
+      <hr>
+      <div class="inifinite">
+        <h2>Infinite for Loop</h2>
+        <p>Similar to <code>while</code> and <code>do...while</code> loop, a <code>for</code> also requires <code>stopping condition</code>. If the <code>condition</code> in a <code>for</code> loop is always <code>true</code>, it runs forever (until memory is full). For example,</p>
+        <pre><code>
+          <keyword>for</keyword> (<keyword>int</keyword> i = 1; i > 0; i++) {
+            <comment>// code block</comment>
+          }
+        </code></pre>
+        <p>Here, the <code>condition</code> is always <code>true</code> which will then run the code for infinite times.</p>
+
+        <br>
+        <p>Sometimes, for some reasons programmers would want to implement an infinite <code>for</code> loop, example below is another way of expressing an infinite <code>for</code> loop:</p>
+        <pre><code>
+          <keyword>for</keyword> (;;) {
+            <comment>// code block</comment>
+          }
+        </code></pre>
+        <p>Here, the <code>for</code> loop is infinite because there is <strong>no stopping condition</strong>.</p>
+      </div>
+
+      <hr>
+      <div class="nested">
+        <h2>Nested for Loop</h2>
+        <p>Nested for loop is a <code>for</code> loop within another <code>for</code> loop.</p>
+        <h3>Example 4: Nested for Loop</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>()
+          {
+            <keyword>for</keyword> (<keyword>int</keyword> i = <variable>1</variable>; i <= <variable>3</variable>; i++)
+            {
+              <keyword>for</keyword> (<keyword>int</keyword> j = <variable>1</variable>; j <= <variable>3</variable>; j++)
+              {  
+                <std>cout</std> << <string>"i = "</string> << i << <string>", j = "</string> << j << <std>endl</std>;
+              }
+              <std>cout</std> << <string>"<variable>\n</variable>"</string>;
+            }
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          i = 1, j = 1
+          i = 1, j = 2
+          i = 1, j = 3
+
+          i = 2, j = 1
+          i = 2, j = 2
+          i = 2, j = 3
+
+          i = 3, j = 1
+          i = 3, j = 2
+          i = 3, j = 3
+        </code></pre>
+        <table>
+          <tbody>
+            <tr>
+              <th>Outer iteration</th>
+              <th>Inner iteration</th>
+              <th><code>i</code></th>
+              <th><code>j</code></th>
+            </tr>
+            <tr><td>1</td><td>1</td><td><code>1</code></td><td><code>1</code></td></tr>
+            <tr><td></td><td>2</td><td><code>1</code></td><td><code>2</code></td></tr>
+            <tr><td></td><td>3</td><td><code>1</code></td><td><code>3</code></td></tr>
+            <tr><td>2</td><td>1</td><td><code>2</code></td><td><code>1</code></td></tr>
+            <tr><td></td><td>2</td><td><code>2</code></td><td><code>2</code></td></tr>
+            <tr><td></td><td>3</td><td><code>2</code></td><td><code>3</code></td></tr>
+            <tr><td>3</td><td>1</td><td><code>3</code></td><td><code>1</code></td></tr>
+            <tr><td></td><td>2</td><td><code>3</code></td><td><code>2</code></td></tr>
+            <tr><td></td><td>3</td><td><code>3</code></td><td><code>3</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="navigate">
+      <hr>
+      <a href="./while_loop.html" class="previous">&laquo; Previous</a>
+      <a href="./break_statement.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

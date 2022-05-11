@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Variables Creation</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Variables and Constants Creation</h1>
+      <p>In this tutorial, we will learn how to create variables and constants.</p>
+    </div>
+
+    <br>
+    <div class="content">
+      <div class="variable">
+        <h2>C++ Variables</h2>
+        <p>
+          The usefulness of the "Hello World" programs shown in the previous chapter is rather questionable. 
+          We had to write several lines of code, compile them, and then execute the resulting program, just to obtain the result of a simple sentence written on the screen. 
+          It certainly would have been much faster to type the output sentence ourselves.
+        </p>
+        <p>
+          However, programming is not limited only to printing simple texts on the screen. 
+          In order to go a little further on and to become able to write programs that perform useful tasks that really save us work, we need to introduce the concept of variables.
+        </p>
+        <p>
+          Let's imagine that I ask you to remember the number 5, and then I ask you to also memorize the number 2 at the same time. 
+          You have just stored two different values in your memory (5 and 2). 
+          Now, if I ask you to add 1 to the first number I said, you should be retaining the numbers 6 (that is 5+1) and 2 in your memory. 
+          Then we could, for example, subtract these values and obtain 4 as result.
+        </p>
+        <p>
+          The whole process described above is a simile of what a computer can do with two variables. 
+          The same process can be expressed in C++ with the following set of statements:
+        </p>
+
+        <pre><code>
+          a = 5;
+          b = 2;
+          a = a + 1;
+          result = a - b;
+        </code></pre>
+
+        <p>Obviously, this is a very simple example, since we have only used two small integer values, but consider that your computer can store millions of numbers like these at the same time and conduct sophisticated mathematical operations with them.</p>
+        <p>We can now define variable as a portion of memory to store a value.</p>
+        <p>While writing program in any language, you need to use various variables to store various information. Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserve some space in memory.</p>
+      
+        <img src="./asset/variable_memory.png" alt="variable memory" class="imagecenter">
+
+        <p>You may like to store information of various data types like character, wide character, integer, floating point, double floating point, boolean etc. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.</p>
+        <div class="note-tip">
+          <ul>
+            <li>A variable is actually a place to store information in a computer.</li>
+            <li>It is a location (or series of locations) in the memory.</li>
+            <li>The name of a variable can be considered as a label of that piece of memory.</li>
+          </ul>
+        </div>
+
+        <br>
+        <h3>Declaration of Variables</h3>
+        <p>Creating variables is also called declaring variables.</p>
+        <p>C++ is a strongly-typed language, and requires every variable to be declared with its type before its first use. This informs the compiler the size to reserve in memory for the variable and how to interpret its value.</p>
+        <p>The syntax to declare a new variable in C++ is straightforward: we simply write the type followed by the variable name (i.e., its identifier). For example:</p>
+        <pre><code>
+          <keyword>int</keyword> a;
+          <keyword>float</keyword> my_number;
+        </code></pre>
+        <p>These are two valid declarations of variables. The first one declares a variable of type int with the identifier a. The second one declares a variable of type float with the identifier mynumber. Once declared, the variables a and mynumber can be used within the rest of their scope in the program.</p>
+        <p>If declaring more than one variable of the same type, they can all be declared in a single statement by separating their identifiers with commas. For example:</p>
+        <pre><code>
+          <keyword>int</keyword> a, b, c;
+        </code></pre>
+        <p>This declares three variables (a, b and c), all of them of type int, and has exactly the same meaning as:</p>
+        <pre><code>
+          <keyword>int</keyword> a;
+          <keyword>int</keyword> b;
+          <keyword>int</keyword> c;
+        </code></pre>
+        
+        <p class="note-tip"><strong>Note:</strong> A variable must be given a unique name as identifier, learn more about <a href="./keywords.html" target="_blank">identifiers</a>.</p>
+      
+        <br>
+        <h3>Initialization of Variables</h3>
+        <p>When the variables in the example above are declared, they have an undetermined value until they are assigned a value for the first time. But it is possible for a variable to have a specific value from the moment it is declared. This is called the initialization of the variable.</p>
+        <ol>
+          <li>
+            <p>The first one, known as <strong>C-like initialization</strong> (because it is inherited from the C language), consists of appending an equal sign followed by the value to which the variable is initialized:</p>
+            <pre><code>
+              type identifier = initial_value;
+            </code></pre>
+            <p>For example, to declare a variable of type int called x and initialize it to a value of zero from the same moment it is declared:</p>
+            <pre><code>
+              <keyword>int</keyword> x = 0;
+            </code></pre>
+          </li>
+
+          <li>
+            <p>The second method, known as <strong>constructor initialization</strong> (introduced by the C++ language), encloses the initial value between parentheses <code>()</code></p>
+            <pre><code>
+              type identifier (initial_value);
+            </code></pre>
+            <p>For example:</p>
+            <pre><code>
+              <keyword>int</keyword> x(0);
+            </code></pre>
+          </li>
+
+          <li>
+            <p>The third method, known as <strong>uniform initialization</strong>, similar to the above, but using curly braces <code>{}</code> instead of parentheses (this was introduced by the revision of the C++ standard, in 2011):</p>
+            <pre><code>
+              type identifier {initial_value};
+            </code></pre>
+            <p>For example:</p>
+            <pre><code>
+              <keyword>int</keyword> x{0};
+            </code></pre>
+          </li>
+        </ol>
+
+        <br>
+        <h3>Storing and Access Values of Variables</h3>
+        <p>A variable can be declared without initialization, and a value can be stored to a variable at some point later. Storing value into a variable can also be known as <strong>assigning</strong> data to a variable.</p>
+        <p>In C++, the <code>=</code> is called an assignment operator. Assignment operator is used to assigning value to a variable. The left side operand of the assignment operator is a variable and right side operand of the assignment operator is a value.</p>
+        <pre><code>
+          x = <variable>10</variable>;
+          my_char = <string>'Z'</string>;
+        </code></pre>
+        <p>To access the value of a variable, we simply use the variable name in a statements. For example:</p>
+        <pre><code>
+          sum = x + y;
+        </code></pre>
+
+        <p class="note-tip">Note: See <a href="./variables-literal-constant.html" target="_blank">here</a> for general rules of thumb for naming a variable. For a more standard style guide, please refer to <a href="https://google.github.io/styleguide/cppguide.html" target="_blank">Google C++ Style Guide</a>.</p>
+      </div>
+
+      <hr>
+
+      <div class="constant">
+        <h2>C++ Constants</h2>
+        <p>Constants refer to fixed values that the program may not alter and they are called <strong>literals</strong>.</p>
+        <p>Constants can be of any of the basic data types and can be divided into Integer Numerals, Floating-Point Numerals, Characters, Strings and Boolean Values.</p>
+        <p>Again, constants are treated just like regular variables except that their values cannot be modified after their definition. The value of a constant will be fixed until the end of the program.</p>
+        <p>There are two types of constants:</p>
+        <ul>
+          <li><strong>Literal Constants</strong> - come with the language, e.g. a number 39 (cannot assign another value to 39)</li>
+          <li><strong>Symbolic Constants</strong> - user defines a name as a label for it</li>
+        </ul>
+
+        <br>
+        <h3>Defining Symbolic Constants</h3>
+        <p>A symbolic constant can be defined in two ways.</p>
+        <ol>
+          <li>
+            <p>Use the preprocessor <code>#define</code></p>
+            <pre><code>
+              <preprocessor>#define</preprocessor> DAYS_PER_WEEK 7
+            </code></pre>
+            <ul>
+              <li>No type need to be defined for <code>DAYS_PER_WEEK</code>.</li>
+              <li>Preprocessor just replaces the word <code>DAYS_PER_WEEK</code> with <code>7</code> whenever it is found in the program.</li>
+            </ul>
+          </li>
+          <li>
+            <p>Use <code>const</code> keyword</p>
+            <pre><code>
+              <keyword>const unsigned short</keyword> DAYS_PER_WEEK = 7;
+            </code></pre>
+            <ul>
+              <li>Variable <code>DAYS_PER_WEEK</code> has a fixed value <code>7</code>.</li>
+              <li>It has a type now. This feature helps the compiler to debug the program.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <br>
+        <h3>Why do we need Constants</h3>
+        <ul>
+          <li><strong>Help debugging the program</strong>: Compiler wil lautomatically check if a constant is modified by the program later (and reports it if modified).</li>
+          <li><strong>Improve redability</strong>: Give the value a more meaningful name. e.g. use <code>degreeInCircle</code> rather then writing <code>360</code>.</li>
+          <li><strong>Easy modification</strong>: If a constant really need to be changed, only need to change the line where it is defined in the source code.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./data-types.html" class="previous">&laquo; Previous</a>
+      <a href="./char.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

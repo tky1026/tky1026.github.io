@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Functions</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Functions</h1>
+      <p>In this tutorial, we will learn about the C++ function and function expressions.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <p>In mathematics, a function is an expression, rule, or law that defines a relationship between one variable (the independent variable) and another variable (the dependent variable).</p>
+        <p>In programming, a function is a block of code that performs a specific task.</p>
+        
+        <img src="./asset/function1.png" alt="Function diagram" class="imagecenter" style="width: 30%;">
+        
+        <p>Suppose we need to create a program to create a circle and color it. We can create two functions to solve this problem:</p>
+        <ul>
+          <li>a function to draw the circle</li>
+          <li>a function to color the circle</li>
+        </ul>
+        <p>Dividing a complex problem into smaller chunks makes our program easy to understand and reusable.</p>
+        <p>There are two types of function:</p>
+        <ol>
+          <li><strong>Standard Library Functions</strong>: Predefined in C++</li>
+          <li><strong>User-defined Functions</strong>: Created by users</li>
+        </ol>
+      </div>
+
+      <hr>
+
+      <div class="section2">
+        <h2>C++ User-defined Function</h2>
+        <p>C++ allows the programmer to define their own function.</p>
+        <p>A user-defined function groups code to perform a specific task and that group of code is given a name (identifier).</p>
+        <p>When the function is invoked from any part of the program, it all executes the codes defined in the body of the function.</p>
+        <br>
+        <h3>Why Using Functions?</h3>
+        <p>New programmers often ask, “Can’t we just put all the code inside the main function?” For simple programs, you absolutely can. However, functions provide a number of benefits that make them extremely useful in programs of non-trivial length or complexity.</p>
+        <ul>
+          <li>
+            <p><strong>Organization</strong></p>
+            <p>As programs grow in complexity, having all the code live inside the main() function becomes increasingly complicated. A function is almost like a mini-program that we can write separately from the main program, without having to think about the rest of the program while we write it. This allows us to reduce a complicated program into smaller, more manageable chunks, which reduces the overall complexity of our program.</p>
+          </li>
+          <li>
+            <p><strong>Reusability</strong></p>
+            <p>Once a function is written, it can be called multiple times from within the program. This avoids duplicated code (“Don’t Repeat Yourself”) and minimizes the probability of copy/paste errors. Functions can also be shared with other programs, reducing the amount of code that has to be written from scratch (and retested) each time.</p>
+          </li>
+          <li>
+            <p><strong>Testing</strong></p>
+            <p>Because functions reduce code redundancy, there’s less code to test in the first place. Also because functions are self-contained, once we’ve tested a function to ensure it works, we don’t need to test it again unless we change it. This reduces the amount of code we have to test at one time, making it much easier to find bugs (or avoid them in the first place).</p>
+          </li>
+          <li>
+            <p><strong>Extensibility</strong></p>
+            <p>When we need to extend our program to handle a case it didn’t handle before, functions allow us to make the change in one place and have that change take effect every time the function is called.</p>
+          </li>
+          <li>
+            <p><strong>Abstraction</strong></p>
+            <p>In order to use a function, you only need to know its name, inputs, outputs, and where it lives. You don’t need to know how it works, or what other code it’s dependent upon to use it. This lowers the amount of knowledge required to use other people’s code (including everything in the standard library).</p>
+          </li>
+        </ul>
+        <br>
+        <h3>When and How to Effectively Using Functions?</h3>
+        <p>One of the biggest challenges new programmers encounter (besides learning the language) is understanding when and how to use functions effectively.</p>
+        <ul>
+          <li>Groups of statements that appear more than once in a program should generally be made into a function. For example, if we’re reading input from the user multiple times in the same way, that’s a great candidate for a function. If we output something in the same way in multiple places, that’s also a great candidate for a function.</li>
+          <li>Code that has a well-defined set of inputs and outputs is a good candidate for a function, (particularly if it is complicated). For example, if we have a list of items that we want to sort, the code to do the sorting would make a great function, even if it’s only done once. The input is the unsorted list, and the output is the sorted list. Your current program might only use that in one place, but if you turn it into a function, it’s ready to be reused if you later extend your program or in a future program.</li>
+          <li>A function should generally perform one (and only one) task.</li>
+          <li>When a function becomes too long, too complicated, or hard to understand, it can be split into multiple sub-functions. This is called refactoring.</li>
+        </ul>
+        <hr>
+        <h3>Function Declaration</h3>
+        <p>The syntax to declare a function is: </p>
+        <pre><code>
+          returnType <function>FunctionName</function> (dataType param1, dataType param2, ...) {
+            <comment>// function body</comment>
+          }
+        </code></pre>
+        <p>For example: </p>
+        <pre><code>
+          <keyword>void</keyword> <function>SayHello</function>() {
+            <std>std</std>::<std>cout</std> << <string>"Hello World"</string>;
+          }
+        </code></pre>
+        <ul>
+          <li>the name of the function is <code>SayHello</code></li>
+          <li>the return type of the function is <code>void</code></li>
+          <li>the empty parentheses <code>()</code> mean it doesn't have any parameters</li>
+          <li>the function body is written inside <code>{}</code></li>
+        </ul>
+        <p class="note-tip"><strong>Note:</strong> We will learn about <a href="#sec-returntype">return type</a> and <a href="#sec-parameters">parameters</a> later in this tutorial.</p>
+        <br>
+        <h3>Calling a Function</h3>
+        <p>We have declared a function named <code>SayHello()</code>. To use the <code>SayHello()</code> function, we need to call it.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <comment>// declaring a function</comment>
+          <keyword>void</keyword> <function>SayHello</function>() {
+            <std>std</std>::<std>cout</std> << <string>"Hello World"</string>;
+          }
+  
+          <keyword>int</keyword> <function>main</function>() {
+            <comment>// calling a function</comment>
+            <function>SayHello</function>();
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Hello World
+        </code></pre>
+        <img src="./asset/function2.png" alt="Function call flow" class="imagecenter" style="width: 50%;">
+      
+        <hr>
+        <h3 id="sec-parameters">Function Parameters</h3>
+        <p>A function can be declared with parameters (arguments). A parameter is a value that is passed when declaring a function.</p>
+        <pre><code>
+          <keyword>void</keyword> <function>PrintNum</function>(<keyword>int</keyword> num) {
+            <std>cout</std> << <string>"The number is "</string> << num;
+          }
+        </code></pre>
+        <p>Here, the <code>int</code> variable <code>num</code> is the function parameter.</p>
+        <p>We pass a value to the function parameter while calling the function.</p>
+        <pre><code>
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <keyword>int</keyword> n = <variable>7</variable>;
+  
+            <comment>// calling the function</comment>
+            <comment>// n is passed to the function as argument</comment>
+            <function>PrintNum</function>(n);
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          The number is 7
+        </code></pre>
+        We can also create a function that take in multiple parameters, for example:
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>void</keyword> <function>displayNum</function>(<keyword>int</keyword> n1, <keyword>float</keyword> n2) {
+            <std>cout</std> << <string>"The int number is "</string> << n1;
+            <std>cout</std> << <string>"The float number is "</string> << n2;
+          }
+  
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <keyword>int</keyword> num1 = <variable>5</variable>;
+            <keyword>float</keyword> num2 = <variable>5.5</variable>;
+  
+            <function>displayNum</function>(num1, num2);
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          The int number is 5
+          The float number is 5.5
+        </code></pre>
+        <p>In the above program, we have used a function that has one <code>int</code> parameter and one <code>float</code> parameter.</p>
+        <p>We then pass <code>num1</code> and <code>num2</code> as arguments. These values are stored by the function parameters <code>n1</code> and <code>n2</code> respectively.</p>
+        <img src="./asset/function3.png" alt="Function multiple parameters" class="imagecenter" style="width: 50%;">
+        <p class="note-tip"><strong>Note: </strong> The type of the arguments passed while calling the function must match with the corresponding parameters defined in the function declaration. </p>
+      
+        <hr>
+        <h3 id="sec-returntype">Return Statement</h3>
+        <p>In the above examples, we have used <code>void</code> in the function declaration. The means the function is not returning any value.</p>
+        <p>It is also possible to return a value from a function. For this, we need to specify the return type of the function during function declaration.</p>
+        <p>Then, the <code>return</code> statement can be used to return a value from a function. For example:</p>
+        <pre><code>
+          <keyword>int</keyword> <function>add</function> (<keyword>int</keyword> a, <keyword>int</keyword> b) {
+            <keyword>int</keyword> result = a + b;
+            <keyword>return</keyword> result;
+          }
+        </code></pre>
+        <p>Here, we have the data type <code>int</code> instead of <code>void</code>. This means that the function returns an <code>int</code> value.</p>
+        <p>In this example, the function return the sum of two parameters as the function value.</p>
+        <p>The <code>return</code> statement denotes that the function has ended. Any code after <code>return</code> inside the function is not executed.</code></p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>int</keyword> <function>add</function>(<keyword>int</keyword> n1, <keyword>int</keyword> n2) {
+            <keyword>return</keyword> (a + b);
+          }
+  
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <keyword>int</keyword> sum = <function>add</function>(<variable>100</variable>, <variable>78</variable>);
+            <std>cout</std> << <string>"100 + 78 = "</string> << sum << <std>endl</std>;
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          100 + 78 = 178
+        </code></pre>
+        <p>In the above example, the <code>add()</code> function is called with two <code>int</code> literals <code>100</code> and <code>78</code> as arguments.</p>
+        <p>The returned value of the function is stored in the variable <code>sum</code>, and being printed.</p>
+        <p>Notice that <code>sum</code> is a variable of <code>int</code> type. This is because the return value of <code>add()</code> is of <code>int</code> type.</p>
+        <img src="./asset/function4.png" alt="Function return value" class="imagecenter" style="width: 50%;">
+      
+        <hr>
+        <h3>Function Prototype</h3>
+        <p>In C++, the code of function declaration should be done before the function call.</p>
+        <p>However, if we want to define a function after the function call, we need to use the function prototype. For example</p>
+        <pre><code>
+          <comment>// function prototype</comment>
+          <keyword>int</keyword> <function>Addition</function>(<keyword>int</keyword>, <keyword>int</keyword>);
+
+          <keyword>int</keyword> <function>main</function>() {
+            <function>Addition</function>(<variable>5</variable>, <variable>3</variable>);
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+
+          <comment>// function definition</comment>
+          <keyword>int</keyword> <function>Addition</function>(<keyword>int</keyword> a, <keyword>int</keyword> b) {
+            <std>cout</std> << (a + b);
+          }
+        </code></pre>
+        <p>This provides the compiler with information about the function name and its parameters. That's why we can use the code to call a function before the function has been defined.</p>
+        <p>The syntax of a function prototype is</p>
+        <pre><code>
+          returnType <function>FunctionName</function>(dataType1, dataType2, ...)
+        </code></pre>
+        <p>Using the above example, we modified it to use function prototype</p>
+        <pre><code>
+          <comment>// function prototype is declared before main()</comment>
+          <comment>// function definition is defined after main()</comment>
+
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>void</keyword> <function>add</function>(<keyword>int</keyword>, <keyword>int</keyword>);
+  
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <keyword>int</keyword> sum = <function>add</function>(<variable>100</variable>, <variable>78</variable>);
+            <std>cout</std> << <string>"100 + 78 = "</string> << sum << <std>endl</std>;
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+
+          <keyword>void</keyword> <function>add</function>(<keyword>int</keyword> n1, <keyword>float</keyword> n2) {
+            <keyword>return</keyword> (a + b);
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          100 + 78 = 178
+        </code></pre>
+        <hr>
+        <h3>Benefits of Using User-Defined Functions</h3>
+        <ul>
+          <li>Functions make the code reusable. We can declare them once and use them multiple times.</li>
+          <li>Functions make the program easier as each small task is divided into a function.</li>
+          <li>Functions increase readability.</li>
+        </ul>
+
+        <hr>
+        <h3>Function Styling</h3>
+        <p>Function styling is not syntactically required in order to have a legal function. However proper styling is still important in order to improve readability.</p>
+        <p>Typically, common function naming style in C++ community is <code>CamelCase</code> or <code>camelCase</code>. Either sytle is fine as long as it is consistent throughout the whole program.</p>
+        <p>Different field or different project team may come up with their own defined style to follow. However if not specifically mentioned, usually <a href="https://google.github.io/styleguide/cppguide.html" target="_blank">Google C++ Style Guide</a> is the most common style to follow.</p>
+      </div>
+
+      <hr>
+      <div class="section3">
+        <h2>C++ Library Functions</h2>
+        <p>There are many built-in functions in C++ that programmers can use them by invoking the functions directly; and they don't need to write the functions themselves. Some common functions are <code>sqrt()</code>, <code>abs()</code>, <code>isdigit()</code>, and many many more. Typically, these functions are optimized and very efficient. Hence, we are recommended to use them whenever possible instead of implementing ourselves.</p>
+        <p>These functions are defined in standard libraries, such as <code>iostream</code>, <code>cmath</code>, etc.</p>
+        <p>In order to use the standard library functions, we need to include the header file where these functions are defined.</p>
+        <p>To learn more, visit <a href="https://en.cppreference.com/w/cpp/header" target="_blank">C++ Standard Library</a> or <a href="https://www.programiz.com/cpp-programming/library-function" target="_blank">C++ Standard Library Functions</a>.</p>
+      </div>
+
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./arrays_multidimension.html" class="previous">&laquo; Previous</a>
+      <a href="./function_2.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

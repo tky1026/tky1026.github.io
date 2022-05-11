@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Ternary Operator</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Ternary Operator</h1>
+      <p>In this tutorial, we will learn about the ternary operator in C++</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <p>In C++, the ternary operator (also known as the conditional operator) can be used to replace <a href="./if_else.html" target="_blank">if...else</a> in certain scenarios.</p>
+
+        <hr>
+        <h2>Ternary Operator</h2>
+        <p>A ternary operator evaluates the test condition and executes a block of code based on the result of the condition. Its syntax is</p>
+        <pre><code>
+          condition ? expression1 : expression2;
+        </code></pre>
+        <p>Here <code>condition</code> is evaluated and</p>
+        <ul>
+          <li>if <code>condition</code> is <code>true</code>, <code>expression1</code> is executed.</li>
+          <li>if <code>condition</code> is <code>false</code>, <code>expression2</code> is executed.</li>
+        </ul>
+        <p>The ternary operator takes <strong>3 operands</strong> (<code>condition</code>, <code>expression1</code> and <code>expression2</code>). Hence the name <code>ternary operator</code>.</p>
+        <br>
+        <h3>Example: Ternary Operator</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+              <keyword>double</keyword> marks;
+
+              <comment>// take input from users</comment>
+              <std>cout</std> << <string>"Enter your marks: "</string>;
+              <std>cin</std> >> marks;
+
+              <comment>// ternary operator checks if marks is greater than 60</comment>
+              <std>string</std> result = (marks >= 60) ? <string>"passed"</string> : <string>"failed"</string>;
+
+              <std>cout</std> << <string>"You "</string> << result << <string>" the exam."</string> << <std>endl</std>;
+
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output 1</strong>
+        <pre><code>
+          Enter your marks: 80
+          You passed the exam.
+        </code></pre>
+        <p>Suppose the user enters <strong>80</strong>. Then, the condition<code>marks >= 60</code> evaluates to <code>true</code>. Hence the first expression <code>"passed"</code> is assigned to <code>result</code>.</p>
+        <strong>Output 2</strong>
+        <pre><code>
+          Enter your marks: 59
+          You failed the exam.
+        </code></pre>
+        <p>Suppose the user enters <strong>59</strong>. Then, the condition<code>marks >= 60</code> evaluates to <code>false</code>. Hence the second expression <code>"failed"</code> is assigned to <code>result</code>.</p>
+      </div>
+
+      <hr>
+
+      <div class="section2">
+        <h2>When to use a Ternary Operator?</h2>
+        <p>In C++, the ternary operator can be used to replace certain types of <code>if...else</code> statements.</p>
+        <p>For example, we can replace this code</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+              <keyword>int</keyword> number = <variable>-4</variable>;
+
+              <keyword>if</keyword> (number > <variable>0</variable>) {
+                <std>cout</std> << <string>"Positive number"</string> << <std>endl</std>;
+              } <keyword>else</keyword> {
+                <std>cout</std> << <string>"Negative number"</string> << <std>endl</std>;
+              }
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <p>with</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+              <keyword>int</keyword> number = <variable>-4</variable>;
+
+              <std>string</std> result = (number > <variable>0</variable>) ? <string>"Positive number"</string> : <string>"Negative number"</string>;
+              <std>cout</std> << result << <std>endl</std>;
+
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Negative number
+        </code></pre>
+        <p>Here, both programs give the same output. However, the use of the ternary operator makes our code more readable and clean.</p>
+        <p class="note-tip"><strong>Note:</strong> It is recommended to use the ternary operator only if the resulting statement is short.</p>
+      </div>
+
+      <hr>
+      <div class="section3">
+        <h2>Nested Ternary Operator</h2>
+        <p>It is also possible to use one ternary operator inside another ternary operator. It is called the <strong>nested ternary operator</strong> in C++.</p>
+        <p>Here's a program to find whether a number is positive, negative, or zero using the nested ternary operator.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+              <keyword>int</keyword> number = <variable>-4</variable>;
+
+              <std>string</std> result = (number == <variable>0</variable>) ? <string>"Zero"</string> : ((number > <variable>0</variable>) ? <string>"Positive number"</string> : <string>"Negative number"</string>);
+              <std>cout</std> << result << <std>endl</std>;
+
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Negative number
+        </code></pre>
+        <p>Here</p>
+        <ul>
+          <li><code>(number == 0)</code> is the first test condition that checks if <code>number</code> is 0 or not. If it is, then it assigns the string value <code>"Zero"</code> to <code>result</code>.</li>
+          <li>Else, the second test condition <code>(number > 0)</code> is evaluated if the first condition is <code>false</code>.</li>
+        </ul>
+        <p class="note-tip"><strong>Note:</strong> It is not recommended to use nested ternary operators as it usually makes our code more complex.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

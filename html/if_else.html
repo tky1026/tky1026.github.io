@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Conditional Statement</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Conditional Statement</h1>
+      <p>In this tutorial, we will learn conditional statement, using <code>if...else</code> statement, to create decision making programs.</p>
+    </div>
+
+    <div class="content">
+      <div class="intro">
+        <p>In computer programming, we use the <code>if</code> statement to run a block only when a certain condition is met.</p>
+        <p>For example, assigning grades (A, B, C) based on marks obtained by a student.</p>
+        <ul>
+            <li>if the percentage is above <strong>90</strong>, assign grade <strong>A</strong></li>
+            <li>if the percentage is above <strong>75</strong>, assign grade <strong>B</strong></li>
+            <li>if the percentage is above <strong>60</strong>, assign grade <strong>C</strong></li>
+        </ul>
+
+        <p>There are three form of conditional statement using <code>if</code> and <code>else</code> in C++:</p>
+        <ol>
+            <li><code>if</code> statement</li>
+            <li><code>if ... else</code> statement</li>
+            <li><code>if ... else if ... else</code> statement</li>
+        </ol>
+      </div>
+
+      <hr>
+
+      <div class="if">
+        <h2>if Statement</h2>
+        <p>The syntax of the <code>if</code> statement is:</p>
+        <pre><code>
+            <keyword>if</keyword> (condition) {
+                <comment>// body of if statement</comment>
+            }
+        </code></pre>
+        <p>The <code>if</code> statement evaluates the <code>condition</code> inside the parentheses <code>( )</code>.</p>
+        <ul>
+            <li>If the <code>condition</code> evaluates to <code>true</code>, the code inside the body of <code>if</code> is executed.</li>
+            <li>If the <code>condition</code> evaluates to <code>false</code>, the code inside the body of <code>if</code> is skipped.</li>
+        </ul>
+        <p class="note-tip"><strong>Note:</strong> The code inside the <code>{ }</code> is the body of the <code>if</code> statement.</p>
+        <img src="asset/if_example.png" alt="C++ if statement flow" class="imagecenter" style="width: 50%;">
+        <br>
+        <h3>Example 1: if Statement</h3>
+        <pre><code>
+            <comment>// Program to print positive number entered by the user</comment>
+            <comment>// If the user enters a negative number, it is skipped</comment>
+
+            <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+            <keyword>using namespace</keyword> <std>std</std>;
+
+            <keyword>int</keyword> <function>main</function>() {
+                <keyword>int</keyword> number;
+
+                <std>cout</std> << <string>"Enter an integer: "</string>;
+                <std>cin</std> >> number;
+
+                <comment>// checks if the number is positive</comment>
+                <keyword>if</keyword> (number > <variable>0</variable>) {
+                  <std>cout</std> << <string>"You entered a positive integer: "</string> << number << <std>endl</std>;
+                }
+                <std>cout</std> << <string>"This statement is always executed."</string> << <std>endl</std>;
+                <keyword>return</keyword> <variable>0</variable>;
+            }
+        </code></pre>
+        <strong>Output 1</strong>
+        <pre><code>
+            Enter an integer: 5
+            You entered a positive number: 5
+            This statement is always executed.
+        </code></pre>
+        <p>When the user enters <code>5</code>, the condition <code>number > 0</code> is evaluated to <code>true</code> and the statement inside the body of if is executed.</p>
+        <strong>Output 2</strong>
+        <pre><code>
+            Enter an integer: -5
+            This statement is always executed.
+        </code></pre>
+        <p>When the user enters <code>-5</code>, the condition <code>number > 0</code> is evaluated to <code>false</code> and the statement inside the body of if is not executed.</p>
+
+        <div class="note-tip">
+          <p><strong>Note:</strong> In C++, <code>true</code> evaluates to <code>1</code> and <code>false</code> evaluates to <code>0</code>. With that being said, if the <code>condition</code> of <code>if</code> statement is not <code>0</code> or not <code>NULL</code>, it will evaluates to <code>true</code>.</p>
+          <pre><code>
+            <keyword>if</keyword> (<boolean>true</boolean>)   <comment>// True</comment>
+            <keyword>if</keyword> (<boolean>false</boolean>)  <comment>// False</comment>
+            <keyword>if</keyword> (1)      <comment>// True</comment>
+            <keyword>if</keyword> (0)      <comment>// False</comment>
+            <keyword>if</keyword> (<keyword>NULL</keyword>)   <comment>// False</comment>
+          </code></pre>
+          <p><strong>Question:</strong> What will the statements below evaluate to?</p>
+          <pre><code>
+            <keyword>if</keyword> (123)
+            <keyword>if</keyword> (-1)
+            <keyword>if</keyword> (<string>'a'</string>)
+            <keyword>if</keyword> (<string>"apple"</string>)
+          </code></pre>
+        </div>
+      </div>
+
+      <hr>
+      <div class="if_else">
+          <h2>if...else Statement</h2>
+          <p>The <code>if</code> statement can have an optional <code>else</code> clause. Its syntax is:</p>
+          <pre><code>
+              <keyword>if</keyword> (condition) {
+                  <comment>// block of code if condition is true</comment>
+              } <keyword>else</keyword> {
+                  <comment>// block of code if condition is false</comment>
+              }
+          </code></pre>
+          <img src="asset/if_else_example.png" alt="C++ if else statement flow" class="imagecenter" style="width: 50%;">
+          <p>If the <code>condition</code> evaluates <code>true</code>,</p>
+          <ul>
+              <li>the code inside the body of <code>if</code> is executed</li>
+              <li>the code inside the body of <code>else</code> is skipped from execution</li>
+          </ul>
+          <p>If the <code>condition</code> evaluates <code>false</code>,</p>
+          <ul>
+              <li>the code inside the body of <code>else</code> is executed</li>
+              <li>the code inside the body of <code>if</code> is skipped from execution</li>
+          </ul>
+          <br>
+          <h3>Example 2: if...else Statement</h3>
+          <pre><code>
+            <comment>// Program to check whether an integer is positive or negative</comment>
+            <comment>// This program considers 0 as a positive number</comment>
+
+            <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+            <keyword>using namespace</keyword> <std>std</std>;
+
+            <keyword>int</keyword> <function>main</function>() {
+                <keyword>int</keyword> number;
+
+                <std>cout</std> << <string>"Enter an integer: "</string>;
+                <std>cin</std> >> number;
+
+                <comment>// checks if the number is positive</comment>
+                <keyword>if</keyword> (number > <variable>0</variable>) {
+                    <std>cout</std> << <string>"You entered a positive integer: "</string> << number << <std>endl</std>;
+                } <keyword>else</keyword> {
+                    <std>cout</std> << <string>"You entered a negative integer: "</string> << number << <std>endl</std>;
+                }
+                <std>cout</std> << <string>"This statement is always executed."</string> << <std>endl</std>;
+                <keyword>return</keyword> <variable>0</variable>;
+            }
+          </code></pre>
+          <strong>Output 1</strong>
+          <pre><code>
+            Enter an integer: 4
+            You entered a positive integer: 4
+            This statement is always executed.
+          </code></pre>
+          <p>In the above program, we have the condition <code>number >= 0</code>. If we enter the number greater or equal to <code>0</code>, then the condition evaluates <code>true</code>.</p>
+          <p>Here, we enter <code>4</code>. So, the condition is <code>true</code>. Hence, the statement inside the body of <code>if</code> is executed.</p>
+          <strong>Output 2</strong>
+          <pre><code>
+            Enter an integer: -4
+            You entered a negative integer: -4
+            This statement is always executed.
+          </code></pre>
+          <p>Here, we enter <code>-4</code>. So, the condition is <code>false</code>. Hence, the statement inside the body of <code>else</code> is executed.</p>
+      </div>
+
+      <hr>
+
+      <div class="elseif">
+          <h2>if...else if...else Statement</h2>
+        <p>The <code>if...else</code> statement is used to execute a block of code among two alternatives. However, if we need to make a choice between more than two alternatives, we use the <code>if...else if...else</code> statement. The syntax is:</p>
+        <pre><code>
+            <keyword>if</keyword> (condition1) {
+                <comment>// code block 1</comment>
+            } <keyword>else if</keyword> (condition2) {
+                <comment>// code block 2</comment>
+            } <keyword>else</keyword> {
+                <comment>// code block 3</comment>
+            }
+        </code></pre>
+        <p>Here</p>
+        <ul>
+            <li>If <code>condition1</code> evaluates to <code>true</code>, the <code>code block 1</code> is executed.</li>
+            <li>If <code>condition1</code> evaluates to <code>false</code>, then <code></code> is evaluated.</li>
+            <li>If <code>condition2</code> is <code>true</code>, the <code>code block 2</code> is executed.</li>
+            <li>If <code>condition2</code> is <code>false</code>, the <code>code block 3</code> is executed.</li>
+        </ul>
+        <img src="asset/if_elseif_example.png" alt="C++ else if statement flow" class="imagecenter" style="width: 50%;">
+        <p class="note-tip"><strong>Note: </strong> There can be more than one <code>else if</code> statement but only one <code>if</code> and <code>else</code> statements.</p>
+        <br>
+        <h3>Example 3: if...else if...else Statement</h3>
+          <pre><code>
+            <comment>// Program to check whether an integer is positive, negative or zero</comment>
+
+            <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+            <keyword>using namespace</keyword> <std>std</std>;
+
+            <keyword>int</keyword> <function>main</function>() {
+                <keyword>int</keyword> number;
+
+                <std>cout</std> << <string>"Enter an integer: "</string>;
+                <std>cin</std> >> number;
+
+                <comment>// checks if the number is positive</comment>
+                <keyword>if</keyword> (number > <variable>0</variable>) {
+                    <std>cout</std> << <string>"You entered a positive integer: "</string> << number << <std>endl</std>;
+                } <keyword>else if</keyword> (number < <variable>0</variable>) {
+                    <std>cout</std> << <string>"You entered a negative integer: "</string> << number << <std>endl</std>;
+                } <keyword>else</keyword> {
+                    <std>cout</std> << <string>"You entered 0"</string> << <std>endl</std>;
+                }
+                <std>cout</std> << <string>"This statement is always executed."</string> << <std>endl</std>;
+                <keyword>return</keyword> <variable>0</variable>;
+            }
+          </code></pre>
+          <strong>Output 1</strong>
+          <pre><code>
+            Enter an integer: 1
+            You entered a positive integer: 1
+            This statement is always executed.
+          </code></pre>
+          <strong>Output 2</strong>
+          <pre><code>
+            Enter an integer: -2
+            You entered a positive integer: -2
+            This statement is always executed.
+          </code></pre>
+          <strong>Output 3</strong>
+          <pre><code>
+            Enter an integer: 0
+            You entered 0
+            This statement is always executed.
+          </code></pre>
+          <p>In this program, we take a number from the user. If the number is greater than <code>0</code>, the code inside the <code>if</code> block is executed. If the number is less than <code>0</code>, the code inside the <code>else if</code> block is executed. Otherwise, the code inside the <code>else</code> block is executed.</p>
+          <p class="note-tip"><strong>Note:</strong> In conditional statements with multiple <code>else if</code>, the conditions are checked in order until the first occurence of <code>true</code> evaluation and the rest are omitted. For example, in the <code>if...else if...else</code> syntax example above: even though if both <code>condition1</code> and <code>condition2</code> are <code>true</code>, only <code>code block 1</code> will be executed and then jumps out of the conditional statements and continue with code after <code>if</code>.</p>
+      </div>
+
+      <hr>
+
+      <div class="nested">
+        <h2>Nested if...else</h2>
+        <p>Sometimes, we need to use an <code>if</code> statement inside another <code>if</code> statement. This is known as <strong>nested if</strong> statement.</p>
+        <p>Think of it as multiple layers of <code>if</code> statements. There is a first, outer <code>if</code> statement, and inside it is another, inner <code>if</code> statement. Its syntax is:</p>
+        <pre><code>
+            <comment>// outer if statement</comment>
+            <keyword>if</keyword> (condition1) {
+                <comment>// statements</comment>
+
+                <comment>// inner if statement</comment>
+                <keyword>if</keyword> (condition2){
+                <comment>// statements</comment>
+                }
+            }
+        </code></pre>
+          <div class="note-tip"><strong>Notes:</strong>
+            <ul>
+                <li>We can add <code>else</code> and <code>else if</code> statements to the inner if statement as well.</li>
+                <li>The inner <code>if</code> statement can also be inserted inside the outer <code>else</code> or <code>else if</code> statements.</li>
+                <li>We can nest multiple layers of <code>if</code> statements.</li>
+            </ul>
+          </div>
+          <br>
+          <h3>Example 4: Nested if</h3>
+          <pre><code>
+            <comment>// C++ program to find if an integer is even or odd or neither (0)</comment>
+            <comment>// using nested if statements</comment>
+
+            <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+            <keyword>using namespace</keyword> <std>std</std>;
+
+            <keyword>int</keyword> <function>main</function>() {
+                <keyword>int</keyword> number;
+
+                <std>cout</std> << <string>"Enter an integer: "</string>;
+                <std>cin</std> >> number;
+
+                <comment>// outer if condition</comment>
+                <keyword>if</keyword> (number != <variable>0</variable>) {
+
+                    <comment>// inner if condition</comment>
+                    <keyword>if</keyword> ((num % <variable>2</variable>) == <variable>0</variable>) {
+                      
+                      <std>cout</std> << <string>"The number is even"</string> << <std>endl</std>;
+                    } <keyword>else</keyword> {
+                      <std>cout</std> << <string>"The number is odd"</string> << <std>endl</std>;
+                    }
+
+                } <keyword>else</keyword> {
+                    <std>cout</std> << <string>"The number is 0"</string> << <std>endl</std>;
+                }
+
+                <std>cout</std> << <string>"This line is always printed."</string> << <std>endl</std>;
+                <keyword>return</keyword> <variable>0</variable>;
+            }
+          </code></pre>
+          <strong>Output 1</strong>
+          <pre><code>
+            Enter an integer: 34
+            The number is even
+            This line is always printed.
+          </code></pre>
+          <strong>Output 2</strong>
+          <pre><code>
+            Enter an integer: 35
+            The number is odd
+            This line is always printed.
+          </code></pre>
+          <strong>Output 3</strong>
+          <pre><code>
+            Enter an integer: 0
+            The number is 0
+            This line is always printed.
+          </code></pre>
+          <p>In the above example,</p>
+          <ul>
+            <li>We take an integer as an input from the user and store it in the variable <code>num</code>.</li>
+            <li>We then use an <code>if...else</code> statement to check whether num is not equal to <code>0</code>.
+              <ul>
+                <li>If <code>true</code>, then the inner <code>if...else</code> statement is executed.</li>
+                <li>If <code>false</code>, the code inside the outer else condition is executed, which prints <code>"The number is 0"</code>.</li>
+              </ul>
+            </li>
+            <li>The inner <code>if...else</code> statement checks whether the input number is divisible by 2.
+              <ul>
+                <li>If <code>true</code>, then we print a statement saying that the number is even.</li>
+                <li>If <code>false</code>, we print that the number is odd.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>Notice that <code>0</code> is also divisible by 2, but it is actually not an even number. This is why we first make sure that the input number is not <code>0</code> in the outer <code>if</code> condition.</p>
+      </div>
+
+      <hr>
+
+      <div class="single">
+        <h2>Body of if...else With Only One Statement</h2>
+        <p>If the body of <code>if...else</code> has only one statement, you can omit <code>{ }</code> in the program. </p>
+        <p>For example, you can replace</p>
+        <pre><code>
+          <keyword>if</keyword> (number > <variable>0</variable>) {
+            <std>cout</std> << <string>"The number is positive"</string> << <std>endl</std>;
+          } <keyword>else</keyword> {
+            <std>cout</std> << <string>"The number is negative"</string> << <std>endl</std>;
+          }
+        </code></pre>
+        <p>with</p>
+        <pre><code>
+          <keyword>if</keyword> (number > <variable>0</variable>)
+            <std>cout</std> << <string>"The number is positive"</string> << <std>endl</std>;
+          <keyword>else</keyword>
+            <std>cout</std> << <string>"The number is negative"</string> << <std>endl</std>;
+        </code></pre>
+        <p>The output of both programs will be the same.</p>
+        <p>However, for code block with more than one line, <code>{ }</code> are still needed.</p>
+        <p class="note-tip"><strong>Note:</strong> Although it's not necessary to use <code>{ }</code> if the body of <code>if...else</code> has only single-line statement, using <code>{ }</code> makes your code more readable. It is a good practice that no matter which style is chosen, keep it consistent throughout the whole code.</p>
+      </div>
+
+      <hr>
+
+      <div class="other">
+        <h2>More on Decision Making</h2>
+        <p>In certain situations, a <strong>ternary operator</strong> can replace an <code>if...else</code> statement. To learn more, visit <a href="./ternary_operator.html" target="_blank">C++ Ternary Operator</a>.</p>
+        <p>If we need to make a choice between more than one alternatives based on a given test condition, the <code>switch</code> statement can be used. To learn more, visit <a href="./switch.html" target="_blank">C++ Switch Statement</a>.</p>
+      </div>
+
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./comments.html" class="previous">&laquo; Previous</a>
+      <a href="./switch.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

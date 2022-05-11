@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- https://www.programiz.com/cpp-programming/break-statement -->
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ break Statement</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ break Statement</h1>
+      <p>In this tutorial, we will learn about the break statement and its working in loops.</p>
+    </div>
+
+    <div class="content">
+      <div class="intro">
+        <h2>break Statement</h2>
+        <p>In C++, the <code>break</code> statement terminates the loop when it is encountered.</p>
+        <p>The syntax of the <code>break</code> statement is:</p>
+        <pre><code>
+          <keyword>break</keyword>;
+        </code></pre>
+        <p>Before we learn about the <code>break</code> statement, make sure you are already familiar about: </p>
+        <ul>
+          <li><a href="./if_else.html" target="_blank">C++ if...else</a></li>
+          <li><a href="./while_loop.html" target="_blank">C++ while and do...while loops</a></li>
+          <li><a href="./for_loop.html" target="_blank">C++ for loop</a></li>
+        </ul>
+        <p class="note-tip"><strong>Note: </strong> A <code>break</code> statement may only be used within a <strong>loop</strong> or <strong>switch</strong>.</p>
+      </div>
+
+      <hr>
+
+      <div class="break">
+        <h2>Working of break Statement</h2>
+        <p>In the body of a loop statement, the <code>break</code> statement will terminate the loop and "break" out of current parent <code>loop</code> statement.</p>
+        <img src="./asset/break_flow.png" alt="C++ break flow" class="imagecenter" style="width: 50%;">
+        <br>
+        <h3>Example 1: break with for loop</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            <keyword>for</keyword> (<keyword>int</keyword> i = <variable>1</variable>; i <= <variable>5</variable>; i++) 
+            {
+              <keyword>if</keyword> (i == <variable>3</variable>)    <comment>// break condition</comment>
+                <keyword>break</keyword>;
+
+              <std>cout</std> << i << <std>endl</std>;
+            }
+            <std>cout</std> << <string>"This line is always printed"</string> << <std>endl</std>;
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          1
+          2
+          This line is always printed
+        </code></pre>
+        <p>In the above program, the <code>for</code> loop is used to print the value of <code>i</code> in each iteration, from 1 to 5. Here notice the code:</p>
+        <pre><code>
+          <keyword>if</keyword> (i == <variable>3</variable>)
+            <keyword>break</keyword>;
+        </code></pre>
+        <p>This means, when <code>i</code> is equal <strong>3</strong>, the <code>break</code> statement immediately terminates the loop. Hence, the output doesn't include values greater than or equal to 3.</p>
+        <p class="note-tip"><strong>Note:</strong> The statement <code>break</code> is usually used with decision-making statements.</p>
+        <br>
+        <h3>Example 2: break with while loop</h3>
+        <pre><code>
+          <comment>// program to find the sum of positive numbers</comment>
+          <comment>// if the user enters a negative numbers, break statement ends the loop</comment>
+          <comment>// the negative number entered is not added to sum</comment>
+
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            <keyword>int</keyword> number;
+            <keyword>int</keyword> sum = <variable>0</variable>;
+
+            <keyword>while</keyword> (<boolean>true</boolean>)
+            {
+              <comment>// take input from the user</comment>
+              <std>cout</std> << <string>"Enter a number: "</string>;
+              <std>cin</std> >> number;
+
+              <comment>// break condition</comment>
+              <keyword>if</keyword> (number < <variable>0</variable>)
+              {
+                <std>cout</std> << <string>"Read negative number"</string> << <std>endl</std>;
+                <keyword>break</keyword>;
+                <std>cout</std> << <string>"Breaking out of while loop"</string> << <std>endl</std>;
+              }
+
+              <comment>// add all positive numbers</comment>
+              sum += number;
+            }
+
+            <comment>// display the sum</comment>
+            <std>cout</std> << <string>"<variable>\n</variable>The sum is "</string><< sum << <std>endl</std>;
+
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Enter a number: 1
+          Enter a number: 2
+          Enter a number: 3
+          Enter a number: -5
+          Read negative number
+
+          The sum is 6
+        </code></pre>
+        <p>In the above program, at the beginning of each iteration in the <code>while</code> loop, the user enters a number. As long as the user input a positive number, all the positive number will be summed up. Here, notice that:</p>
+        <pre><code>
+          <keyword>if</keyword> (number < <variable>0</variable>)
+          {
+            <std>cout</std> << <string>"Read negative number"</string> << <std>endl</std>;
+            <keyword>break</keyword>;
+            <std>cout</std> << <string>"Breaking out of while loop"</string> << <std>endl</std>;
+          }
+        </code></pre>
+        <p>This means, when the user enters a negative number, this <code>if</code> statement is <code>true</code>. Hence, it prints <code>"Read negative number"</code> and break out of the loop. Also note that, since it already jumps out of the loop once encountered the <code>break</code> statement, the statement that prints <code>"Breaking out of while loop"</code> is thus skipped and not executed.</p>
+      </div>
+
+      <hr>
+      <div class="nested">
+        <h2>break with Nested Loop</h2>
+        <p>Note that when <code>break</code> is used with nested loops, the <code>break</code> only terminates its "parent" loop.</p>
+        <br>
+        <h3>Example 3: break with nested loop</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>()
+          {
+            <keyword>for</keyword> (<keyword>int</keyword> i = <variable>1</variable>; i <= <variable>3</variable>; i++)
+            {
+              <keyword>for</keyword> (<keyword>int</keyword> j = <variable>1</variable>; j <= <variable>3</variable>; j++)
+              {
+                <keyword>if</keyword> (i == <variable>2</variable>) 
+                 <keyword>break</keyword>;
+                 
+                <std>cout</std> << <string>"i = "</string> << i << <string>", j = "</string> << j << <std>endl</std>;
+              }
+            }
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          i = 1, j = 1
+          i = 1, j = 2
+          i = 1, j = 3
+          i = 3, j = 1
+          i = 3, j = 2
+          i = 3, j = 3
+        </code></pre>
+        <p>In the above program, the <code>break</code> statement is executed when <code>i == 2</code>. It terminates the inner loop, and the control flow of the program moves to the outer loop. Hence, the value of <code>i = 2</code> is never displayed in the output.</p>
+      </div>
+
+      <hr>
+      <div class="switch">
+        <h2>break with switch Statement</h2>
+        <p>The <code>break</code> statement is also used with the <code>switch</code> statement. To learn more, visit <a href="./switch.html" target="_blank">C++ switch Statement</a>.</p>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./for_loop.html" class="previous">&laquo; Previous</a>
+      <a href="./continue_statement.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

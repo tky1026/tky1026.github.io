@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ switch Statement</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ switch Statement</h1>
+      <p>In this tutorial, we will learn about switch statement.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <h2>Switch Statement</h2>
+        <p>The <code>switch</code> statement allows us to execute a block of code among many alternatives.</p>
+        <p>The syntax of the <code>switch</code> statement is:</p>
+        <pre><code>
+          <keyword>switch</keyword> (expression) {
+              <keyword>case</keyword> constant1:
+                  <comment>// code to be executed if</comment>
+                  <comment>// expression is equal to constant1</comment>
+                  <keyword>break</keyword>;
+                
+              <keyword>case</keyword> constant2:
+                  <comment>// code to be executed if</comment>
+                  <comment>// expression is equal to constant2</comment>
+                  <keyword>break</keyword>;
+                  .
+                  .
+                  .
+              <keyword>default</keyword>:
+                  <comment>// code to be executed if</comment>
+                  <comment>// expression doesn't match any constant</comment>
+          }
+        </code></pre>
+        <p>The <code>expression</code> is evaluated once and compared with the values of each <code>case</code> label.</p>
+        <ul>
+          <li>If there is a match, the corresponding code after the matching label is executed. For example, if the value of the variable is equal to <code>constant2</code>, the code after <code>case constant2:</code> is executed until the <code>break</code> statement is encountered.</li>
+          <li>If there is no match, the code after <code>default</code> is executed.</li>
+        </ul>
+        <img src="./asset/switch_flow.png" alt="C++ switch flow" class="imagecenter" style="width: 50%;">
+        <p class="note-tip"><strong>Note:</strong> We can do the same thing with the <code>if...else..if</code> ladder. However, the syntax of the <code>switch</code> statement is cleaner and much easier to read and write.</p>
+        <h3>Example: Retreive English Text of Number between 1~5</h3>
+<pre><code>
+  <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+  <keyword>using namespace</keyword> <std>std</std>;
+
+  <keyword>int</keyword> <function>main</function>() {
+    <keyword>int</keyword> number;
+
+    <std>cout</std> << <string>"Enter an integer (1~5): "</string>;
+    <std>cin</std> >> number;
+
+    <keyword>switch</keyword> (number) {
+      <keyword>case</keyword> <variable>1</variable>:
+        <std>cout</std> << <string>"One"</string> << <std>endl</std>;
+        <keyword>break</keyword>;
+      <keyword>case</keyword> <variable>2</variable>:
+        <std>cout</std> << <string>"Two"</string> << <std>endl</std>;
+        <keyword>break</keyword>;
+      <keyword>case</keyword> <variable>3</variable>:
+        <std>cout</std> << <string>"Three"</string> << <std>endl</std>;
+        <keyword>break</keyword>;
+      <keyword>case</keyword> <variable>4</variable>:
+        <std>cout</std> << <string>"Four"</string> << <std>endl</std>;
+        <keyword>break</keyword>;
+      <keyword>case</keyword> <variable>5</variable>:
+        <std>cout</std> << <string>"Five"</string> << <std>endl</std>;
+        <keyword>break</keyword>;
+      <keyword>default</keyword>:
+        <std>cout</std> << <string>"Out of Range!"</string> << <std>endl</std>;
+        <keyword>break</keyword>;
+    }
+
+    <keyword>return</keyword> <variable>0</variable>;
+  }
+</code></pre>
+        <strong>Output 1</strong>
+        <pre><code>
+          Enter an integer (1~5): 3
+          Three
+        </code></pre>
+        <strong>Output 2</strong>
+        <pre><code>
+          Enter an integer (1~5): 6
+          Out of Range!
+        </code></pre>
+        <p>In the above example, </p>
+        <ol>
+          <li>We first prompt the user to enter number between 1 to 5. This input is then stored in the <code>int</code> variable <code>number</code>.</li>
+          <li>The <code>switch</code> statement is then used to check the number entered by the user:
+            <ul>
+              <li>If the user enters number that matches the case label, which is <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code> or <code>5</code>, then the corresponding word is printed.</li>
+              <li>If the user enters any other number, none of the cases matches, then the default code is executed.</li>
+            </ul>
+          </li>
+        </ol>
+        <p>It is <strong>important</strong> to note that the <code>break</code> statement is used inside each <code>case</code> block. This terminates the <code>switch</code> statement.</p>
+        <p>If the <code>break</code> statement is not used, all cases after the correct <code>case</code> will be executed. It is a common careless mistake made by programmers when using <code>switch</code> statement that leads to logic error.</p>
+        <p>Learn more about <a href="./break_statement.html" target="_blank">break</a> statement.</p>
+        <p class="note-tip"><strong>Note:</strong> In <code>switch</code> statement, the label for each cases has to be unique, otherwise it will lead to a syntax error. </p>
+      </div>
+
+      <hr>
+      <div class="section2">
+        <h2>Multiple Cases with Same Expression</h2>
+        <p>When we have multiple cases that have the same expression to be executed, instead of writing each case separately, we can use the following syntax:</p>
+        <pre><code>
+          <keyword>switch</keyword> (expression) {
+            <keyword>case</keyword> constant1, constant2:
+                <comment>// code to be executed if</comment>
+                <comment>// expression is equal to constant1 or constant2</comment>
+                <keyword>break</keyword>;
+              
+            <keyword>case</keyword> constant3:
+                <comment>// code to be executed if</comment>
+                <comment>// expression is equal to constant3</comment>
+                <keyword>break</keyword>;
+                .
+                .
+                .
+            <keyword>default</keyword>:
+                <comment>// code to be executed if</comment>
+                <comment>// expression doesn't match any constant</comment>
+        }
+        </code></pre>
+        <h3>Example: Odd or Even Numbers</h3>
+<pre><code>
+  <comment>// check number is odd or even between 1 to 6 only </comment>
+
+  <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+  <keyword>using namespace</keyword> <std>std</std>;
+
+  <keyword>int</keyword> <function>main</function>() 
+  {
+    <keyword>int</keyword> num = <variable>3</variable>;
+
+    <keyword>switch</keyword> (num) 
+    {
+        <keyword>case</keyword> <variable>1</variable>: <keyword>case</keyword> <variable>3</variable>: <keyword>case</keyword> <variable>5</variable>:
+            <std>cout</std> << <string>"Odd number"</string> << <std>endl</std>;
+            <keyword>break</keyword>;
+          
+        <keyword>case</keyword> <variable>2</variable>: <keyword>case</keyword> <variable>4</variable>: <keyword>case</keyword> <variable>6</variable>:
+            <std>cout</std> << <string>"Even number"</string> << <std>endl</std>;
+            <keyword>break</keyword>;
+            
+        <keyword>default</keyword>:
+            <std>cout</std> << <string>"Out of Range!"</string> << <std>endl</std>;
+    }
+    <keyword>return</keyword> <variable>0</variable>;
+  }
+</code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Odd number
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./if_else.html" class="previous">&laquo; Previous</a>
+      <a href="./while_loop.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

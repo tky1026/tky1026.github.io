@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Data Types</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Data Types</h1>
+      <p>In this tutorial, we will learn about basic data types such as int, float, char, etc.</p>
+    </div>
+
+    <div class="content">
+      <div class="fundamental">
+        <p>In C++, data types are declarations for variables. This determines the type and size of data associated with variables. For example:</p>
+
+        <pre><code>
+          <keyword>int</keyword> age = <variable>18</variable>
+          <keyword>bool</keyword> is_adult = <boolean>true</boolean>;
+        </code></pre>
+
+        <p>Here, <var>age</var> is a variable of type <code>int</code> while <var>is_adult</var> is a variable of type <code>bool</code>.</p>
+
+        <p>
+          While writing program in any language, you need to use various variables to store various information. 
+          Variables are nothing but reserved memory locations to store values. 
+          This means that when you create a variable you reserve some space in memory.
+        </p>
+
+        <p>
+          You may like to store information of various data types like character, wide character, integer, floating point, double floating point, boolean etc. 
+          Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.
+        </p>
+
+        <hr>
+
+        <h2>C++ Fundamental Data Types</h2>
+        <p>In C++ there are seven basic data types / primitive data types.</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <th>Data Type</th>
+              <th>Meaning</th>
+              <th>Size(Bytes)</th>
+            </tr>
+            <tr>
+              <td><code>int</code></td>
+              <td>Integer</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td><code>float</code></td>
+              <td>Floating-point</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td><code>double</code></td>
+              <td>Double Floating-point</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><code>char</code></td>
+              <td>Character</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><code>wchar_t</code></td>
+              <td>Wide Character</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td><code>bool</code></td>
+              <td>Boolean</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><code>void</code></td>
+              <td>Empty / Valueless</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div id="int">
+          <hr>
+          <h3>1. int</h3>
+          <ul>
+            <li>The <code>int</code> keyword is used to indicate integers.</li>
+            <li>Its size is 4 bytes and it can store values from <strong>-2147483648</strong> to <strong>2147483647</strong>.</li> 
+          </ul>
+          <pre><code>
+            <keyword>int</keyword> salary = <variable>85000</variable>;
+          </code></pre>
+        </div>
+
+        <div id="float">
+          <hr>
+          <h3>2. float and double</h3>
+          <ul>
+            <li><code>float</code> and <code>double</code> are used to store floating-point numbers (decimals and exponentials).</li>
+            <li>The size of <code>float</code> is 4 bytes and the size of <code>double</code> is 8 bytes. Hence, <code>double</code> has two times the precision of <code>float</code>.</li>
+          </ul>
+          <pre><code>
+            <keyword>float</keyword> area = <variable>12.34</variable>;
+            <keyword>double</keyword> volume = <variable>56.789</variable>;
+            <keyword>double</keyword> two_million = <variable>2e6</variable> <comment>// 2e6 or 2E6 is equal to 2*10^6</comment>
+          </code></pre>
+        </div>
+
+        <div id="char">
+          <hr>
+          <h3>3. char</h3>
+          <ul>
+            <li>Keyword <code>char</code> is used for character.</li>
+            <li><code>char</code> is 1 byte in size.</li>
+            <li>Characters in C++ are enclosed inside single quotes <code>' '</code>.</li>
+          </ul>
+          <pre><code>
+            <keyword>char</keyword> test = <character>'k'</character>;
+          </code></pre>
+
+          <p class="note-tip"><strong>Note: </strong>In C++, an integer value is stored in a <code>char</code> variable rather than the character itself, the integer value is called <strong>ASCII</strong> value. 
+          <a href="./char.html" target="_blank">C++ char</a></p>
+        </div>
+
+        <div id="wchar">
+          <hr>
+          <h3>4. wchar_t</h3>
+          <ul>
+            <li>Wide character <code>wchar_t</code> is similar to the <code>char</code> data type, except its size is 2 bytes instead of 1. </li>
+            <li>It is used to represent characters that require more memory to represent them than a single <code>char</code>.</li>
+            <li>Mostly the wchar_t datatype is used when international languages like Japanese are used.</li>
+          </ul>
+          <pre><code>
+            <keyword>wchar_t</keyword> hello[] = L<string>"Привет мир"</string>; <comment>// hello world in russian</comment>
+          </code></pre>
+        </div>
+
+        <div id="bool">
+          <hr>
+          <h3>5. bool</h3>
+          <ul>
+            <li>The <code>bool</code> data type only has one of the two possible values: <code>true</code> of <code>false</code>.</li>
+            <li>Booleans are used in conditional statements and loops.</li>
+          </ul>
+          <pre><code>
+            <keyword>bool</keyword> cond = <boolean>false</boolean>;
+          </code></pre>
+        </div>
+
+        <div id="void">
+          <hr>
+          <h3>6. void</h3>
+          <ul>
+            <li>The <code>void</code> keyword indicates an absence of data. It means "nothing" or "no value".</li>
+            <li>We cannot declare variables of <code>void</code> type.</li>
+          </ul>
+        </div>
+
+      <hr>
+
+      <div class="modifiers">
+        <h2>C++ Type Modifiers</h2>
+        <p>We can further modify some of the fundamental data types by using type modifiers. There are 4 type modifiers in C++.</p>
+        <ol>
+          <li><code>signed</code></li>
+          <li><code>unsigned</code></li>
+          <li><code>short</code></li>
+          <li><code>long</code></li>
+        </ol>
+        <p>We can modify the following data types with the above modifiers:</p>
+        <ul>
+          <li><code>int</code></li>
+          <li><code>double</code></li>
+          <li><code>char</code></li>
+        </ul>
+        <p>The table below shows the available C++ data types, memory and range of value can be stored in such type of variables.</p>
+        <table>
+          <tbody>
+            <tr><th>Type</th><th>Size (byte)</th><th>Range</th></tr>
+            <tr><td>char</td><td>1</td><td>-127 to 127 or 0 to 255</td></tr>
+            <tr><td>signed char</td><td>1</td><td>-127 to 127</td></tr>
+            <tr><td>unsigned char</td><td>1</td><td>0 to 255</td></tr>
+            <tr><td>int</td><td>4</td><td>-2147483648 to 2147483647</td></tr>
+            <tr><td>signed int</td><td>4</td><td>-2147483648 to 2147483647</td></tr>
+            <tr><td>unsigned int</td><td>4</td><td>0 to 4294967295</td></tr>
+            <tr><td>short</td><td>2</td><td>-32768 to 32767</td></tr>
+            <tr><td>unsigned short</td><td>2</td><td>0 to 65535</td></tr>
+            <tr><td>long</td><td>4</td><td>-2147483,648 to 2147483647</td></tr>
+            <tr><td>unsigned long</td><td>4</td><td>0 to 4294967295</td></tr>
+            <tr><td>long long</td><td>8</td><td>-9223372036854775808 to 9223372036854775807</td></tr>
+            <tr><td>unsigned long long</td><td>8</td><td>0 to 18446744073709551615</td></tr>
+            <tr><td>float</td><td>4</td><td>3.4E +/- 38 (7 digits)</td></tr>
+            <tr><td>double</td><td>8</td><td>1.7E +/- 308 (15 digits)</td></tr>
+            <tr><td>long double</td><td>12</td><td>1.7E +/- 308 (15 digits)</td></tr>
+            <tr><td>wchar_t</td><td>2</td><td>0 to 65535</td></tr>
+            <tr><td>bool</td><td>1</td><td><code>true</code> or <code>false</code></td></tr>
+          </tbody>
+        </table>
+        <p class="note-tip"><strong>Note:</strong> Usually for <code>char</code>, <code>int</code>, <code>float</code> and <code>double</code>, they are default with signed range.</p>
+        <p class="note-tip"><strong>Note:</strong> The <code>long</code> integer in particular depends on the operating system and the target architecture, depending on the system implementation, it can be 4 bytes or 8 bytes. Under Windows, they are the same as <code>int</code>.</p>
+      </div>
+
+      <hr>
+
+      <div class="derived">
+        <h2>Derived Data Types</h2>
+        <p>Data types that are derived from fundamental data types are derived types. For example: arrays, pointers, function types, structures, etc.</p>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./variables-literal-constant.html" class="previous">&laquo; Previous</a>
+      <a href="./variables-creation.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>
+
+<!-- overflow concept and example -->

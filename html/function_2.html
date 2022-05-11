@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Function Overloading</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Function Overloading</h1>
+      <p>In this tutorial, we will learn about the function overloading</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <p>In C++, two functions can have the same name if the number and/or type of arguments passed is different.</p>
+        <p>These functions having the same name but different arguments are known as overloaded functions. For example:</p>
+        <pre><code>
+          <comment>// same name different arguments</comment>
+          <keyword>int</keyword> <function>test</function>() { }
+          <keyword>int</keyword> <function>test</function>(<keyword>int</keyword> a) { }
+          <keyword>float</keyword> <function>test</function>(<keyword>double</keyword> a) { }
+          <keyword>int</keyword> <function>test</function>(<keyword>int</keyword> a, <keyword>double</keyword> b) { }
+        </code></pre>
+        <p>Here, all four functions are overloaded functions.</p>
+        <p>Notice that the return types of all these 4 functions are not the same. Overloaded functions may or may not have different return types but they must have different arguments. For example:</p>
+        <pre><code>
+          <comment>// Error</comment>
+          <keyword>int</keyword> <function>test</function>(<keyword>int</keyword> a) { }
+          <keyword>double</keyword> <function>test</function>(<keyword>int</keyword> a) { }
+        </code></pre>
+        <p>Here, both functions have the same function name, the same type and the number of arguments. Hence, the compiler will throw an error.</p>
+
+        <hr>
+        <h3>Example 1: Overloading Using Different Types of Parameter</h3>
+        <pre><code>
+          <comment>// Program to compute absolute value</comment>
+          <comment>// Works for both int and float</comment>
+
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>float</keyword> <function>absolute</function>(<keyword>float</keyword> var) {
+            <keyword>if</keyword> (var < <variable>0.0</variable>)
+              var = -var;
+            <keyword>return</keyword> var;
+          }
+
+          <keyword>int</keyword> <function>absolute</function>(<keyword>int</keyword> var) {
+            <keyword>if</keyword> (var < <variable>0</variable>)
+              var = -var;
+            <keyword>return</keyword> var;
+          }
+  
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <comment>// call function with int type parameter</comment>
+            <std>cout</std> << <string>"Absolute value of -5 = "</string> << <function>absolute</function>(<variable>-5</variable>) << <std>endl</std>;
+
+            <comment>// call function with float type parameter</comment>
+            <std>cout</std> << <string>"Absolute value of 5.5 = "</string> << <function>absolute</function>(<variable>5.5</variable>) << <std>endl</std>;
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Absolute value of -5 = 5
+          Absolute value of 5.5 = 5.5
+        </code></pre>
+        <img src="./asset/overload1.png" alt="Overloading functions by types" class="imagecenter" style="width: 50%;">
+        <p>Here, we overload the <code>absolute()</code> function. Based on the type of parameter passed during the function call, the corresponding function is called.</p>
+        
+        <hr>
+        <h3>Example 2: Overloading Using Different Number of Parameters</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>void</keyword> <function>display</function>(<keyword>int</keyword> var1, <keyword>double</keyword> var2) {
+            <std>cout</std> << <string>"Integer number = "</string> << var1;
+            <std>cout</std> << <string>" and Double number = "</string> << var2 << <std>endl</std>;
+          }
+
+          <keyword>void</keyword> <function>display</function>(<keyword>double</keyword> var) {
+            <std>cout</std> << <string>"Double number = "</string> << var << <std>endl</std>;
+          }
+
+          <keyword>void</keyword> <function>display</function>(<keyword>int</keyword> var) {
+            <std>cout</std> << <string>"Integer number = "</string> << var << <std>endl</std>;
+          }
+  
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <keyword>int</keyword> a = <variable>5</variable>;
+            <keyword>double</keyword> b = <variable>5.5</variable>;
+
+            <function>display</function>(a);
+            <function>display</function>(b);
+            <function>display</function>(a, b);
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Integer number = 5
+          Double number = 5.5
+          Integer number = 5 and Double number = 5.5
+        </code></pre>
+        <img src="./asset/overload2.png" alt="Overloading functions by types" class="imagecenter" style="width: 50%;">
+        <p>Here, the <code>display()</code> function is called three times with different arguments. Depending on the number and type of arguments passed, the corresponding <code>display()</code> function is called.</p>
+
+        <hr>
+        <p class="note-tip"><strong>Note: </strong>In C++, many standard library functions are overloaded. For example, the <code>sqrt()</code> function can take <code>double</code>, <code>float</code>, <code>int</code>, etc. as parameters. This is possible because the <code>sqrt()</code> function is overloaded in C++.</p>
+      </div>
+
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./function_1.html" class="previous">&laquo; Previous</a>
+      <a href="./function_3.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

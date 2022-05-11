@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ continue Statement</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ continue Statement</h1>
+      <p>In this tutorial, we will learn about the continue statement and its working with loops.</p>
+    </div>
+
+    <div class="content">
+      <div class="intro">
+        <h2>continue Statement</h2>
+        <p>The continue statement is used to skip the current iteration of the loop and the control of the program goes to the next iteration.</p>
+        <p>The syntax of <code>continue</code> statement is:</p>
+        <pre><code>
+          <keyword>continue</keyword>;
+        </code></pre>
+        <p>Before we learn about the <code>break</code> statement, make sure you are already familiar about: </p>
+        <ul>
+          <li><a href="./if_else.html" target="_blank">C++ if...else</a></li>
+          <li><a href="./while_loop.html" target="_blank">C++ while and do...while loops</a></li>
+          <li><a href="./for_loop.html" target="_blank">C++ for loop</a></li>
+        </ul>
+        <p class="note-tip"><strong>Note:</strong> A <code>continue</code> statement may only be used within a loop.</p>
+      </div>
+
+      <hr>
+      <div class="continue">
+        <h2>Working of continue Statement</h2>
+        <p>In the body of a loop statement, the <code>continue</code> statement will skip the current iteration of the loop and "jump" to the next iteration.</p>
+        <img src="./asset/continue_flow.png" alt="C++ continue flow" class="imagecenter" style="width: 50%;">
+        <br>
+        <h3>Example 1: continue with for loop</h3>
+        <p>In a <code>for</code> loop, <code>continue</code> skips the current iteration and the control flow jumps to the <code>update</code> expression.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            <keyword>for</keyword> (<keyword>int</keyword> i = <variable>1</variable>; i <= <variable>5</variable>; i++) 
+            {
+              <keyword>if</keyword> (i == <variable>3</variable>)    <comment>// continue condition</comment>
+                <keyword>continue</keyword>;
+
+              <std>cout</std> << i << <std>endl</std>;
+            }
+            <std>cout</std> << <string>"This line is always printed"</string> << <std>endl</std>;
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          1
+          2
+          4
+          5
+          This line is always printed
+        </code></pre>
+        <p>In the example above, we have used the the <code>for</code> loop to print the value of <code>i</code> in each iteration. Here, notice the code:</p>
+        <pre><code>
+          <keyword>if</keyword> (i == <variable>3</variable>)
+            <keyword>continue</keyword>;
+        </code></pre>
+        <p>This means when <code>i</code> is equal to <strong>3</strong>, the <code>continue</code> statement skips the current iteration and start the next iteration. Therefore, the statement that prints out <code>i</code> is skipped.</p>
+        <p>Then, in the <code>update</code> expression, <code>i</code> is incremented to 4 and the <code>condition</code> is evaluated again. Hence <code>4</code> and <code>5</code> are printed in the next two iteration.</p>
+        <p class="note-tip"><strong>Note:</strong> The statement <code>continue</code> is usually used with decision-making statements.</p>
+        <br>
+        <h3>Example 2: continue with while loop</h3>
+        <p>In a <code>while</code> loop, <code>continue</code> skips the current iteration and control flow of the program jumps back to the <code>while</code> condition.</p>
+        <pre><code>
+          <comment>// program to calculate positive numbers till 50 only</comment>
+          <comment>// if the user enters a negative number,</comment>
+          <comment>// that number is skipped from the calculation</comment>
+          <comment>// negative number -> loop terminate</comment>
+          <comment>// numbers above 50 -> skip iteration</comment>
+  
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>int</keyword> <function>main</function>()
+          {
+            <keyword>int</keyword> number = <variable>0</variable>;
+            <keyword>int</keyword> sum = <variable>0</variable>;
+  
+            <keyword>while</keyword> (number >= <variable>0</variable>)
+            {
+              <comment>// add all positive numbers</comment>
+              sum += number;
+  
+              <comment>// take input from the user</comment>
+              <std>cout</std> << <string>"Enter a number: "</string>;
+              <std>cin</std> >> number;
+  
+              <comment>// continue condition</comment>
+              <keyword>if</keyword> (number > <variable>50</variable>)
+              { 
+                <std>cout</std> << <string>"The number is greater than 50 and won't be calculated."</string><< <std>endl</std>;
+                number = <variable>0</variable>;  // reset the number to 0 s.t. it will not be added
+                <keyword>continue</keyword>;
+              }
+  
+              <std>cout</std> << <string>"---"</string> << <std>endl</std>;
+            }
+  
+            <comment>// display the sum</comment>
+            <std>cout</std> << <string>"<variable>\n</variable>The sum is "</string><< sum << <std>endl</std>;
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Enter a number: 5
+          ---
+          Enter a number: 0
+          ---
+          Enter a number: 56
+          The number is greater than 50 and won't be calculated.
+          Enter a number: 7
+          ---
+          Enter a number: -1
+          ---
+  
+          The sum is 12
+        </code></pre>
+        <p>In the above program, the <code>loop</code> will keep adding the positive number smaller than 50 input by the user. Note the use of the <code>continue</code> statement:</p>
+        <pre><code>
+          <keyword>if</keyword> (number > <variable>50</variable>)
+            <keyword>continue</keyword>;
+        </code></pre>
+        <p>When the user enters a number greater than <code>50</code>, the <code>continue</code> statement skips the current iteration and whatever is left behind. Then the control flow of the program goes to the <code>contidion</code> of the <code>while</code> loop. Notice that in the iteration where the <code>continue</code> is executed, the <code>---</code> is not printed.</p>
+      </div>
+
+      <hr>
+      <div class="nested">
+        <h2>continue with Nested Loop</h2>
+        <p>Note that when <code>continue</code> is used with nested loops, the <code>continue</code> only skip the iteration of its "parent" loop.</p>
+        <br>
+        <h3>Example 3: continue with nested loop</h3>
+          <pre><code>
+            <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+            <keyword>using namespace</keyword> <std>std</std>;
+  
+            <keyword>int</keyword> <function>main</function>()
+            {
+              <keyword>for</keyword> (<keyword>int</keyword> i = <variable>1</variable>; i <= <variable>3</variable>; i++)
+              {
+                <keyword>for</keyword> (<keyword>int</keyword> j = <variable>1</variable>; j <= <variable>3</variable>; j++)
+                {
+                  <keyword>if</keyword> (j == <variable>2</variable>) 
+                   <keyword>continue</keyword>;
+                   
+                  <std>cout</std> << <string>"i = "</string> << i << <string>", j = "</string> << j << <std>endl</std>;
+                }
+              }
+              <keyword>return</keyword> <variable>0</variable>;
+            }
+          </code></pre>
+          <strong>Output</strong>
+          <pre><code>
+            i = 1, j = 1
+            i = 1, j = 3
+            i = 2, j = 1
+            i = 2, j = 3
+            i = 3, j = 1
+            i = 3, j = 3
+          </code></pre>
+          <p>Note that when <code>j</code> is equal to <strong>2</strong>, the iteration of the inner loop is skipped. Hence, the value of <code>j = 2</code> is never displayed in the output.</p>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./break_statement.html" class="previous">&laquo; Previous</a>
+      <a href="./arrays.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

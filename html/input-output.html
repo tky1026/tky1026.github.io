@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Basic Input/Output</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Basic Input/Output</h1>
+      <p>In this tutorial, we will learn to use the cin object to take input from the user, and the cout object to display output to the user.</p>
+    </div>
+    
+    <div class="content">
+      <p class="note-tip"><strong>Note: </strong> Both cin and cout object are defined in C++ standard library <code>iostream</code>.</p>
+      
+      <div class="output">
+        <h2>C++ Output</h2>
+        <p>In C++, <code>cout</code> sends formatted output to standard output devices, such as the screen. We use the <code>cout</code> object along with the <code><<</code> operator for displaying output.</p>
+      
+        <hr>
+        <h3>Example 1: String Output</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>() {
+              <comment>// prints the string enclosed in double quotes</comment>
+              <std>cout</std> << <string>"This is C++ Programming"</string>;
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+
+        <h3>Output</h3>
+        <pre><code>
+          This is C++ Programming
+        </code></pre>
+
+        <ul>
+          <li>We first include the <code>iostream</code> header file that allows us to display output.</li>
+          <li>The <code>cout</code> object is defined inside the <code>std</code> namespace. To use the <code>std</code> namespace, we used the <code>using namespace std;</code> statement.</li>
+          <li>Every C++ program starts with the main() function. The code execution begins from the start of the main() function.</li>
+          <li><code>cout</code> is an object that prints the string inside quotation marks <code>" "</code>. It is followed by the </code><<</code> operator.</li>
+          <li><code>return 0;</code> is the "exit status" of the <code>main()</code> function. The program ends with this statement, however, this statement is not mandatory.</li>
+        </ul>
+
+        <div class="note-tip">
+          <p><strong>Note:</strong> If we don't include the <code>using namespace std;</code> statement, we need to use <code>std::cout</code> instead of <code>cout</code>.</p>
+          <p>Namespaces in C++ is a declarative region that provides a scope to the identifiers (types, variables, classes, objects, functions, etc.). It is used to divide the global scope into the sub-scopes.</p>
+          <pre><code>
+            <std>std</std>::<std>cout</std> << <string>"This is C++ Programming"</string>;
+          </code></pre>
+        </div>
+
+        <hr>
+        <h3>Example 2: Numbers, Characters and Boolean Output</h3>
+        <p>Numbers, characters, and boolean can also be directly printed using <code>cout</code>.</p>
+        <ul>
+          <li>Numbers, integers and floating-points, can be printed without using a quotation marks.</li>
+          <li>Characters need to be enclosed with a single quotation mark <code>' '</code>.</li>
+          <li>Booleans are printed as 1 for <code>true</code> and 0 for <code>false</code>.</li>
+        </ul>
+        
+        <pre><code>
+          <std>cout</std> << <variable>123.45</variable> << <std>endl</std>;
+          <std>cout</std> << <character>'C'</character> << <std>endl</std>;
+          <std>cout</std> << <boolean>true</boolean> << <string>" "</string> << <boolean>false</boolean> << <std>endl</std>;
+        </code></pre>
+
+        <h3>Output</h3>
+        <pre><code>
+          123.45
+          C
+          1 0
+        </code></pre>
+
+        <p class="note-tip"><strong>Note:</strong> The <code>endl</code> manipulator is used to insert a new line. That's why each output above is displayed in a new line.</p>
+
+        <hr>
+        <h3>Example 3: Variables Output</h3>
+        <p><code>cout</code> can also prints out data stored in a variable.</p>
+
+        <pre><code>
+          <keyword>bool</keyword> <variable>var_bool</variable> = <boolean>false</boolean>;
+          <keyword>int</keyword> <variable>var_int</variable> = <variable>12</variable>;
+          <keyword>float</keyword> <variable>var_float</variable> = <variable>3.4</variable>;
+          <keyword>char</keyword> <variable>var_char</variable> = <character>'A'</character>;
+          <keyword>string</keyword> <variable>var_str</variable> = <string>"Hello"</string>;
+
+          <std>cout</std> << <string>"bool  : "</string> << <variable>var_bool</variable> << <std>endl</std>;
+          <std>cout</std> << <string>"int   : "</string> << <variable>var_int</variable> << <std>endl</std>;
+          <std>cout</std> << <string>"float : "</string> << <variable>var_float</variable> << <std>endl</std>;
+          <std>cout</std> << <string>"char  : "</string> << <variable>var_char</variable> << <std>endl</std>;
+          <std>cout</std> << <string>"string: "</string> << <variable>var_str</variable> << <std>endl</std>;
+        </code></pre>
+        
+        <h3>Output</h3>
+        <pre><code>
+          bool  : 0
+          int   : 12
+          float : 3.4
+          char  : A
+          string: Hello
+        </code></pre>
+
+        <p class="note-tip"><strong>Note: </strong> The <code><<</code> operator applied to an output stream is known as <strong>insertion operator</strong>. It can be used to print different variables, strings, etc. into a single formatted statement.</p>
+
+      
+      
+      </div>
+
+      <hr>
+
+      <div class="input">
+        <h2>C++ Input</h2>
+        <p>In C++, <code>cin</code> takes formatted input from standard input devices such as the keyboard. We use the <code>cin</code> object along with the <code>>></code> operator for taking input.</p>
+        <p class="note-tip"><strong>Note: </strong> The <code>>></code> operator applied to an input stream is known as <strong>extraction operator</strong>. It is used to read from the formatted input and store the extracted data into a variable.</p>
+
+        <hr>
+        <h3>Example 4: Integer Input</h3>
+
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>() {
+              <keyword>int</keyword> <variable>num</variable>;
+              <std>cout</std> << <string>"Enter an integer: "</string>;
+              <std>cin</std> >> <variable>num</variable>;   <comment>// Taking input</comment>
+              <std>cout</std> << <string>"The number is: "</string> << <variable>num</variable>;
+              <keyword>return</keyword> <variable>0</variable>;
+          }            
+        </code></pre>
+
+        <h3>Output</h3>
+        <pre><code>
+          Enter an integer: 70
+          The number is: 70
+        </code></pre>
+
+        <p>Here, we used</p>
+        <pre><code>
+          cin >> num;
+        </code></pre>
+        <p>to take input from the user, and the input is stored in the variable <code>num</code>.</p>
+        <p class="note-tip"><strong>Note:</strong> If we don't include the <code>using namespace std;</code> statement, we need to use <code>std::cin</code> instead of <code>cin</code>.</p>
+
+        <hr>
+        <h3>Example 5: Taking Multiple Inputs</h3>
+
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>() {
+              <keyword>char</keyword> <variable>a</variable>;
+              <keyword>int</keyword> <variable>num</variable>;
+          
+              <std>cout</std> << <string>"Enter a character and an integer: "</string>;
+              <std>cin</std> >> <variable>a</variable> >> <variable>num</variable>;
+          
+              <std>cout</std> << <string>"Character: "</string> << <variable>a</variable> << <std>endl</std>;
+              <std>cout</std> << <string>"Number: "</string> << <variable>num</variable> << <std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }            
+        </code></pre>
+
+        <h3>Output</h3>
+        <pre><code>
+          Enter a character and an integer: J 18
+          Character: J
+          Number: 18
+        </code></pre>
+
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./string.html" class="previous">&laquo; Previous</a>
+      <a href="./type-conversion.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>
+
+<!-- overflow concept and example -->

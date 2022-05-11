@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Arrays</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Arrays</h1>
+      <p>In this tutorial, we will learn to work with arrays. We will learn to declare, initialize, and access array elements.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <p>In C++, an array is a variable that can store multiple values of the same type.</p>
+        <p>Suppose a class has 27 students, and we need to store the grades of all of them. Instead of creating 27 separate variables, we can simply create an array:</p>
+        <pre><code>
+          <keyword>double</keyword> grade[<variable>27</variable>];
+        </code></pre>
+        <p>Here, <code>grade</code> is an array that can hold a maximum of 27 elements of <code>double</code> type.</p>
+        <p>In C++, the size and type of arrays <strong>cannot be changed</strong> after its declaration.</p>
+      </div>
+
+      <hr>
+
+      <div class="section2">
+        <h2>Array Declaration</h2>
+        <pre><code>
+          dataType arrayName[arraySize];
+        </code></pre>
+        <p>For example</p>
+        <pre><code>
+          <keyword>int</keyword> my_arr[<variable>5</variable>];
+        </code></pre>
+        <p>Here, we declared an array of <code>int</code> type named <code>my_arr</code>, with container size of <code>6</code> elements.</p>
+        <p class="note-tip"><strong>Note:</strong> Each data storred in the array is referred as an <strong>element</strong>.</p>
+      </div>
+      
+      <hr>
+      
+      <div class="section3">
+        <h2>Access Elements in Array</h2>
+        <p>Each element in an array is associated with a number. The number is known as an array <strong>index</strong>. We can access elements of an array by using those indices.</p>
+        <pre><code>
+          <comment>// syntax to access array elements</comment>
+          array[index];
+        </code></pre>
+        <p>Consider the array <code>x</code> with 6 elements:</p>
+        <img src="./asset/array_index.png" alt="C++ array index" class="imagecenter" style="width:50%;">
+        <ul>
+          <li>The array indices start with <code>0</code>. Meaning <code>x[0]</code> is the first element stored at index 0.</li>
+          <li>If the size of an array is <code>n</code>, the last element is stored at index <code>(n-1)</code>. In this example, <code>x[5]</code> is the last element.</li>
+          <li>Elements of an array have consecutive addresses. For example, suppose the starting address of <code>x[0]</code> is <code>2120d</code>. Then, the address of the next element <code>x[1]</code> will be <code>2124d</code>, the address of <code>x[2]</code> will be <code>2128d</code> and so on. Here, the size of each element is increased by 4. This is because the size of <code>int</code> is 4 bytes.</li>
+        </ul>
+        <p class="note-tip"><strong>Note:</strong> Most of the programming languages are zero-based array indexing.</p>
+      </div>
+
+      <hr>
+
+      <div class="section4">
+        <h2>Array Initialization</h2>
+        <p>In C++, it's possible to initialize an array during declaration. For example:</p>
+        <pre><code>
+          <comment>// declare and initialize the array</comment>
+          <keyword>int</keyword> x[<variable>6</variable>] = {<variable>19</variable>, <variable>10</variable>, <variable>8</variable>, <variable>17</variable>, <variable>9</variable>, <variable>15</variable>};
+        </code></pre>
+        <img src="./asset/array_element.png" alt="C++ array elements" class="imagecenter" style="width:50%;">
+        <p>Another method to initialize array during declaration: </p>
+        <pre><code>
+          <comment>// declare and initialize the array, without specifiying the size</comment>
+          <keyword>int</keyword> x[] = {<variable>19</variable>, <variable>10</variable>, <variable>8</variable>, <variable>17</variable>, <variable>9</variable>, <variable>15</variable>};
+        </code></pre>
+        <p>Here, we have not mentioned the size of the array. In such cases, the compiler automatically computes the size.</p>
+        <p class="note-tip"><strong>Note: </strong> Declaration without specifying the array size is only allowed with immediate initialization. Otherwise, declaring an array must always provided with array size in order for the compiler to reserve the allocated memeory.</p>
+      </div>
+
+      <hr>
+
+      <div class="section5">
+        <h2>Array with Empty Elements</h2>
+        <p>If an array has a size <code>n</code>, we can store up to <code>n</code> number of elements in the array. However, what will happen if we store less than <code>n</code> number of elements.</p>
+        <p>For example: </p>
+        <pre><code>
+          <comment>// store only 3 elements in the array</comment>
+          <keyword>int</keyword> x[<variable>6</variable>] = {<variable>19</variable>, <variable>10</variable>, <variable>8</variable>};
+        </code></pre>
+        <p>Here, the array <code>x</code> has a size of <code>6</code>. However, we have initialized it with only 3 elements.</p>
+        <p>In such cases, the compiler assigns <strong>random values</strong> to the remaining places. Oftentimes, this random value is simply <code>0</code>.</p>
+        <img src="./asset/array_empty_element.png" alt="C++ array empty elements" class="imagecenter" style="width:50%;">
+      </div>
+
+      <hr>
+
+      <div class="section6">
+        <h3>Example 1: Insert and access array elements</h3>
+        <pre><code>
+          <keyword>int</keyword> mark[<variable>5</variable>] = {<variable>19</variable>, <variable>10</variable>, <variable>8</variable>, <variable>17</variable>, <variable>9</variable>}
+
+          <comment>// change 4th element to 9</comment>
+          mark[<variable>3</variable>] = <variable>9</variable>;
+
+          <comment>// take input from the user</comment>
+          <comment>// store the value at third position</comment>
+          <std>cin</std> >> mark[<variable>2</variable>];
+
+
+          <comment>// take input from the user</comment>
+          // insert at ith position
+          <std>cin</std> >> mark[i-<variable>1</variable>];
+
+          <comment>// print first element of the array</comment>
+          <std>cout</std> << mark[<variable>0</variable>];
+
+          <comment>// print ith element of the array</comment>
+          <std>cout</std> >> mark[i-<variable>1</variable>];
+        </code></pre>
+
+        <br>
+
+        <h3>Example 2: Print array elements using loops</h3>
+        <pre><code>
+          <keyword>int</keyword> mark[<variable>5</variable>] = {<variable>19</variable>, <variable>10</variable>, <variable>8</variable>, <variable>17</variable>, <variable>9</variable>}
+
+          <std>cout</std> << <string>"The numbers are: "</string>;
+
+          <comment>// Printing array elements using normal for loop</comment>
+          <keyword>for</keyword> (<keyword>int</keyword> i = 0; i < <variable>5</variable>; ++i) {
+            <std>cout</std> << numbers[i] << <string>"  "</string>;
+          }
+
+          <std>cout</std> << <string>"<variable>\n</variable>The numbers are: "</string>;
+
+          <comment>// Printing array elements using range based for loop</comment>
+          <keyword>for</keyword> (<keyword>const int</keyword> &n : numbers) {
+            <std>cout</std> << n << <string>"  "</string>;
+          }
+
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+        The numbers are: 7  5  6  12  35
+        The numbers are: 7  5  6  12  35
+      </code></pre>
+
+      <div class="note-tip">
+        <p><strong>Note: </strong> In the range based loop above, we have used <code>const int &n</code> instead of <code>int n</code> as the range declaration. However, the <code>const int &n</code> is more preferred because: </p>
+        <ol>
+          <li>Using <code>int n</code> simply copies the array elements to the variable <code>n</code> during each iteration. This is not memory-efficient.</li>
+          <li><code>&n</code>, however, uses the memory address of the array elements to access their data without copying them to a new variable. This is memory-efficient.</li>
+          <li>We are simply printing the array elements, not modifying them. Therefore, we use <code>const</code> so as not to accidentally change the values of the array.</li>
+        </ol>
+      </div>
+      
+      <br>
+      
+      <h3>Example 3: Take inputs from the user and store them in an array</h3>
+      <pre><code>
+        <keyword>int</keyword> numbers[<variable>5</variable>]
+
+        <std>cout</std> << <string>"Enter 5 numbers: "</string> << <std>endl</std>;
+        
+        <comment>// store input from user to array</comment>
+        <keyword>for</keyword> (<keyword>int</keyword> i = 0; i < <variable>5</variable>; ++i) {
+          <std>cin</std> >> numbers[i];
+        }
+
+        <std>cout</std> << "The numbers are: ";
+        
+        <comment>// print array elements</comment>
+        <keyword>for</keyword> (<keyword>int</keyword> n = 0; n < <variable>5</variable>; ++n) {
+          <std>cout</std> << numbers[n] << <string>"  "</string>;
+        }
+      </code></pre>
+      <strong>Output</strong>
+      <pre><code>
+        Enter 5 numbers: 
+        11
+        12
+        13
+        14
+        15
+        The numbers are: 11  12  13  14  15
+      </code></pre>
+
+      <br>
+
+      <h3>Example 4: Sum and average of array elements</h3>
+      <pre><code>
+        <comment>// initialize an array without specifying size</comment>
+        <keyword>double</keyword> numbers[] = {<variable>7</variable>, <variable>5</variable>, <variable>6</variable>, <variable>12</variable>, <variable>35</variable>, <variable>27</variable>};
+
+        <keyword>double</keyword>  sum = <variable>0</variable>;
+        <keyword>double</keyword>  count = <variable>0</variable>;
+        <keyword>double</keyword>  average;
+        
+        <std>cout</std> << <string>"The numbers are: "</string>;
+
+        <comment>// print array elements</comment>
+        for (const <keyword>double</keyword>  &n : numbers) {
+          <std>cout</std> << n << <string>"  "</string>;
+
+            <comment>// calculate the sum</comment>
+            sum += n;
+
+            <comment>// count the no. of array elements</comment>
+            ++count;
+        }
+
+        <comment>// print the sum</comment>
+        <std>cout</std> << <string>"<variable>\n</variable>Sum = "</string> << sum << <std>endl</std>;
+
+        <comment>// find the average</comment>
+        average = sum / count;
+        <std>cout</std> << <string>"<variable>\n</variable>Average = "</string> << average << <std>endl</std>;
+      </code></pre>
+      <strong>Output</strong>
+      <pre><code>
+        The numbers are: 7  5  6  12  35  27
+        Sum = 92
+        Average = 15.3333
+      </code></pre>
+      <p class="note-tip"><strong>Note: </strong> In the example above, we use ranged <code>for</code> loop instead of a normal <code>for</code> loop. A normal <code>for</code> loop requires us to specify the number of iterations, which is given by the size of the array; but a ranged <code>for</code> loop does not require such specifications.</p>
+    </div>
+
+    <hr>
+
+    <div class="section7">
+      <h2>Array Out of Bounds</h2>
+      <p>Trying to access memory addresses outside of an array would result in an error.</p>
+      <p>For example, with an array of size 10, then the array will contain elements from index 0 to 9. However, if we try to access the element at index 10 or -1, it will result in Undefined Behaviour.</p>
+    </div>
+
+    <hr>
+
+    <div class="section8">
+      <h2>Obtain the Array Size</h2>
+      <p>Although the array size is required during the declaration of an array, the number of elements in an array can also be obtain programatically through snippet below: </p>
+      <pre><code>
+        <keyword>int</keyword> n = <keyword>sizeof</keyword>(arr) / <keyword>sizeof</keyword>(arr[<variable>0</variable>]);
+      </code></pre>
+      <br>
+      <h3>Example 5: Number of elements in array</h3>
+      <pre><code>
+        <keyword>int</keyword> arr[] = {<variable>19</variable>, <variable>10</variable>, <variable>8</variable>, <variable>17</variable>, <variable>9</variable>};
+
+        <keyword>int</keyword> n_elem = <keyword>sizeof</keyword>(arr) / <keyword>sizeof</keyword>(arr[<variable>0</variable>]);
+        <std>cout</std> << <string>"Number of elements in array = "</string> << n_elem << <std>endl</std>;
+      </code></pre>
+      <strong>Output</strong>
+      <pre><code>
+        Number of elements in array = 5
+      </code></pre>
+      <p>In the example above, we declare and initialize an array <code>arr</code> without specifying the array size. However, using the code snippet as shown, we are able to obtain the number of elements in the array.</p>
+    </div>
+
+
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./continue_statement.html" class="previous">&laquo; Previous</a>
+      <a href="./arrays_multidimension.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

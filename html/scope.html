@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Global & Local Variables</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Global & Local Variables</h1>
+      <p>In this tutorial, we will learn about the concept of variable scope, global and local variables.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <p>Every variable in C++ has two features: <strong>type</strong> and <strong>storage class</strong>.</p>
+        <p><strong>Type</strong> specifies the type of data that can be stored in a variable. For example: <code>int</code>, <code>float</code>, <code>char</code> etc.</p>
+        <p><strong>Storage class</strong> is used to define the <strong>scope</strong>, <strong>lifetime</strong> and <strong>visibility</strong> of a variable and/or function within a C++ program.</p>
+        <p>Lifetime determines how long a variable can exist; visibility refers to the module of a program in which the variable is accessible; and a scope is a region of the program and broadly speaking there are three places, where variables can be declared:</p>
+        <ul>
+          <li>Inside a function or a block which is called local variables</li>
+          <li>In the definition of function parameters which is called formal parameters</li>
+          <li>Outside of all functions which is called global variables</li>
+        </ul>
+
+      </div>
+
+      <hr>
+
+      <div class="section2">
+        <h2>Scope</h2>
+        <p>Each variable is defined and can be used within its scope and determines that wherein the program this variable is available to use. The scope means the lifetime of that variable. It means the variable can only be accessed or visible within its scope.</p>
+        <p>The scope of variables can be defined with their declaration, and variables are declared mainly in two ways:</p>
+        <ul>
+          <li>Local Variable</li>
+          <li>Global Variable</li>
+        </ul>
+
+        <hr>
+        <h3>Local Variable</h3>
+        <p>Variables that are declared inside a function or block are local variables (automatic variable). They can be used only by statements that are inside that function or block of code. Local variables are not known to functions outside their own.</p>
+        <p>In other words, its scope is only limited to the function/block where it is defined, which means the local variable exists and can be accessed only inside a scope.</p>
+        <p>The life of a local variable ends (it is destroyed) when the function exits or block ends.</p>
+
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>void</keyword> <function>test</function>() 
+          {
+            <comment>// local variable to test()</comment>
+            <keyword>int</keyword> var1 = <variable>6</variable>;
+
+            <comment>// accessing var1</comment>
+            <std>cout</std> << var1 << <std>endl</std>;
+          }
+
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <comment>// local variable to main()</comment>
+            <keyword>int</keyword> var = <variable>5</variable>;
+
+            <comment>// accessing var</comment>
+            <std>cout</std> << var << <std>endl</std>;
+  
+            <function>test</function>();
+
+            <comment>// Illegal: var1 exist in the scope of test() only</comment>
+            <std>cout</std> << var1 << <std>endl</std>;
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <p>The variable <code>var</code> cannot be used inside <code>test()</code> and <code>var1</code> cannot be used inside <code>main()</code> function.</p>
+
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <comment>// local variable to main()</comment>
+            <keyword>int</keyword> var = <variable>5</variable>;
+
+            <comment>// accessing var</comment>
+            <std>cout</std> << var << <std>endl</std>;
+  
+            {
+              <keyword>int</keyword> var1 = <variable>6</variable>;
+
+              <comment>// accessing var</comment>
+              <std>cout</std> << var << <std>endl</std>;
+
+              <comment>// accessing var1</comment>
+              <std>cout</std> << var1 << <std>endl</std>;
+            }
+
+            <comment>// Illegal: var1 exist in the block only, and it is destroyed after the block end</comment>
+            <std>cout</std> << var1 << <std>endl</std>;
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <p>In the example above, <code>var</code> is declared before and outside of the block, accessing <code>var</code> from inside the block is fine. <code>var1</code> is a more "local" variable that valids only inside the block, therefore it is not accessible from outside the block.</p>
+
+        <h4>Advantages of Local Variables</h4>
+        <ul>
+          <li>The same name of a local variable can be used in different functions as it is only recognized by the function in which it is declared.</li>
+          <li>Local variables use memory only for the limited time when the function is executed; after that same memory location can be reused.</li>
+        </ul>
+
+        <h4>Disadvantages of Local Variables</h4>
+        <ul>
+          <li>The scope of the local variable is limited to its function only and cannot be used by other functions.</li>
+          <li>Data sharing by the local variable is not allowed.</li>
+        </ul>
+
+        <hr>
+        <h3>Global Variable</h3>
+        <p>If a variable is defined outside all functions, then it is called a global variable.</p>
+        <p>The scope of a global variable is the whole program. This means, It can be used and changed at any part of the program after its declaration.</p>
+        <p>Likewise, its life ends only when the program ends. Hence, global variables are useful for cases where all the functions need to access the same data.</p>
+
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <comment>// Global variable declaration</comment>
+          <keyword>int</keyword> var = <variable>11</variable>;
+
+          <keyword>void</keyword> <function>test</function>() {
+            ++var;
+            <comment>// Output 13</comment>
+            <std>cout</std> << var << <std>endl</std>;
+          }
+
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <comment>// Output 11</comment>
+            <std>cout</std> << var << <std>endl</std>;
+
+            ++var;
+            <comment>// Output 12</comment>
+            <std>cout</std> << var << <std>endl</std>;
+
+            <function>test</function>();
+
+            <comment>// Output 13</comment>
+            <std>cout</std> << var << <std>endl</std>;
+
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          11
+          12
+          13
+          13
+        </code></pre>
+
+        <h4>Advantages of Global Variables</h4>
+        <ul>
+          <li>Global variables can be accessed by all the functions present in the program.</li>
+          <li>Very useful if all the functions are accessing the same data.</li>
+        </ul>
+
+        <h4>Disadvantages of Global Variables</h4>
+        <ul>
+          <li>The value of a global variable can be changed accidently as it can be used by any function in the program.</li>
+          <li>If we use a large number of global variables, then there is a high chance of human error in the program.</li>
+        </ul>
+
+        <hr>
+        <strong>Example: Local vs Global</strong>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <comment>// global variables</comment>
+          <keyword>int</keyword> a, b;
+
+          <keyword>int</keyword> <function>Add</function> ()
+          {
+            <keyword>return</keyword> a + b;
+          }
+
+          <keyword>int</keyword> <function>Sub</function> ()
+          {
+            <keyword>int</keyword> a = <variable>10</variable>;
+            <keyword>int</keyword> b = <variable>5</variable>;
+            <keyword>return</keyword> a - b;
+          }
+
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            a = <variable>100</variable>;
+            b = <variable>200</variable>;
+
+            <keyword>int</keyword> ans1 = <function>Add</function>();
+            <keyword>int</keyword> ans2 = <function>Sub</function>();
+
+            <std>cout</std> << <string>"ans1 = "</string> << ans1 << <std>endl</std>;
+            <std>cout</std> << <string>"ans2 = "</string> << ans2 << <std>endl</std>;
+
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          ans1 = 300
+          ans2 = 5
+        </code></pre>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

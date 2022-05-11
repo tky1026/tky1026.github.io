@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Basic Syntax</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Basic Syntax and Terms</h1>
+      <p>We will learn about the fundamentals of a computer program, C++ basic syntax and some commonly used programming terms.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <br>
+        <h2>Introduction to Computer Program</h2>
+        <p>Computer programming is the act of writing computer programs, which are a sequence of instructions written using a Computer Programming Language to perform a specified task by the computer.</p>
+        <p>Before getting into computer programming, let us first understand computer programs and what they do.</p>
+        <p class="note-tip">A computer program is a sequence of instructions written using a Computer Programming Language to perform a specified task by the computer.</p>
+        <p>The two important terms that we have used in the above definition are:</p>
+        <ul>
+          <li>Sequence of instructions</li>
+          <li>Computer Programming Language</li>
+        </ul>
+
+        <p>To understand these terms, consider a situation when someone asks you about how to go to a nearby Starbucks. What exactly do you do to tell him the way to go to Starbucks?</p>
+        <p>You will use Human Language to tell the way to go to Starbucks, something like:</p>
+        <p><code>First go straight, after half kilometer, take left from the red light and then drive around one kilometer and you will find Starbucks at the right.</code></p>
+        <p>Here, you have used English Language to give several steps to be taken to reach Starbucks. If they are followed in the following sequence, then you will reach Starbucks</p>
+        <pre><code>
+          1. Go straight
+          2. Drive half kilometer
+          3. Turn left
+          4. Drive around one kilometer
+          5. Search for Starbucks at your right side
+        </code></pre>
+
+        <p>
+          Now, try to map the situation with a computer program. The above sequence of instructions is actually a <strong>Human Program</strong> written in <strong>English Language</strong>, which instructs on how to reach Starbucks from a given starting point. 
+          This same sequence could have been given in Chinese, Malay, French, or any other human language, provided the person seeking direction knows any of these languages.
+        </p>
+
+        <p>
+          Now, let's go back and try to understand a computer program, which is a sequence of instructions written in a Computer Language to perform a specified task by the computer. 
+          Following is a simple program written in Python programming Language: 
+        </p>
+
+        <pre><code>
+          num = 1 + 2
+          print("Hello World: ", num)
+        </code></pre>
+
+        <p>The above computer program instructs the computer to print <code>Hello World: 3</code> on the computer screen.</p>
+
+        <p>Similarly in C programming Language: </p>
+        <pre><code>
+          int num = 1 + 2;
+          printf("Hello World: %d", num);
+        </code></pre>
+
+        <p>In JavaScript:</p>
+        <pre><code>
+          let num = 1 + 2;
+          console.log("Hello World: ", num);
+        </code></pre>
+
+        <ul>
+          <li>A computer program is also called a <strong>computer software</strong>, which can range from one lines to millions of lines of instructions.</li>
+          <li>Computer program instructions are also called <strong>program source code</strong> and computer programming is also called <strong>program coding</strong>.</li>
+          <li>A computer without a computer program is just a dump box; it is programs that make computers active.</li>
+        </ul>
+
+        <br>
+        <h3>Computer Programming Language</h3>
+        <p>If you understood what a computer program is, then we will say: <em>the act of writing computer programs is called computer programming</em>.</p>
+        <p>There are hundreds of programming languages, which can be used to write computer programs and following are a few of them:</p>
+        <ul>
+          <li>C</li>
+          <li>C++</li>
+          <li>Java</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>PHP</li>
+          <li>Ruby</li>
+          <li>Swift</li>
+        </ul>
+
+        <br>
+        <h3>Uses of Computer Programs</h3>
+        <p>Today computer programs are being used in almost every field, household, agriculture, medical, entertainment, defense, communication, etc. Listed below are a few applications of computer programs:</p>
+        <ul>
+          <li>MS Word, MS Excel, Adobe Photoshop, Internet Explorer, Chrome, etc., are examples of computer programs.</li>
+          <li>Computer programs are being used to develop graphics and special effects in movie making.</li>
+          <li>Computer programs are being used to perform Ultrasounds, X-Rays, and other medical examinations.</li>
+          <li>Computer programs are being used in our mobile phones for SMS, Chat, and voice communication.</li>
+        </ul>
+
+        <br>
+        <h3>Algorithm, Pseudocode, Program</h3>
+        <p>From programming point of view, an algorithm is a step-by-step procedure to resolve any problem. An algorithm is an effective method expressed as a finite set of well-defined instructions.</p>
+        <p><strong>Algorithm</strong> is a Systematic logical approach which is a well-defined, step-by-step procedure that allows a computer to solve a problem</p>
+        <p><strong>Pseudocode</strong>is a simpler version of a programming code in plain English which uses short phrases to write code for a program before it is implemented in a specific programming language.</p>
+        <p><strong>Program</strong> is the exact code written for problem following all the rules of the programming language.</p>
+        <p>Thus, a computer programmer lists down all the steps required to resolve a problem before writing the actual code.</p>
+
+        <br>
+        <h4>Algorithm</h4>
+        <p>An algorithm is used to provide a solution to a particular problem in form of well-defined steps. Whenever you use a computer to solve a particular problem, the steps which lead to the solution should be properly communicated to the computer. While executing an algorithm on a computer, several operations such as additions and subtractions are combined to perform more complex mathematical operations. Algorithms can be expressed using natural language, flowcharts, etc. </p>
+        <pre><code>
+          1. Start from the leftmost element of arr[] and 
+             one by one compare x with each element of arr[]. 
+          2. If x matches with an element, return the index. 
+          3. If x doesn’t match with any of elements, return -1. 
+        </code></pre>
+
+        <br>
+        <h4>Pseudocode</h4>
+        <p>It is one of the methods which can be used to represent an algorithm for a program. It does not have a specific syntax like any of the programming languages and thus cannot be executed on a computer. There are several formats which are used to write pseudo-codes and most of them take down the structures from languages such as C, Lisp, FORTRAN, etc.</p>
+        <p>Many time algorithms are presented using pseudocode since they can be read and understood by programmers who are familiar with different programming languages. Pseudocode allows you to include several control structures such as While, If-then-else, Repeat-until, for and case, which is present in many high-level languages.</p>
+        <pre><code>
+          FUNCTION linearSearch(list, searchTerm):
+            FOR index FROM 0 -> length(list):
+              IF list[index] == searchTerm THEN
+                RETURN index
+              ENDIF
+              ENDLOOP
+                RETURN -1
+          END FUNCTION 
+        </code></pre>
+
+        <br>
+        <h4>Program</h4>
+        <p>A program is a set of instructions for the computer to follow. The machine can’t read a program directly, because it only understands machine code. But you can write stuff in a computer language, and then a compiler or interpreter can make it understandable to the computer.</p>
+        <pre><code>
+          int search(int arr[], int n, int x)
+          {
+            int i;
+            for (i = 0; i < n; i++)
+              if (arr[i] == x)
+                return i;
+            return -1;
+          }
+        </code></pre>
+      </div>
+
+      <hr>
+
+      <div class="section2">
+        <h2>C++ Basic Syntax</h2>
+        <p>Let’s start with a little coding. We are going to write a single-line computer program to write <code>Hello World!</code> on your screen.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <comment>// main() is where program execution begins</comment>
+          <keyword>int</keyword> <function>main</function>()
+          {
+            <std>cout</std> << <string>"Hello World!"</string> << <std>endl</std>;
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <p>Output</p>
+        <pre><code>
+          Hello World!
+        </code></pre>
+
+        <ul>
+          <li>The C++ language defines several headers, which contain information that is either necessary or useful to your program. For this program, the header &lt;iostream&gt; is needed.</li>
+          <li>The line <code>using namespace std;</code> tells the compiler to use the <code>std</code> namespace. Namespaces are a relatively recent addition to C++.</li>
+          <li>The next line <code>'// main() is where program execution begins.'</code> is a single-line comment available in C++. Single-line comments begin with <code>//</code> and stop at the end of the line.</li>
+          <li>The line <code>int main()</code> is the main function where program execution begins.</li>
+          <li>The next line <code>cout << "Hello World" << endl;</code> causes the message "Hello World" to be displayed on the screen.</li>
+          <li>The next line <code>return 0;</code> terminates <code>main( )</code> function and causes it to return the value 0 to the calling process.</li>
+        </ul>
+
+        <br>
+        <h3>Program Entry Point</h3>
+        <p>For now, just forget about the <code>#include &lt;iostream&gt;</code> statement, but keep a note that you may have to put this statement at the top of a C++ program most of the time.</p>
+        <p>Every C++ program starts with <code>main()</code>, which is called the <strong>main function</strong>, then it is followed by a left curly brace. The rest of the program instruction is written in between and finally a right curly brace ends the program.</p>
+        <p>The coding part inside these two curly braces is called the program body. The left curly brace can be in the same line as <code>main(){</code> or in the next line like it has been mentioned in the above program. However, it is recommended to always follow a certain style throughout your code. For example, <a href="https://google.github.io/styleguide/cppguide.html">Google C++ Style Guide</a>.</p>
+
+        <br>
+        <h3>Whitespaces</h3>
+        <p>
+          When we write a program using any programming language, we use various printable characters to prepare programming statements.
+          These printable characters are a, b, c,......z, A, B, C,.....Z, 1, 2, 3,...... 0, !, @, #, $, %, ^, &, *, (, ), -, _, +, =, \, |, {, }, [, ], :, ;, <, >, ?, /, \, ~, `, ", '.
+        </p>
+
+        <p>Apart from these characters, there are some characters which we use very frequently but they are invisible in your program and these characters are spaces, tabs <code>\t</code>, new lines<code>\n</code>. These characters are called whitespaces.</p>
+        <p>A line containing only whitespace, possibly with a comment, is known as a blank line, and a C compiler totally ignores it. Whitespace is the term used in C to describe blanks, tabs, newline characters, and comments.</p>
+        <p>So you can write code as shown below. Here all the created spaces around <code>"Hello, World!"</code> are useless and the compiler will ignore them at the time of compilation.</p>
+
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+
+          <keyword>int</keyword> <function>main</function>() {
+
+            <std>cout</std> <<        <string>"Hello World!"</string>        << <std>endl</std>;
+
+            <keyword>return</keyword> <variable>0</variable>;
+
+          }
+        </code></pre>
+        
+        <pre><code>
+          <variable>fruit</variable> = <variable>apples</variable> + <variable>oranges</variable>;
+          <variable>vegetable</variable>=<variable>brocolli</variable>+<variable>carrot</variable>;
+        </code></pre>
+
+        <br>
+        <h3>Semicolons</h3>
+        <p>Every individual statement in a C++ Program must be ended with a semicolon <code>;</code></p>
+        <p>In C++, every line of executable is called a statement. The semicolon is a statement terminator. That is, each individual statement must be ended with a semicolon. It indicates the end of one logical entity.</p>
+        <p>For example, following are three different statements: </p>
+        <pre><code>
+          int x = 1;
+          int y = x + 1;
+          divide(x, y);
+        </code></pre>
+        
+        <p>A block is a set of logically connected statements that are surrounded by opening and closing braces. For example: </p>
+        <pre><code>
+          {
+            cout << "Hello World"; // prints Hello World
+            return 0;
+          }
+        </code></pre>
+
+        <p>C++ does not recognize the end of the line as a terminator. For this reason, it does not matter where you put a statement in a line.</p>
+        <pre><code>
+          int x = 1; int y = x + 1; divide(x, y);
+        </code></pre>
+
+        <br>
+        <h3>Case Sensitive</h3>
+        <p>The C++ language is a "case sensitive" language. That means that an identifier written in capital letters is not equivalent to another one with the same name but written in small letters. Thus, for example, the <code>RESULT</code> variable is not the same as the <code>result</code> variable or the <code>Result</code> variable. These are three different identifiers identifiying three different variables.</p>
+    </div>
+
+    <hr>
+    <div class="section3">
+      <h3>Compile and Execute C++ Program</h3>
+      <p>Finally, compile and run the program as an executable file.</p>
+      <ul>
+        <li>Save the 'Hello World' source file as <code>hello.cpp</code></li>
+        <li>Open a terminal and go the directory where you saved the file</li>
+        <li>
+          <p>Type the following and press enter to compile your code. If there are no errors the terminal will take you to the next line and would generate <code>a.out</code> executable file.</p>
+          <pre><code>
+            g++ hello.cpp
+          </code></pre>
+        </li>
+        <li>
+          <p>Execute the <code>a.out</code> to run your program</p>
+          <pre><code>
+            ./a.out
+          </code></pre>
+        </li>
+      </ul>
+      <p>Learn more about <a href="./compiler.html" target="_blank">compiler</a>.</p>
+      <div class="note-tip">
+        <p>By default, g++ output executable will be named <code>a.out</code></p>
+        <p>One can manually specify the desired name using the flags as shown below.</p>
+        <pre><code>
+          g++ -o [EXE_NAME] -g [SRC_FILE ...]
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./environment.html" class="previous">&laquo; Previous</a>
+      <a href="./program-structure.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

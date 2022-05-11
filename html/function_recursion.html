@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Recursive Function</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Recursive Function</h1>
+      <p>In this tutorial, we will learn about recursive function in C++.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <p>A function that calls itself is known as a recursive function. And, this technique is known as recursion.</p>
+        <hr>
+  
+        <p>The figure below shows how recursion works by calling itself over and over again.</p>
+        <img src="./asset/recursion1.png" alt="Recursion flow" class="imagecenter" style="width: 50%;">
+        <p>The recursion continues until some condition is met.</p>
+        <p>Hence, it is very important to have terminating condition in recursive function, to prevent <strong>infinite</strong> recursion. For example, <code>if...else</code> statement or similar approach can be used where one branch makes the recursive call and the other doesn't.</p>
+        <hr>
+        <h3>Example: Factorial of a Number Using Recursion</h3>
+        <p>In mathematics, the factorial of a non-negative integer <code>n</code>, denoted by <code>n!</code>, is the product of all positive integers less than or equal to <code>n</code>.</p>
+        <ul>
+          <li>0! = 1</li>
+          <li>1! = 1</li>
+          <li>2! = 2 x 1</li>
+          <li>3! = 3 x 2 x 1</li>
+          <li>4! = 4 x 3 x 2 x 1</li>
+        </ul>
+        <p>The factorial of n also equals the product of <code>n</code> with the next smaller factorial.</p>
+        <ul>
+          <li>5! = 5 x 4 x 3 x 2 x 1 = 5 x 4!</li>
+        </ul>
+        <p>Expressed in general form:</p>
+        <ul>
+          <li>
+            n! = n x (n - 1) x (n - 2) x ... x 3 x 2 x 1 = n x (n - 1)!
+          </li>
+        </ul>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>int</keyword> <function>factorial</function>(<keyword>int</keyword> n) 
+          {
+            <keyword>if</keyword> (n > <variable>1</variable>)
+              <keyword>return</keyword> n * <function>factorial</function> (n - <variable>1</variable>);
+            <keyword>else</keyword>
+              <keyword>return</keyword> <variable>1</variable>;
+          }
+  
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            <keyword>int</keyword> result = <function>factorial</function>(<variable>4</variable>);
+            <std>cout</std> << <string>"Factorial of 4 = "</string> << result << <std>endl</std>;
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Factorial of 4 = 24
+        </code></pre>
+        <img src="./asset/recursion_factorial.png" alt="Factorial example" class="imagecenter" style="width: 50%;">
+        <p>As we can see, the <code>factorial()</code> function is calling itself. However, during each call, we have decreased the value of <code>n</code> by <code>1</code>. When <code>n</code> is less than <code>1</code>, the <code>factorial()</code> function ultimately returns the output.</p>
+        <hr>
+        <h3>Advantages of Recursion</h3>
+        <ul>
+          <li>It makes code shorter and cleaner.</li>
+          <li>Recursion is required in problems concerning data structures and advanced algorithms, such as Graph and Tree Traversal.</li>
+        </ul>
+        <h3>Disadvantages of Recursion</h3>
+        <ul>
+          <li>It takes a lot of stack space compared to an iterative program.</li>
+          <li>It uses more processor time.</li>
+          <li>It can be more difficult to debug compared to an equivalent iterative program.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./function_template.html" class="previous">&laquo; Previous</a>
+      <a href="#" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

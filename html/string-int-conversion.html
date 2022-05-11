@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ string - int conversion</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Conversion between string and int</h1>
+      <p>In this tutorial, we will learn how to convert string to int and vice versa.</p>
+    </div>
+
+    <div class="content">
+      <div class="string_to_int">
+        <hr>
+        <h2>C++ string to int Conversion</h2>
+        
+        <h3>Example 1: string to int using stoi()</h3>
+        <p>We can convert <code>string</code> to <code>int</code> in multiple ways. The easiest way to do this is by using the <code>std::stoi()</code> function introduced in C++11.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <std>std</std>::<std>string</std> str = <string>"123"</string>;
+              <keyword>int</keyword> num;
+          
+              <comment>// using stoi() to store the value of str1 to x</comment>
+              num = <std>std</std>::<std>stoi</std>(str);
+          
+              <std>std</std>::<std>cout</std> << num;
+            
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          123
+        </code></pre>
+
+        <hr>
+        <h3>Example 2: char array to int using atoi()</h3>
+        <p>We can convert a <code>char</code> array to <code>int</code> using the <code>std::atoi()</code> function. The <code>atoi()</code> function is defined in the <code>cstdlib</code> header file.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;cstdlib&gt;</string>
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <comment>// declaring and initializing character array</comment>
+              <keyword>char</keyword> str[] = <string>"456"</string>;
+              <keyword>int</keyword> num = <std>std</std>::<std>atoi</std>(str);
+          
+              <std>std</std>::<std>cout</std> << <string>"num = "</string> << num;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          num = 456
+        </code></pre>
+
+        <p class="note-tip">To learn other ways of converting string to integers, visit this <a href="https://stackoverflow.com/questions/7663709/how-can-i-convert-a-stdstring-to-int/#answer-26530289" target="_blank">stackoverflow</a> thread.</p>
+      </div>
+
+      <hr>
+
+      <div class="int_to_string">
+        <h2>C++ int to string Conversion</h2>
+        <p>We can convert <code>int</code> to <code>string</code> using the C++11 <code>std::to_string()</code> function. For older versions of C++, we can use <code>std::stringstream</code> objects.</p>
+
+        <hr>
+        <h3>Example 3: int to string using to_string()</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <keyword>int</keyword> num = <variable>123</variable>;
+    
+              <std>std</std>::<std>string</std> str = <std>std</std>::<function>to_string</function>(num);
+        
+              <std>std</std>::<std>cout</std> << str;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          123
+        </code></pre>
+
+        <hr>
+        <h3>Example 4: int to string using stringstream</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;sstream&gt;</string>
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <keyword>int</keyword> num = <variable>15</variable>;
+    
+              <comment>// creating stringstream object ss</comment>
+              <std>std</std>::<std>stringstream</std> ss;
+            
+              <comment>// assigning the value of num to ss</comment>
+              ss << num;
+            
+              <comment>// initializing string variable with the value of ss</comment>
+              <comment>// and converting it to string format with str() function</comment>
+              <std>std</std>::<std>string</std> strNum = ss.<function>str</function>();
+              <std>std</std>::<std>cout</std> << strNum;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          15
+        </code></pre>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

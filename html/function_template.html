@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Function Template</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Function Template</h1>
+      <p>In this tutorial, we will learn about class templates in C++.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <p>Templates are powerful features of C++ which allows us to write generic programs.</p>
+        <p>We can create a single function to work with different data types by using a template.</p>
+      </div>
+
+      <hr>
+
+      <div class="section2">
+        <h2>Function Template</h2>
+        <p>A function template starts with the keyword <code>template</code> followed by template parameter(s) inside <code><></code> which is followed by the function definition.</p>
+        <pre><code>
+          <keyword>template</keyword> &lt;<keyword>typename</keyword> T&gt;
+          T <function>functionName</function>(T parameter1, T parameter2, ...) {
+            <comment>// code</comment>
+          }
+        </code></pre>
+        <p>Here, <code>T</code> is a template argument or generic data type that accepts different data types (<code>int</code>, <code>float</code>, etc.), and <code>typename</code> is a keyword.</p>
+        <p>When an argument of a data type is passed to <code>functionName()</code>, the compiler generates a new version of <code>functionName()</code> for the given data type. This process is being done behind the scene during compilation.</p>
+        <hr>
+        <h3>Calling Function Template</h3>
+        <p>Once we've declared and defined a function template, we can call it in other functions or templates (such as the main() function) with the following syntax:</p>
+        <pre><code>
+          <function>functionName</function>&lt;<keyword>dataType</keyword>&gt;(parameter1, parameter2, ...);
+        </code></pre>
+        <h3>Example</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>template</keyword> &lt;<keyword>typename</keyword> T&gt;
+          T <function>add</function>(T num1, T num2) {
+            <keyword>return</keyword> (num1 + num2);
+          }
+
+          <keyword>int</keyword> <function>main</function>() {
+
+            <comment>// calling with int parameters</comment>
+            <keyword>int</keyword> result1 = <function>add</function><<keyword>int</keyword>>(<variable>2</variable>, <variable>3</variable>);
+            <std>cout</std> << result1 << <std>endl</std>;
+
+            <comment>// calling with double parameters</comment>
+            <keyword>double</keyword> result2 = <function>add</function><<keyword>double</keyword>>(<variable>2.2</variable>, <variable>3.3</variable>);
+            <std>cout</std> << result2 << <std>endl</std>;
+
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          5
+          5.5
+        </code></pre>
+        <img src="./asset/function_template1.png" alt="Function template example" class="imagecenter" style="width: 70%;">
+        <p>When the compiler encounters this call to a template function, it uses the template to automatically generate a function replacing each appearance of generic type <code>T</code> by the type passed as the actual template parameter (<code>int</code> and <code>double</code> in this case) and then calls it. This process is automatically performed by the compiler and is invisible to the programmer.</p>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./function_3.html" class="previous">&laquo; Previous</a>
+      <a href="./function_recursion.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

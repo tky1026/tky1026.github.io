@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ String</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ String</h1>
+      <p>In this tutorial, we wil learn about character array and string class.</p>
+      <p>C++ provides following two types of string representations:</p>
+      <ul>
+        <li>C-style character string</li>
+        <li>Standard C++ string class type</li>
+      </ul>
+    </div>
+
+    <br>
+    <div class="content">
+      <div class="character">
+        <h2>C-Style Character String</h2>
+        <p>The C-style character string (character array) originated within the C language and continues to be supported within C++. This string is actually a one-dimensional array of characters which is terminated by a null character <code>'\0'</code>. Thus a null-terminated string contains the characters that comprise the string followed by a null.</p>
+        <p>The following declaration and initialization create a string consisting of the word "Hello". To hold the null character at the end of the array, the size of the character array containing the string is one more than the number of characters in the word "Hello."</p>
+        <pre><code>
+          <keyword>char</keyword> greeting[6] = {<string>'H'</string>, <string>'e'</string>, <string>'l'</string>, <string>'l'</string>, <string>'o'</string>, <string>'\0'</string>};
+        </code></pre>
+        <p>Following the rule of array initialization, then the above statements can also be written as follows:</p>
+        <pre><code>
+          <keyword>char</keyword> greeting[] = <string>"Hello"</string>;
+        </code></pre>
+        <p>Memory presentation of the above defined string in C/C++</p>
+        <img src="./asset/char_array_memory.png" alt="char array memory" class="imagecenter" style="width: 50%;">
+        <p class="note-tip"><strong>Note:</strong> Actually, you do not place the null character at the end of a string constant. The C++ compiler automatically places the '\0' at the end of the string when it initializes the array.</p>
+        <p>Exmaple</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> std;
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            <keyword>char</keyword> greeting[6] = {<string>'H'</string>, <string>'e'</string>, <string>'l'</string>, <string>'l'</string>, <string>'o'</string>};
+            <std>cout</std> &lt;&lt; <string>"Greeting message: "</string> &lt;&lt; greeting &lt;&lt; <std>endl</std>;
+            
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <p>Output</p>
+        <pre><code>
+          Greeting message: Hello
+        </code></pre>
+      </div>
+
+      <hr>
+
+      <div class="string">
+        <h2>C++ String Class</h2>
+        <p>The standard C++ library provides a string class type that supports all the operations mentioned above, additionally much more functionality.</p>
+        <p>Strings are objects that represent sequences of characters.</p>
+        <p>Exmaple</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          <keyword>using namespace</keyword> std;
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            <keyword>string</keyword> greeting_str = "Hello";
+            <std>cout</std> &lt;&lt; <string>"Greeting message: "</string> &lt;&lt; greeting_str &lt;&lt; <std>endl</std>;
+
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <p>Output</p>
+        <pre><code>
+          Greeting message: Hello
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./char.html" class="previous">&laquo; Previous</a>
+      <a href="./input-output.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

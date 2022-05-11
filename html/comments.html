@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Comments</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Comments</h1>
+      <p>In this tutorial, we will learn about C++ comments, why we use them, and how to use them.</p>
+    </div>
+
+    <div class="content">
+      <p>C++ comments are hints that a programmer can add to make their code easier to read and understand. They are completely ignored by C++ compilers.</p>
+      <p>There are two ways to add comments to code:</p>
+      <ul>
+        <li><code>//</code> Single line comments</li>
+        <li><code>/* */</code> Multi-line comments / Block comments</li>
+      </ul>
+      
+      <hr>
+      <div class="single">
+        <h2>Single Line Comments</h2>
+        <p>In C++, any line that starts with <code>//</code> is a comment. For example</p>
+        <pre><code>
+          <comment>// declaring a variable</comment>
+          <keyword>int</keyword> a;
+
+          <comment>// initializing the variable 'a' with the value 2</comment>
+          a = <variable>2</variable>;
+        </code></pre>
+        <p>We can also use single line comment like this</p>
+        <pre><code>
+          <keyword>int</keyword> a;   <comment>// declaring a variable</comment>
+        </code></pre>
+      </div>
+
+      <hr>
+
+      <div class="multi">
+        <h2>Multi-line Comments</h2>
+        <p>In C++, any line between <code>/*</code> and <code>*/</code> is also a comment. For example</p>
+        <pre><code>
+          <comment>/* declaring a variable
+          to store salary to employees
+          */</comment>
+          <keyword>int</keyword> salary = <variable>2000</variable>;
+        </code></pre>
+        <p>This syntax can be used to write both single-line and multi-line comments.</p>
+      </div>
+
+      <hr>
+      <div class="debug">
+        <h2>Using Comments for Debugging</h2>
+        <p>Comments can also be used to disable code to prevent it from being executed. For example</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <std>cout</std> << <string>"some code"</string>;
+              <std>cout</std> << <string>''error code;
+              cout << "some other code";
+          
+              return 0;</string>
+          }            
+        </code></pre>
+        <p>If we get an error while running the program, instead of removing the error-prone code, we can use comments to disable it from being executed.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <std>cout</std> << <string>"some code"</string>;
+              <comment>// cout << ''error code;</comment>
+              <std>cout</std> << <string>"some other code"</string>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <p>Although there are dedicated debuggers like the GNU debugger (GDB), sometimes simply using commenting and printing within the code are commonly the unspoken go-to debugging tools used by developers.</p>
+      </div>
+
+      <hr>
+      <div class="why">
+        <h2>Why use Comments?</h2>
+        <p>If we write comments on our code, it will be easier for us to understand the code in the future. Also, it will be easier for your fellow developers to understand the code.</p>
+        <p class="note-tip"><strong>Note: </strong>Comments shouldn't be the substitute for a way to explain poorly written code in English. We should always write well-structured and self-explanatory code. And, then use comments.</p>
+        <p>As a general rule of thumb, use comments to explain <strong>Why</strong> you did something rather than <strong>How</strong> you did something, and you are good. Hence writting good comments within the code as part of the documentation is an important aspect in programming.</p>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./operators.html" class="previous">&laquo; Previous</a>
+      <a href="./if_else.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

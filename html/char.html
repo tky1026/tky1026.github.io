@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ char</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ char</h1>
+      <p>In this tutorial, we will learn about the char data type in C++.</p>
+    </div>
+
+    <div class="content">
+      <div class="char">
+        <p>In C++, <code>char</code> keyword is used to declare character type variables. A character variable can store only a single character.</p>
+        
+        <h3>Example 1: Printing a char variable</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          <keyword>int</keyword> <function>main</function>() {
+              <comment>// initializing a variable</comment>
+              <keyword>char</keyword> ch = <character>'h'</character>;
+          
+              <comment>// printing the  variable</comment>
+              <std>cout</std> << <character>"Character = "</character> << ch << <std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }            
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          Charcter = h
+        </code></pre>
+        <p>In the example above, we have declared a character type variable named <code>ch</code>, and assigned the character <code>h</code> to it.</p>
+        <p class="note-tip"><strong>Note:</strong> In C and C++, a character should be inside single quotation marks, while double quotation marks for a string.</p>
+      </div>
+
+      <hr>
+
+      <div class="ascii">
+        <h2>ASCII Value</h2>
+        <p>In C and C++, an integer (ASCII value) is stored in char variables rather than the character itself. For example, if we assign 'h' to a char variable, 104 is stored in the variable rather than the character itself. It's because the ASCII value of 'h' is 104.</p>
+        <p>The table below showing the <strong>ASCII</strong> values of characters of <code>A</code>, <code>Z</code>, <code>a</code>, <code>z</code> and <code>5</code>.</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>Characters</th>
+              <th>ASCII Values</th>
+            </tr>
+            <tr>
+              <td><code>A</code></td>
+              <td>65</td>
+            </tr>
+            <tr>
+              <td><code>Z</code></td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td><code>a</code></td>
+              <td>97</td>
+            </tr>
+            <tr>
+              <td><code>z</code></td>
+              <td>122</td>
+            </tr>
+            <tr>
+              <td><code>5</code></td>
+              <td>53</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>To learn more about <storng>ASCII value</storng>, visit the <a href="https://en.cppreference.com/w/cpp/language/ascii" target="_blank">ASCII Chart</a>.</p>
+
+        <hr>
+        <h3>Example 2: Printing ASCII value of a character</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>() {
+              <keyword>char</keyword> ch = <character>'h'</character>;
+          
+              <comment>// Printing the corresponding ASCII of a character 
+              // Notice the use of int() to get an integer, this is called type casting</comment>
+              <std>cout</std> << <string>"ASCII value = "</string> << <keyword>int</keyword>(ch) << <std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          ASCII value = 104
+        </code></pre>
+        <p>Here, get the corresponding ASCII value of a character by using <code>int()</code> when we print it.</p>
+
+        <hr>
+        <p>For a <code>char</code> data type variable, we can either assign an ASCII value (from 0 to 127), or a single quoted character itself to it.</p>
+
+        <h3>Example 3: Assigning a character</h3>
+        <pre><code>
+          <comment>// assigning the character itself</comment>
+          <keyword>char</keyword> ch1 = <character>'A'</character>;
+          <std>std::cout</std> << <string>"ch1 Character   = "</string> << ch1 << <std>std::endl</std>;
+          <std>std::cout</std> << <string>"ch1 ASCII value = "</string> << <keyword>int</keyword>(ch1) << <std>std::endl</std>;
+
+          <comment>// assigning the ascii value</comment>
+          <keyword>char</keyword> ch2 = <variable>65</variable>;
+          <std>std::cout</std> << <string>"ch2 Character   = "</string> << ch2 << <std>std::endl</std>;
+          <std>std::cout</std> << <string>"ch2 ASCII value = "</string> << <keyword>int</keyword>(ch2) << <std>std::endl</std>;
+        </code></pre>
+
+        <h3>Output</h3>
+        <pre><code>
+          ch1 Character   = A
+          ch1 ASCII value = 65
+          ch2 Character   = A
+          ch2 ASCII value = 65
+        </code></pre>
+        <p>We can see that both assigning the character itself to <code>ch1</code> and assigining the integer ASCII value to <code>ch2</code> give us the same result.</p>
+        <p class="note-tip"><strong>Note:</strong> 
+          If we assign <code>'8'</code> (quotation marks) to a <code>char</code> variable, we are storing <strong>56</strong> (its ASCII value). 
+          However, if we assign <code>8</code> (without quotation marks) to a <code>char</code> variable, we are storing the ASCII value <strong>8</strong> (a backspace character).
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="escape_sequence">
+        <h2>Escape Sequences</h2>
+        <p>Some characters have special meaning in C++, such as single quote <code>'</code>, double quote <code>"</code>, backslash <code>\</code> and so on. We cannot use these characters directly in our program.</p>
+        <p>For example: </p>
+        <pre><code>
+          <comment>// This code shows an error</comment>
+          <keyword>char</keyword> character = <character>'''</character>;
+        </code></pre>
+        <p>Here, we are trying to store a single quote character <code>'</code> in a variable. But this code shows a compilation error.</p>
+
+        <h4>So how can we use those special characters?</h4>
+        <p>To solve this issue, C++ provides special codes known as <strong>escape sequences</strong> with a backslash key <code>\</code>. Now with the help of escape sequences, we can write those special characters as they are.</p>
+        <p>For example: </p>
+        <pre><code>
+          <keyword>char</keyword> character = <character>' \' '</character>;
+        </code></pre>
+        <p>Here, <code>\'</code> is an escape sequence that allows us to print or store a single quote in the variable.</p>
+        <p>The table below lists escape sequences of C++.</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>Escape Sequences</th>
+              <th>Character</th>
+            </tr>
+            <tr>
+              <td><code>\b</code></td>
+              <td>Backspace</td>
+            </tr>
+            <tr>
+              <td><code>\f</code></td>
+              <td>Form feed</td>
+            </tr>
+            <tr>
+              <td><code>\n</code></td>
+              <td>Newline</td>
+            </tr>
+            <tr>
+              <td><code>\r</code></td>
+              <td>Return</td>
+            </tr>
+            <tr>
+              <td><code>\t</code></td>
+              <td>Horizontal tab</td>
+            </tr>
+            <tr>
+              <td><code>\v</code></td>
+              <td>Vertical tab</td>
+            </tr>
+            <tr>
+              <td><code>\\</code></td>
+              <td>Backslash</td>
+            </tr>
+            <tr>
+              <td><code>\'</code></td>
+              <td>Single quotation mark</td>
+            </tr>
+            <tr>
+              <td><code>\"e></td>
+              <td>Double quotation mark</td>
+            </tr>
+            <tr>
+              <td><code>\?</code></td>
+              <td>Question mark</td>
+            </tr>
+            <tr>
+              <td><code>\0</code></td>
+              <td>Null character</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Example 4: Using escape sequences</h3>
+        <pre><code>
+          <keyword>char</keyword> character1 = <character>'A'</character>;
+          <keyword>char</keyword> character2 = <character>'\t'</character>;
+          <keyword>char</keyword> character3 = <character>'5'</character>;
+          <keyword>char</keyword> character4 = <character>'\n'</character>;
+          <keyword>char</keyword> character5 = <variable>97</variable>;
+
+          <std>cout</std> << character1;   // A
+          <std>cout</std> << character2;   // horizontal tab
+          <std>cout</std> << character3;   // 5
+          <std>cout</std> << character4;   // new line
+          <std>cout</std> << character5;   // a
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          A       5
+          a
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./variables-creation.html" class="previous">&laquo; Previous</a>
+      <a href="./string.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

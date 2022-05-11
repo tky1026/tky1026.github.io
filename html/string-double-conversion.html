@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ string - float/double conversion</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Conversion between string and float/double</h1>
+      <p>In this tutorial, we will learn how to convert string to floating-point numbers and vice versa.</p>
+    </div>
+
+    <div class="content">
+      <div class="string_to_float">
+        <hr>
+        <h2>C++ string to float/double Conversion</h2>
+        <p>The easiest way to convert a string to a floating-point number is by using these C++11 functions:</p>
+        <ul>
+          <li><strong>std::stof()</strong> - convert <code>string</code> to <code>float</code></li>
+          <li><strong>std::stod()</strong> - convert <code>string</code> to <code>double</code></li>
+          <li><strong>std::stold()</strong> - convert <code>string</code> to <code>long double</code></li>
+        </ul>
+        <p>These functions are defined in <code>string</code> header file.</p>
+
+        <hr>
+        <h3>Example 1: string to float and double</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <std>std</std>::<std>string</std> str = <string>"123.4567"</string>;
+          
+              <comment>// convert string to float</comment>
+              <keyword>float</keyword> num_float = <std>std</std>::<std>stof</std>(str);
+          
+              <comment>// convert string to double</comment>
+              <keyword>double</keyword> num_double = <std>std</std>::<std>stod</std>(str);
+          
+              <std>std</std>::<std>cout</std> << <string>"num_float = "</string> << num_float << <std>std</std>::<std>endl</std>;
+              <std>std</std>::<std>cout</std> << <string>"num_double = "</string> << num_double << <std>std</std>::<std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          num_float = 123.457
+          num_double = 123.457
+        </code></pre>
+
+        <hr>
+        <h3>Example 2: char array to double</h3>
+        <p>We can convert a <code>char</code> array to <code>double</code> by using the <code>std::atof()</code> function.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;cstdlib&gt;</string>
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {          
+              <comment>// declaring and initializing character arrayt</comment>
+              <keyword>char</keyword> str[] = <string>"123.4567"</string>;
+          
+              <keyword>double</keyword> num_double = <std>std</std>::<std>stof</std>(str);
+          
+              <std>std</std>::<std>cout</std> << <string>"num_double = "</string> << num_double << <std>std</std>::<std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          num_double = 123.457
+        </code></pre>
+      </div>
+      
+
+      <hr>
+
+      <div class="float_to_string">
+        <h2>C++ float/double to string Conversion</h2>
+        <p>We can convert <code>float</code> and <code>double</code> to string using the C++11 <code>std::to_string()</code> function. For the older C++ compilers, we can use <code>std::stringstream</code> objects.</p>
+
+        <hr>
+        <h3>Example 3: float/double to string using to_string()</h3>
+        <p>We can convert a <code>char</code> array to <code>double</code> by using the <code>std::atof()</code> function.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {          
+              <keyword>float</keyword> num_float = <variable>123.4567F</variable>;
+              <keyword>double</keyword> num_double = <variable>123.4567</variable>;
+
+              <std>std</std>::<std>string</std> str1 = <std>std</std>::to_string(num_float);
+              <std>std</std>::<std>string</std> str2 = <std>std</std>::to_string(num_double);
+
+              <std>std</std>::<std>cout</std> << <string>"Float to String = "</string> << str1 << <std>std</std>::<std>endl</std>;
+              <std>std</std>::<std>cout</std> << <string>"Double to String = "</string> << str2 << <std>std</std>::<std>endl</std>;
+
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          Float to String = 123.456703
+          Double to String = 123.456700
+        </code></pre>
+
+        <hr>
+        <h3>Example 4: float/double to string using stringstream</h3>
+        <p>We can convert a <code>char</code> array to <code>double</code> by using the <code>std::atof()</code> function.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;string&gt;</string>
+          <preprocessor>#include</preprocessor> <string>&lt;sstream&gt;</string>
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <keyword>float</keyword> num_float = <variable>123.4567F</variable>;
+              <keyword>double</keyword> num_double = <variable>123.4567</variable>;
+              
+              <comment>// create stringstream object</comment>
+              <std>std</std>::<std>stringstream</std> ss1;
+              <std>std</std>::<std>stringstream</std> ss2;
+
+              <comment>// assigning the value of num_float to ss1</comment>
+              ss1 << num_float;
+
+              <comment>// assigning the value of num_double to ss2</comment>
+              ss2 << num_double;
+
+              <comment>// initializing two string variables with the values of ss1 and</comment>
+              <comment>// and converting it to string format with str() function</comment>
+              <std>std</std>::<std>string</std> str1 = ss1.str()
+              <std>std</std>::<std>string</std> str2 = ss2.str()
+
+              <std>std</std>::<std>cout</std> << <string>"Float to String = "</string> << str1 << <std>std</std>::<std>endl</std>;
+              <std>std</std>::<std>cout</std> << <string>"Double to String = "</string> << str2 << <std>std</std>::<std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <h3>Output</h3>
+        <pre><code>
+          Float to String = 123.457
+          Double to String = 123.457
+        </code></pre>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Bitwise operators</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+  <main>
+    <div class="main-description">
+      <h1>C++ Bitwise Operators</h1>
+      <p>In this tutorial, we will learn about bitwise operators in C++</p>
+    </div>
+
+    <div class="content">
+      <hr>
+      <div class="intro">
+        <p>In C++, bitwise operators perform operations on integer data at the individual bit-level. These operations include testing, setting, or shifting the actual bits.</p>
+        <p>For example</p>
+        <pre><code>
+          a & b;
+          a | b;
+        </code></pre>
+        <p>Here is a list of 6 bitwise operators included in C++.</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>Operator</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><code>&</code></td>
+              <td>Bitwise AND Operator</td>
+            </tr>
+            <tr>
+              <td><code>|</code></td>
+              <td>Bitwise OR Operator</td>
+            </tr>
+            <tr>
+              <td><code>^</code></td>
+              <td>Bitwise XOR Operator</td>
+            </tr>
+            <tr>
+              <td><code>~</code></td>
+              <td>Bitwise Complement Operator</td>
+            </tr>
+            <tr>
+              <td><code><<</code></td>
+              <td>Bitwise Shift Left Operator</td>
+            </tr>
+            <tr>
+              <td><code>>></code></td>
+              <td>Bitwise Shift Right Operator</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>These operators are necessary because the Arithmetic-Logic Unit (ALU) present in the computer's CPU carries out arithmetic operations at the bit-level.</p>
+        <p class="note-tip"><strong>Note:</strong> Bitwise operators can only be used alongside <code>char</code> and <code>int</code> data types.</p>
+      </div>
+
+      <hr>
+
+      <div class="and">
+        <h2>Bitwise AND Operator</h2>
+        <p>The bitwise AND <code>&</code> operator returns 1 if and only if both the operands are 1. Otherwise, it returns 0.</p>
+        <p>The following truth table demonstrates the working of the bitwise AND operator. Let <strong>a</strong> and <strong>b</strong> be two operands that can only take binary values i.e. <strong>1</strong> and <strong>0</strong>.</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>a</th>
+              <th>b</th>
+              <th>a & b</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Let's take a look at the bitwise AND operation of two integers 12 and 25:</p>
+        <pre><code>
+          12 = 00001100 (In Binary)
+
+          25 = 00011001 (In Binary)
+
+          Bitwise AND Operation of 12 and 25
+
+              00001100
+          &   00011001
+              _________
+              00001000  = 8 (In decimal)
+        </code></pre>
+        <h3>Example 1: Bitwise AND</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>()
+          {
+              <comment>// declare variables</comment>
+              <keyword>int</keyword> a = <variable>12</variable>, b = <variable>25</variable>;
+
+              <std>cout</std> << <string>"a = "</string> << a << <std>endl</std>;
+              <std>cout</std> << <string>"b = "</string> << b << <std>endl</std>;
+              <std>cout</std> << <string>"a & b = "</string> << (a & b) << <std>endl</std>;
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          a = 12
+          b = 25
+          a & b = 8
+        </code></pre>
+      </div>
+
+      <hr>
+      <div class="or">
+        <h2>Bitwise OR Operator</h2>
+        <p>The bitwise OR <code>|</code> operator returns 1 if at least one of the operands is 1. Otherwise, it returns 0.</p>
+        <p>The following truth table demonstrates the working of the bitwise OR operator. Let <strong>a</strong> and <strong>b</strong> be two operands that can only take binary values i.e. <strong>1</strong> and <strong>0</strong>.</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>a</th>
+              <th>b</th>
+              <th>a | b</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Let's take a look at the bitwise OR operation of two integers 12 and 25:</p>
+        <pre><code>
+          12 = 00001100 (In Binary)
+          25 = 00011001 (In Binary)
+
+          Bitwise OR Operation of 12 and 25
+              00001100
+          |   00011001
+              _________
+              00011101  = 29 (In decimal)
+        </code></pre>
+        <h3>Example 2: Bitwise OR</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>()
+          {
+              <keyword>int</keyword> a = <variable>12</variable>, b = <variable>25</variable>;
+
+              <std>cout</std> << <string>"a = "</string> << a << <std>endl</std>;
+              <std>cout</std> << <string>"b = "</string> << b << <std>endl</std>;
+              <std>cout</std> << <string>"a | b = "</string> << (a | b) << <std>endl</std>;
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          a = 12
+          b = 25
+          a | b = 29
+        </code></pre>
+      </div>
+
+      <hr>
+      <div class="xor">
+        <h2>Bitwise XOR Operator</h2>
+        <p>The bitwise XOR <code>^</code> operator returns 1 if and only if one of the operands is 1. However, if both the operands are 0, or if both are 1, then the result is 0.</p>
+        <p>The following truth table demonstrates the working of the bitwise XOR operator. Let <strong>a</strong> and <strong>b</strong> be two operands that can only take binary values i.e. <strong>1</strong> and <strong>0</strong>.</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>a</th>
+              <th>b</th>
+              <th>a ^ b</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Let's take a look at the bitwise XOR operation of two integers 12 and 25:</p>
+        <pre><code>
+          12 = 00001100 (In Binary)
+          25 = 00011001 (In Binary)
+
+          Bitwise XOR Operation of 12 and 25
+              00001100
+          ^   00011001
+              _________
+              00010101  = 21 (In decimal)
+        </code></pre>
+        <h3>Example 3: Bitwise XOR</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>()
+          {
+              <keyword>int</keyword> a = <variable>12</variable>, b = <variable>25</variable>;
+
+              <std>cout</std> << <string>"a = "</string> << a << <std>endl</std>;
+              <std>cout</std> << <string>"b = "</string> << b << <std>endl</std>;
+              <std>cout</std> << <string>"a ^ b = "</string> << (a ^ b) << <std>endl</std>;
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          a = 12
+          b = 25
+          a ^ b = 21
+        </code></pre>
+      </div>
+
+      <hr>
+      <div class="complement">
+        <h2>Bitwise Complement Operator</h2>
+        <p>The bitwise complement operator is a unary operator (works on only one operand). It is denoted by <code>~</code> that changes binary digits <strong>1</strong> to <strong>0</strong> and <strong>0</strong> to <strong>1</strong>.</p>
+        <p>It is important to note that the <strong>bitwise complement</strong> of any integer <code>N</code> is equal to <code>-(N + 1)</code>.</p>
+        <p>For example, consider an interger 35. As per the rule, the bitwise complement of <strong>35</strong> should be <strong>-(35 + 1) = -36</strong>. Now, let's see if we get the correct answer or not.</p>
+        <pre><code>
+          35 = 00100011 (In Binary)
+
+          Using bitwise complement operator
+          ~ 00100011 
+          __________
+            11011100
+        </code></pre>
+        <p>In the above example, we get that the bitwise complement of <strong>00100011 (35)</strong> is <strong>11011100</strong>. Here, if we convert the result into decimal we get <strong>220</strong>.</p>
+        <p>However, it is important to note that we cannot directly convert the result into decimal and get the desired output. This is because the binary result <strong>11011100</strong> is also equivalent to <strong>-36</strong>.</p>
+        <p>To understand this we first need to calculate the binary output of <strong>-36</strong>. We use 2's complement to calculate the binary of negative integers.</p>
+        <br>
+        <h3>2's Complement</h3>
+        <p>The 2's complement of a number <code>N</code> gives <code>-N</code>.</p>
+        <p>In binary arithmetic, 1's complement changes <strong>0 to 1</strong> and <strong>1 to 0</strong>.</p>
+        <p>And, if we add <strong>1</strong> to the result of the 1's complement, we get the 2's complement of the original number. </p>
+        <p>For example</p>
+        <pre><code>
+          36 = 00100100 (In Binary)
+
+          1's Complement = 11011011 
+
+          2's Complement :   
+          11011011
+          +     1
+          _________
+          11011100   
+        </code></pre>
+        <p>Here, we can see the 2's complement of <strong>36</strong> (i.e. <strong>-36</strong>) is <strong>11011100</strong>. This value is equivalent to the <strong>bitwise complement of 35</strong> that we have calculated in the previous section.</p>
+        <p>Hence, we can say that the bitwise complement of 35 = -36.</p>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>()
+          {
+              <keyword>int</keyword> num1 = <variable>35</variable>;
+              <keyword>int</keyword> num2 = <variable>-150</variable>;
+              <std>cout</std> << <string>"~("</string> << num1 << <string>") = "</string> << (~num1) << <std>endl</std>;
+              <std>cout</std> << <string>"~("</string> << num2 << <string>") = "</string> << (~num2) << <std>endl</std>;
+
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          ~(35) = -36
+          ~(-150) = 149
+        </code></pre>
+      </div>
+
+      <hr>
+      <div class="shift">
+        <h2>Shift Operators</h2>
+        <p>There are two shift operators in C++:</p>
+        <ul>
+          <li>Right shift operator <code>>></code></li>
+          <li>Left shift operator <code><<</code></li>
+        </ul>
+        <br>
+        <h3>Right Shift Operator</h3>
+        <p>The right shift operator shifts all bits towards the right by a certain number of specified bits. It is denoted by <code>>></code>.</p>
+        <p>When we shift any number to the right, the <strong>least significant bits</strong> are discarded, while the <strong>most significant bits</strong> are replaced by zeroes.</p>
+        <img src="./asset/shift_right.png" alt="One bit Right Shift" class="imagecenter" style="width: 50%;">
+        <p>As we can see from the image above, we have a <strong>4-bit number</strong>. When we perform a <strong>one-bit right shift</strong> operation on it, each individual bit is shifted to the right by 1 bit.</p>
+        <p>As a result, the right-most bit is discarded, while the left-most bit remains vacant. This vacancy is replaced by a 0.</p>
+        <br>
+        <h3>Left Shift Operator</h3>
+        <p>The left shift operator shifts all bits towards the left by a certain number of specified bits. It is denoted by <code><<</code>.</p>
+        <img src="./asset/shift_left.png" alt="One bit Left Shift" class="imagecenter" style="width: 50%;">
+        <p>As we can see from the image above, we have a <strong>4-bit number</strong>. When we perform a <strong>one-bit left shift</strong> operation on it, each individual bit is shifted to the left by 1 bit.</p>
+        <p>As a result, the left-most bit is discarded, while the right-most bit remains vacant. This vacancy is replaced by a 0.</p>
+        <br>
+        <h3>Example 5: Shift Operators</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>()
+          {
+              <comment>// declaring two integer variables</comment>
+              <keyword>int</keyword> num = <variable>212</variable>;
+
+              <comment>// Shift Right Operation</comment>
+              <std>cout</std> << <string>"Shift Right:"</string> << <std>endl</std>;
+
+              <comment>// Using for loop for shifting num right from 0 bit to 3 bits</comment> 
+              <keyword>for</keyword> (<keyword>int</keyword> i = <variable>0</variable>; i < <variable>4</variable>; i++) {
+                <std>cout</std> << <string>"212 >> "</string> << i << <string>" = "</string> << (<variable>212</variable> >> i) << <std>endl</std>;
+              }
+
+              <comment>// Shift Left Operation</comment>
+              <std>cout</std> << <string>"\nShift Left:"</string> << <std>endl</std>;
+
+              <comment>// Using for loop for shifting num left from 0 bit to 3 bits</comment>
+              <keyword>for</keyword> (<keyword>int</keyword> i = <variable>0</variable>; i < <variable>4</variable>; i++) {
+                <std>cout</std> << <string>"212 << "</string> << i << <string>" = "</string> << (<variable>212</variable> << i) << <std>endl</std>;
+              }
+            
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          Shift Right:
+          212 >> 0 = 212
+          212 >> 1 = 106
+          212 >> 2 = 53
+          212 >> 3 = 26
+
+          Shift Left:
+          212 << 0 = 212
+          212 << 1 = 424
+          212 << 2 = 848
+          212 << 3 = 1696
+        </code></pre>
+        <p>From the output of the program above, we can infer that, for any number <code>N</code>, the results of the shift right operator are:</p>
+        <pre><code>
+          N >> 0 = N
+          N >> 1 = (N >> 0) / 2
+          N >> 2 = (N >> 1) / 2
+          N >> 3 = (N >> 2) / 2
+        </code></pre>
+        <p>Similarly, the results of the shift left operator are:</p>
+        <pre><code>
+          N << 0 = N
+          N << 1 = (N << 0) * 2
+          N << 2 = (N << 1) * 2
+          N << 3 = (N << 2) * 2
+        </code></pre>
+        <p>Hence, we can conclude that</p>
+        <pre><code>
+          N >> m = [ N >> (m-1) ] / 2
+          N << m = [ N << (m-1) ] * 2
+        </code></pre>
+        <hr>
+        <p>In the above example, note that the <code>int</code> data type stores numbers in <strong>32-bits</strong> i.e. an <code>int</code> value is represented by <strong>32 binary digits</strong>.</p>
+        <p>However, our explanation for the bitwise shift operators used numbers represented in <strong>4-bits</strong>.</p>
+        <p>For example, the base-10 number <code>13</code> can be represented in 4-bit and 32-bit as:</p>
+        <pre><code>
+          4-bit Representation of 13 = 1101
+          32-bit Representation of 13 = 00000000 00000000 00000000 00001101
+        </code></pre>
+        <p>As a result, the <strong>bitwise left-shift</strong> operation for <code>13</code> (and any other number) can be different depending on the number of bits they are represented by.</p>
+        <p>Because in <strong>32-bit</strong> representation, there are many more bits that can be shifted left when compared to <strong>4-bit</strong> representation.</p>
+      </div>
+
+    </div>
+
+    <!-- <div class="navigate">
+      <hr>
+      <a href="#" class="previous">&laquo; Previous</a>
+      <a href="#" class="next">Next &raquo;</a>
+    </div> -->
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

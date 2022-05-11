@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Variable, Literals, Constants</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+  <main>
+    <div class="main-description">
+      <h1>C++ Variables, Literals and Constants</h1>
+      <p>
+        In this tutorial, we will learn about variables, literals, and constants in C++.
+      </p>
+    </div>
+
+    <div class="content">
+      <div class = "variables">
+        <h2>C++ Variables</h2>
+        <p>In programming, a variable is a container (storage area) to hold data.</p>
+        <p>To indicate the storage area, each variable should be given a unique name (identifier).</p>
+
+        <pre><code>
+          <keyword>int</keyword> age = <variable>21</variable>;
+        </code></pre>
+
+        <p>Here, <var>age</var> is a variable of the <code>int</code> data type, and we have assigned an integer value 14 to it.</p>
+
+        <p class="note-tip">
+          <strong>Note:</strong> The <code>int</code> data type suggests that the variable can only hold integers. Similarly, we can use the <code>float</code> and <code>double</code> data type if we have to store decimals and exponentials.
+        </p>
+
+        <hr>
+
+        <h3>Rules for naming a variable</h3>
+        <ul>
+          <li>A variable name can only have alphabets, numbers, and the underscore <code>_</code>.</li>
+          <li>A variable name cannot begin with a number.</li>
+          <li>Variable names should not begin with an uppercase character.</li>
+          <li>Recommended style for a variable name is <code>camel_case</code></li>
+          <li>A variable name cannot be a <a href="./keywords.html" target="_blank">keyword</a>. For example, <code>int</code> is a keyword that is used to denote integers.</li>
+          <li>A variable name can start with an underscore. However, it's not considered a good practice.</li>
+        </ul>
+        <p class="note-tip"><strong>Note:</strong> We should try to give meaningful names to variables. For example, <var>first_name</var> is a better variable name than <var>fn</var>.</p>
+      </div>
+
+      <hr>
+
+      <div class="literals">
+        <h2>C++ Literals</h2>
+
+        <p>Literals are data used for representing fixed values, they are fixed values that the program may not alter. They can be used directly in the code. For example: <code>1</code>, <code>2.5</code>, <code>'c'</code> etc.</p>
+        <p>Here, <code>1</code>, <code>2.5</code> and <code>'c'</code> are literals. Why? You cannot assign different values to these terms.</p>
+        <p>Here's a list of different literals in C++ programming.</p>
+
+        <hr>
+        <h3>1. Integer Literals</h3>
+        <p>An integer is a numeric literal(associated with numbers) without any fractional or exponential part. There are three types of integer literals in C programming:</p>
+        <ul>
+          <li>decimal (base 10)</li>
+          <li>octal (base 8)</li>
+          <li>hexadecimal (base 16)</li>
+        </ul>
+        <p>For example:</p>
+        <pre><code>
+          Decimal: 0, -9, 22 etc
+          Octal: 021, 077, 033 etc
+          Hexadecimal: 0x7f, 0x2a, 0x521 etc 
+          Illegal: 078  // 8 is not an octal digit
+        </code></pre>
+        <p>In C++ programming, octal starts with a <code>0</code>, and hexadecimal starts with a <code>0x</code>.</p>
+
+        <hr>
+        <h3>2. Floating-point Literals</h3>
+        <p>A floating-point literal has an integer part, a decimal point, a fractional part, and an exponent part. You can represent floating point literals either in decimal form or exponential form.</p>
+        <p>While representing using decimal form, you must include the decimal point, the exponent, or both and while representing using exponential form, you must include the integer part, the fractional part, or both. The signed exponent is introduced by e or E.</p>
+        <p>For example:</p>
+        <pre><code>
+          -3.14159
+          0.0000234
+          0.234e-5
+        </code></pre>
+
+        <hr>
+        <h3>3. Boolean Literals</h3>
+        <p>There are two Boolean literals and they are part of standard C++ keywords.</p>
+        <ul>
+          <li><code>true</code> representing true</li>
+          <li><code>false</code> representing false</li>
+        </ul>
+
+        <hr>
+        <h3>4. Characters Literals</h3>
+        <p>A character literal is created by enclosing a single character inside single quotation marks. For example: <code>'a'</code>, <code>'m'</code>, <code>'F'</code>, <code>'2'</code>, <code>'}'</code> etc.</p>
+        <p>A character literal can be a plain character (e.g., <code>'x'</code>), an escape sequence (e.g., <code>'\t'</code>), or a universal character (e.g., </code>'\u02C0'</code>). </p>
+
+        <hr>
+        <h3>5. Escape Sequence</h3>
+        <p>Sometimes, it is necessary to use characters that cannot be typed or has special meaning in C++ programming. For example, newline (enter), tab, question mark, etc.</p>
+        <p>In order to use these characters, escape sequences are used.</p>
+        <table>
+          <tbody>
+            <tr>
+              <th>Escape Sequences</th>
+              <th>Characters</th>
+            </tr>
+            <tr>
+              <td><code>\b</code></td>
+              <td>Backspace</td>
+            </tr>
+            <tr>
+              <td><code>\f</code></td>
+              <td>Form feed</td>
+            </tr>
+            <tr>
+              <td><code>\n</code></td>
+              <td>Newline</td>
+            </tr>
+            <tr>
+              <td><code>\r</code></td>
+              <td>Return</td>
+            </tr>
+            <tr>
+              <td><code>\t</code></td>
+              <td>Horizontal tab</td>
+            </tr>
+            <tr>
+              <td><code>\v</code></td>
+              <td>Vertical tab</td>
+            </tr>
+            <tr>
+              <td><code>\\</code></td>
+              <td>Backslash</td>
+            </tr>
+            <tr>
+              <td><code>\'</code></td>
+              <td>Single quotation mark</td>
+            </tr>
+            <tr>
+              <td><code>\"</code></td>
+              <td>Double quotation mark</td>
+            </tr>
+            <tr>
+              <td><code>\?</code></td>
+              <td>Question mark</td>
+            </tr>
+            <tr>
+              <td><code>\0</code></td>
+              <td>Null Character</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr>
+        <h3>6. String Literals</h3>
+        <p>A string literal is a sequence of characters enclosed in double-quote marks.</p>
+        <p>For example:</p>
+        <table>
+          <tbody>
+            <tr>
+              <td><code>"good"</code></td>
+              <td>string constant</td>
+            </tr>
+            <tr>
+              <td><code>""</code></td>
+              <td>null string constant</td>
+            </tr>
+            <tr>
+              <td><code>" "</code></td>
+              <td>string constant of a white space</td>
+            </tr>
+            <tr>
+              <td><code>"x"</code></td>
+              <td>string constant having a single character</td>
+            </tr>
+            <tr>
+              <td><code>"Earth is round\n"</code></td>
+              <td>prints string with a newline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <div class="constants">
+        <h2>C++ Constants</h2>
+        <p>In C++, we can create variables whose value cannot be changed. For that, we use the <code>const</code> keyword. Here's an example:</p>
+        <pre><code>
+          <keyword>const int</keyword> LIGHT_SPEED = <variable>299792458</variable>;
+          LIGHT_SPEED = <variable>2500</variable> <comment>// Error! LIGHT_SPEED is a constant.</comment>
+        </code></pre>
+
+        <p>Here, we have used the keyword <code>const</code> to declare a constant named <code>LIGHT_SPEED</code>. If we try to change the value of <code>LIGHT_SPEED</code>, we will get an error.</p>
+
+        <p>There are two ways to define constants:</p>
+        <ul>
+          <li>Using <code>#define</code> preprocessor</li>
+          <li>Using <code>const</code> keyword</li>
+        </ul>
+        <pre><code>
+          <preprocessor>#define</preprocessor> DAYS_IN_WEEK <variable>7</variable>
+          <keyword>const float</keyword> PI = <variable>3.1415</variable>
+        </code></pre>
+
+        <p>A constant can also be created using the <code>#define</code> preprocessor directive. We will learn about it in detail in the C++ Macros tutorial.</p>
+      </div>
+
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./program-structure.html" class="previous">&laquo; Previous</a>
+      <a href="./data-types.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

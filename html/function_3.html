@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Function Default Arguments</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Function Default Arguments</h1>
+      <p>In this tutorial, we will learn C++ function default arguments.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <p>In C++ programming, we can provide default values for function parameters.</p>
+        <p>If a function with default arguments is called without passing arguments, then the default parameters are used.</p>
+        <p>However, if arguments are passed while calling the function, the default arguments are ignored.</p>
+      </div>
+
+      <hr>
+
+      <div class="section2">
+        <h2>Default Arguemnts</h2>
+        <br>
+        <img src="./asset/default_args.png" alt="Working of function default arguments" class="imagecenter" style="width: 70%;">
+        <p>We can understand the working of default arguments from the image above:</p>
+        <ol>
+          <li>When <code>temp()</code> is called, both the default parameters are used by the function.</li>
+          <li>When <code>temp(6)</code> is called, the first argument becomes <code>6</code> while the default value is used for the second parameter.</li>
+          <li>When <code>temp(6, -2.3)</code> is called, both the default parameters are overridden, resulting in <code>i = 6</code> and <code>f = -2.3</code></li>
+          <li>
+            When <code>temp(3.4)</code> is passed, the function behaves in an undesired way because the second argument cannot be passed without passing the first argument.
+            <br>
+            Therefore, <code>3.4</code> is passed as the first argument. Since the first argument has been defined as <code>int</code>, the value that is actually passed is <code>3</code>.
+          </li>
+        </ol>
+        <hr>
+        <h3>Example: Default Argument</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+  
+          <keyword>void</keyword> <function>display</function>(<keyword>char</keyword> symbol = <string>'*'</string>, <keyword>int</keyword> count = <variable>3</variable>) {
+            <keyword>for</keyword>(<keyword>int</keyword> i = <variable>1</variable>; i <= count; ++i) {
+              <std>cout</std> << symbol;
+            }
+            <std>cout</std> << <string>'<variable>\n</variable>'</string>;
+          }
+  
+          <keyword>int</keyword> <function>main</function>() {
+  
+            <std>cout</std> << <string>"No argument passed: "</string>;
+            <function>display</function>();
+
+            <std>cout</std> << <string>"First argument passed: "</string>;
+            <function>display</function>(<string>'#'</string>);
+
+            <std>cout</std> << <string>"Both argument passed: "</string>;
+            <function>display</function>(<string>'$'</string>, <variable>5</variable>);
+  
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <strong>Output</strong>
+        <pre><code>
+          No argument passed: ***
+          First argument passed: ###
+          Both arguments passed: $$$$$
+        </code></pre>
+        <p>Here is how this program works:</p>
+        <ol>
+          <li><code>display()</code> is called without passing any arguments. In this case, <code>display()</code> uses both the default parameters <code>c = '*'</code> and <code>n = 3</code>.</li>
+          <li><code>display('#')</code> is called with only one argument. In this case, the first becomes <code>'#'</code>. The second default parameter <code>n = 3</code> is retained.</li>
+          <li><code>display('#', count)</code> is called with both arguments. In this case, default arguments are not used.</li>
+        </ol>
+        <hr>
+        <h2>Things to Remember</h2>
+        <ol>
+          <li>
+            Once we provide a default value for a parameter, all subsequent parameters must also have default values. For example, 
+            <pre><code>
+              <comment>// Invalid</comment>
+              <keyword>void</keyword> <function>add</function>(<keyword>int</keyword> a, <keyword>int</keyword> b = <variable>3</variable>, <keyword>int</keyword> c, <keyword>int</keyword> d);
+
+              <comment>// Invalid</comment>
+              <keyword>void</keyword> <function>add</function>(<keyword>int</keyword> a, <keyword>int</keyword> b = <variable>3</variable>, <keyword>int</keyword> c, <keyword>int</keyword> d = <variable>4</variable>);
+
+              <comment>// valid</comment>
+              <keyword>void</keyword> <function>add</function>(<keyword>int</keyword> a, <keyword>int</keyword> c, <keyword>int</keyword> b = <variable>3</variable>, <keyword>int</keyword> d = <variable>4</variable>);
+            </code></pre>
+          </li>
+          <li>If using function prototype, default arguments are defined in declaration, instead of definition.</li>
+
+          <pre><code>
+            <comment>// Valid (without function prototype)</comment>
+
+            <keyword>void</keyword> <function>add</function>(<keyword>int</keyword> a = <variable>1</variable>, <keyword>int</keyword> b = <variable>2</variable>) {
+              <comment>// code</comment>
+            }
+
+            <keyword>int</keyword> <function>main</function>() {
+              <function>add</function>();
+            }
+          </code></pre>
+
+          <pre><code>
+            <comment>// Valid</comment>
+
+            <keyword>void</keyword> <function>add</function>(<keyword>int</keyword> = <variable>1</variable>, <keyword>int</keyword> = <variable>2</variable>);
+
+            <keyword>int</keyword> <function>main</function>() {
+              <function>add</function>();
+            }
+
+            <keyword>void</keyword> <function>add</function>(<keyword>int</keyword> a, <keyword>int</keyword> b) {
+              <comment>// code</comment>
+            }
+          </code></pre>
+
+          <pre><code>
+            <comment>// Invalid</comment>
+
+            <keyword>void</keyword> <function>add</function>(<keyword>int</keyword>, <keyword>int</keyword>);
+
+            <keyword>int</keyword> <function>main</function>() {
+              <function>add</function>();
+            }
+
+            <keyword>void</keyword> <function>add</function>(<keyword>int</keyword> a = <variable>1</variable>, <keyword>int</keyword> b = <variable>2</variable>) {
+              <comment>// code</comment>
+            }
+          </code></pre>
+        </ol>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./function_2.html" class="previous">&laquo; Previous</a>
+      <a href="./function_template.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

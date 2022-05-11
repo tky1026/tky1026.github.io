@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Program Structure</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Program Structure</h1>
+      <p>We will talk about how to organize and layout code in a source file.</p>
+    </div>
+
+    <div class="content">
+      <div class="section1">
+        <br>
+        <h2>Program Structure</h2>
+        <p>The is a bare minimal valid C++ code, with an entry point and do nothing.</p>
+        <pre><code>
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        <p class="note-tip"> In C++, the default entry point is the <code>main()</code> function. However, it is not necessarily to be <code>main()</code> and the programmer can specificaly tell the compiler the entry point to be somewhere else.</p>
+
+        <p>Let's use the code below as example</p>
+        <img src="./asset/code_structure.png" alt="code structure" class="imagecenter" style="width: 80%;">
+
+        <h3>Header Files</h3>
+        <p>The C/C++ Standard Library offers its users a variety of functions, one of which is header files.</p>
+        <p class="note-tip">In C++, all the header files may or may not end with the .h or .hpp extension but in C, all the header files must necessarily end with the.h extension.</p>
+        
+        <p>A header file in C/C++ contains:</p>
+        <ul>
+          <li>Function definitions</li>
+          <li>Data type definitions</li>
+          <li>Macros</li>
+        </ul>
+        <p>It offers the above features by importing them into the program with the help of a preprocessor directive <code>#include</code>. These preprocessor directives are used for instructing compiler that these files need to be processed before compilation. </p>
+        <p>For example, in C++ program has the header file <code>&lt;iostream&gt;</code> which stands for input and output stream used to take input with the help of <code>cin</code> and <code>cout</code> respectively. </p>
+        <p>There are 2 types of header files:</p>
+        <ol>
+          <li><strong>Pre-existing header files</strong>: Files which are already available in C/C++ compiler we just need to import them</li>
+          <li><strong>User-defined header files</strong>: These files are defined by the user and can be imported using <code>#include</code></li>
+        </ol>
+
+        <p>The <code>#include</code> preprocessor is responsible for directing the compiler that the header file needs to be processed before compilation and includes all the necessary data type and function definitions.</p>
+        <p class="note-tip">The same header file cannot be included twice or more in any program.</p>
+
+        <br>
+        <h3>Declaration</h3>
+        <p>A C++ program consists of various entities such as variables, functions, types, and namespaces. Each of these entities must be declared before they can be used.</p>
+        <p>A declaration specifies a unique name for the entity, along with information about its type and other characteristics. In C++ the point at which a name is declared is the point at which it becomes visible to the compiler. You can't refer to a function or class that is declared at some later point in the compilation unit. Variables should be declared as close as possible before the point at which they're used.</p>
+        <p>The name that is introduced by a declaration is valid within the scope where the declaration occurs.</p>
+        <p>For more information about how scope rules interact with declarations, see <a href="./scope.html" target="_blank">Scope</a>.</p>
+
+        <br>
+        <h3>Definition</h3>
+        <p>Some entities, including functions, classes, enums, and constant variables, must be defined as well as declared.</p>
+        <p>A definition provides the compiler with all the information it needs to generate machine code when the entity is used later in the program.</p>
+
+        <br>
+        <h3>Operation</h3>
+        <p>Computing and manupulating statements happen here. This is the core of the program where the algorithms or tasks of the program are to be done.</p>
+
+        <br>
+        <h3>Output</h3>
+        <p>Finally, output the final result. It can be writing the result into a file, doing some other specific tasks, or most commonly, printing the result in terminal.</p>
+      </div>
+
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./basic-syntax.html" class="previous">&laquo; Previous</a>
+      <a href="./variables-literal-constant.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

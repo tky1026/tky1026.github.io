@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Type Conversion</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/button.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Type Conversion</h1>
+      <p>In this tutorial, we will learn about the basics of C++ type conversion.</p>
+    </div>
+
+    <div class="content">
+      <div class="implicit">
+        <p>C++ allows us to convert data of one type to that of another. This is known as type conversion.</p>
+        <p>There are two typws of type conversion in C++:</p>
+        <ol>
+          <li>Implicit Conversion</li>
+          <li>Explicit Conversion (Type Casting)</li>
+        </ol>
+
+        <p>Why is type casting needed?</p>
+        <p>Typecasting is essential when you want to change data types without changing the significance of the values stored inside the variable.</p>
+        <p>Some functions might require input parameters in specified types only. If you try to call them with different types you will get an error. In order to avoid this we use type conversion.</p>
+        
+        <hr>
+
+        <h2>Implicit Type Conversion</h2>
+        <p>The type conversion that is done automatically done by the compiler is known as <strong>implicit conversion</strong>. This type of conversion is also known as <strong>automatic conversion</strong>.</p>
+        
+        <h3>Example 1: Conversion From int To double</h3>
+
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <comment>// assigning an int value to num_int</comment>
+              <keyword>int</keyword> num_int = <variable>9</variable>;
+          
+              <comment>// declaring a double type variable</comment>
+              <keyword>double</keyword> num_double;
+            
+              <comment>// implicit conversion</comment>
+              <comment>// assigning int value to a double variable</comment>
+              num_double = num_int;
+          
+              <std>cout</std> << <string>"num_int = "</string> << num_int << <std>endl</std>;
+              <std>cout</std> << <string>"num_double = "</string> << num_double << <std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+
+        <h3>Output</h3>
+        <pre><code>
+          num_int = 9
+          num_double = 9
+        </code></pre>
+
+        <p>In the example above, we have assigned an <code>int</code> data to a <code>double</code> variable.</p>
+        <p>Here, the <code>int</code> value is automatically converted to <code>double</code> by the compiler before it is assigned to the <code>num_double</code> variable. This is an example of implicit type conversion.</p>
+      
+        <hr>
+        <h3>Example 2: Conversion From double To int</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <keyword>int</keyword> num_int;
+              <keyword>double</keyword> num_double = <variable>9.99</variable>;
+          
+              <comment>// implicit conversion</comment>
+              <comment>// assigning a double value to an int variable</comment>
+              num_int = num_double;
+          
+              <std>cout</std> << <string>"num_int = "</string> << num_int << <std>endl</std>;
+              <std>cout</std> << <string>"num_double = "</string> << num_double << <std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+
+        <h3>Output</h3>
+        <pre><code>
+          num_int = 9
+          num_double = 9.99
+        </code></pre>
+
+        <p>In the example above, we have assigned a <code>double</code> data to an <code>int</code> variable.</p>
+        <p>Here, the <code>double</code> value is automatically converted to <code>int</code> by the compiler before it is assigned to the <code>num_int</code> variable. This is also an example of implicit type conversion.</p>
+        <p class="note-tip"><strong>Note:</strong> Since <code>int</code> cannot have a decimal part, the digits after the decimal point are truncated.</p>
+
+        <hr>
+        <h3>Data Loss During Conversion</h3>
+        <p>As we have seen from the above example, conversion from one data type to another is prone to data loss. This happens when data of a larger type is converted to data of a smaller type.</p>
+
+        <img src="asset/data_loss.png" alt="Data loss during type conversion" class="imagecenter">
+
+      </div>
+
+      <hr>
+
+      <div class="explicit">
+        <h2>Explicit Type Conversion</h2>
+        <p>When the user manually changes data from one type to another, this is known as <strong>explicit conversion</strong>. This type of conversion is also known as <strong>type casting</strong>.</p>
+        <p>There are three major ways in which we can use explicit conversion in C++:</p>
+        <ol>
+          <li>Cast notation (C-style type casting)</li>
+          <li>Function notation (old C++ style type casting)</li>
+          <li>Type conversion operators</li>
+        </ol>
+        
+        <hr>
+        <h3>Cast Notation</h3>
+        <p><strong>Cast notation</strong>, also known as <strong>C-style Type Casting</strong>. As the name suggests, this type of casting is favored by the C programming language.</p>
+        <h4>Syntax</h4>
+        <pre><code>
+          (data_type)expression;
+        </code></pre>
+
+        <p>For example</p>
+        <pre><code>
+          <comment>// initializing int variable</comment>
+          <keyword>int</keyword> num_int = <variable>26</variable>;
+
+          <comment>// declaring double variable</comment>
+          <keyword>double</keyword> num_double;
+
+          <comment>// converting from int to double</comment>
+          num_double = (<keyword>double</keyword>)num_int;
+        </code></pre>
+
+        <hr>
+        <h3>Function Notation</h3>
+        <p>We can also use the function like notation to cast data from one type to another.</p>
+        <h4>Syntax</h4>
+        <pre><code>
+          data_type(expression);
+        </code></pre>
+
+        <p>For example</p>
+        <pre><code>
+          <comment>// initializing int variable</comment>
+          <keyword>int</keyword> num_int = <variable>26</variable>;
+
+          <comment>// declaring double variable</comment>
+          <keyword>double</keyword> num_double;
+
+          <comment>// converting from int to double</comment>
+          num_double = <keyword>double</keyword>(num_int);
+        </code></pre>
+
+        <hr>
+        <h3>Example 3: Type Casting</h3>
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+              <comment>// initializing a double variable</comment>
+              <keyword>double</keyword> num_double = <variable>3.56</variable>;
+              <std>cout</std> << <string>"num_double = "</string> << num_double << <std>endl</std>;
+          
+              <comment>// C-style conversion from double to int</comment>
+              <keyword>int</keyword> num_int1 = (<keyword>int</keyword>)num_double;
+              <std>cout</std> << <string>"num_int1   = "</string> << num_int1 << <std>endl</std>;
+          
+              <comment>// function-style conversion from double to int</comment>
+              <keyword>int</keyword> num_int2 = <keyword>int</keyword>(num_double);
+              <std>cout</std> << <string>"num_int2   = "</string> << num_int2 << <std>endl</std>;
+          
+              <keyword>return</keyword> <variable>0</variable>;
+          }
+        </code></pre>
+        
+        <h3>Output</h3>
+        <pre><code>
+          num_double = 3.56
+          num_int1   = 3
+          num_int2   = 3
+        </code></pre>
+
+        <hr>
+        <h3>Type Conversion Operators</h3>
+        <p>Besides these two type castings, C++ also has four operators for type conversion. They are known as type conversion operators. They are:</p>
+        <ul>
+          <li>static_cast</li>
+          <li>dynamic_cast</li>
+          <li>const_cast</li>
+          <li>reinterpret_cast</li>
+        </ul>
+
+        <p>A Cast operator is an unary operator which forces one data type to be converted into another data type.</p>
+
+        <pre><code>
+          <preprocessor>#include</preprocessor> <string>&lt;iostream&gt;</string>
+          <keyword>using namespace</keyword> <std>std</std>;
+          
+          <keyword>int</keyword> <function>main</function>() 
+          {
+            <keyword>float</keyword> f = <variable>3.5</variable>;
+          
+            <comment>// using cast operator</comment>
+            <keyword>int</keyword> b = <keyword>static_cast</keyword>&lt;<keyword>int</keyword>&gt;(f);
+          
+            <std>cout</std> << b;
+          }
+        </code></pre>
+
+        <p>Advantages of Type Conversion Operators:</p>
+        <ul>
+          <li>This is done to take advantage of certain features of type hierarchies or type representations.</li>
+          <li>It helps to compute expressions containing variables of different data types.</li>
+        </ul>
+      </div>
+
+      <hr>
+      <div>
+        <p>Conversion between string and numbers.</p>
+        <ul>
+          <li><a href="./string-int-conversion.html" target="_blank">Conversion between string and int</a></li>
+          <li><a href="./string-double-conversion.html" target="_blank">Conversion between string and float/double</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="navigate">
+      <hr>
+      <a href="./input-output.html" class="previous">&laquo; Previous</a>
+      <a href="./operators.html" class="next">Next &raquo;</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>

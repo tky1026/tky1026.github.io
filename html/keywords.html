@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>C++ Keywords and Identifier</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="main-description">
+      <h1>C++ Keywords and Identifier</h1>
+      <p>In this tutorial, we will learn about keywords (reserved words in C++ programming that are part of the syntax). Also, we will learn about identifiers and how to name them.</p>
+    </div>
+
+    <div class="content">
+      <div class="keywords">
+        <h2>C++ Keywords</h2>
+        <p>Keywords are <strong>predefined</strong> words that have special meanings to the compiler. For example,</p>
+        <pre><code>
+          <keyword>int</keyword> age;
+        </code></pre>
+
+        <p>Here, <code>int</code> is a keyword that indicates <var>age</var> is a variable of type integer.</p>
+        <p>Here is a list of all C++ keywords. (as of C++17)</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td><code>alignas</code></td>
+              <td><code>decltype</code></td>
+              <td><code>namespace</code></td>
+              <td><code>struct</code></td>
+            </tr>
+            <tr>
+              <td><code>alignof</code></td>
+              <td><code>default</code></td>
+              <td><code>new</code></td>
+              <td><code>switch</code></td>
+            </tr>
+            <tr>
+              <td><code>and</code></td>
+              <td><code>delete</code></td>
+              <td><code>noexcept</code></td>
+              <td><code>template</code></td>
+            </tr>
+            <tr>
+              <td><code>and_eq</code></td>
+              <td><code>do</code></td>
+              <td><code>not</code></td>
+              <td><code>this</code></td>
+            </tr>
+            <tr>
+              <td><code>asm</code></td>
+              <td><code>double</code></td>
+              <td><code>not_eq</code></td>
+              <td><code>thread_local</code></td>
+            </tr>
+            <tr>
+              <td><code>auto</code></td>
+              <td><code>dynamic_cast</code></td>
+              <td><code>nullptr</code></td>
+              <td><code>throw</code></td>
+            </tr>
+            <tr>
+              <td><code>bitand</code></td>
+              <td><code>else</code></td>
+              <td><code>operator</code></td>
+              <td><code>true</code></td>
+            </tr>
+            <tr>
+              <td><code>bitor</code></td>
+              <td><code>enum</code></td>
+              <td><code>or</code></td>
+              <td><code>try</code></td>
+            </tr>
+            <tr>
+              <td><code>bool</code></td>
+              <td><code>explicit</code></td>
+              <td><code>or_eq</code></td>
+              <td><code>typedef</code></td>
+            </tr>
+            <tr>
+              <td><code>break</code></td>
+              <td><code>export</code></td>
+              <td><code>private</code></td>
+              <td><code>typeid</code></td>
+            </tr>
+            <tr>
+              <td><code>case</code></td>
+              <td><code>extern</code></td>
+              <td><code>protected</code></td>
+              <td><code>typename</code></td>
+            </tr>
+            <tr>
+              <td><code>catch</code></td>
+              <td><code>false</code></td>
+              <td><code>public</code></td>
+              <td><code>union</code></td>
+            </tr>
+            <tr>
+              <td><code>char</code></td>
+              <td><code>float</code></td>
+              <td><code>register</code></td>
+              <td><code>unsigned</code></td>
+            </tr>
+            <tr>
+              <td><code>char16_t</code></td>
+              <td><code>for</code></td>
+              <td><code>reinterpret_cast</code></td>
+              <td><code>using</code></td>
+            </tr>
+            <tr>
+              <td><code>char32_t</code></td>
+              <td><code>friend</code></td>
+              <td><code>return</code></td>
+              <td><code>virtual</code></td>
+            </tr>
+            <tr>
+              <td><code>class</code></td>
+              <td><code>goto</code></td>
+              <td><code>short</code></td>
+              <td><code>void</code></td>
+            </tr>
+            <tr>
+              <td><code>compl</code></td>
+              <td><code>if</code></td>
+              <td><code>signed</code></td>
+              <td><code>volatile</code></td>
+            </tr>
+            <tr>
+              <td><code>const</code></td>
+              <td><code>inline</code></td>
+              <td><code>sizeof</code></td>
+              <td><code>wchar_t</code></td>
+            </tr>
+            <tr>
+              <td><code>constexpr</code></td>
+              <td><code>int</code></td>
+              <td><code>static</code></td>
+              <td><code>while</code></td>
+            </tr>
+            <tr>
+              <td><code>const_cast</code></td>
+              <td><code>long</code></td>
+              <td><code>static_assert</code></td>
+              <td><code>xor</code></td>
+            </tr>
+            <tr>
+              <td><code>continue</code></td>
+              <td><code>mutable</code></td>
+              <td><code>static_cast</code></td>
+              <td><code>xor_eq</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note-tip"><strong>Note:</strong> As C++ is a case sensitive language, all keywords must be written in lowercase.</p>
+      </div>
+
+      <hr>
+
+      <div class="identifiers">
+        <h1>C++ Identifier</h1>
+        <p>Identifiers are the unique names given to variables, classes, functions, modules or other user-defined entities by the programmer. For example: </p>
+        <pre><code>
+          <keyword>int</keyword> accountNumber;
+          <keyword>double</keyword> accountBalance;
+        </code></pre>
+        
+        <p>Here, <var>accountNumber</var> and <var>accountBalance</var> are identifiers.</p>
+        <p>An identifier starts with a letter A to Z or a to z or an underscore (_) followed by zero or more letters, underscores, and digits (0 to 9).</p>
+        <p>C++ does not allow punctuation characters such as @, $, and % within identifiers. C++ is a case-sensitive programming language. Thus, <code>accNumber</code> and <code>accnumber</code> are two different identifiers.</p>
+        <hr>
+
+        <h3>Rules for naming identifiers</h3>
+        <ul>
+          <li>Identifiers can be composed of letters, digits, and the underscore character.</li>
+          <li>It has no limit on name length.</li>
+          <li>It must begin with either a letter or an underscore.</li>
+          <li>It is case-sensitive.</li>
+          <li>We cannot use keywords as identifiers.</li>
+        </ul>
+
+        <p>We can choose any name as an identifier if we follow the above rules. However, we should give meaningful names to the identifier that makes sense.</p>
+
+        <h3>Examples of good and bad identifiers</h3>
+        <table>
+          <tbody>
+            <tr>
+              <th>Invalid Identifier</th>
+              <th>Bad Identifier</th>
+              <th>Good Identifier</th>
+            </tr>
+            <tr>
+              <td><var>Total points</var></td>
+              <td><var>T_points</var></td>
+              <td><var>total_points</var></td>
+            </tr>
+            <tr>
+              <td><var>2list</var></td>
+              <td><var>l2</var></td>
+              <td><var>list2</var></td>
+            </tr>
+            <tr>
+              <td><var>float</var></td>
+              <td><var>n_float</var></td>
+              <td><var>float_number</var></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <hr>
+    Created by KuanYuee. &copy; 2021
+  </footer>
+
+</body>
+<script src="../javascript/pre_indent.js"></script>
+
+</html>
