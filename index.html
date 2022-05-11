@@ -1,93 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>C++ Tutorial</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/button.css">
+  
+  <link rel="stylesheet" href="./ui/ui_style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
-  <main>
-    <div class="main-description">
-      <h1>C++ Tutorial</h1>
+  <div class="sidebar">
+    <div class="logo-details">
+      <img src="./ui/icon/bxl-c-plus-plus.svg" alt="logo">
+      <span class="logo-name">CodingLab</span>
     </div>
-
-    <br>
-    <br>
-    <div class="content">
-      <div class="index">
-        <h2>Programming Introduction</h2>
-        <ul>
-          <li><a href="./html/overview.html">Overview</a></li>
-          <li><a href="./html/environment.html">C++ Environment</a></li>
-          <li><a href="./html/basic-syntax.html">C++ Basic Syntax and Terms</a></li>
-          <li><a href="./html/program-structure.html">C++ Program Structure</a></li>
+    <ul class="nav-links">
+      <li>
+        <a href='javascript:;' onclick='load_page_content("./menu.html")'>
+          <img src="./ui/icon/bxs-dashboard.svg" alt="logo">
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href='javascript:;' onclick='load_page_content("./menu.html")'>Dashboard</a></li>
         </ul>
-
-        <h2>Basics</h2>
-        <ul>
-          <li><a href="./html/variables-literal-constant.html">C++ Variables, Literals and Constants</a></li>
-          <li><a href="./html/data-types.html">C++ Data Types</a></li>
-          <li><a href="./html/variables-creation.html">C++ Variables and Constants Creation</a></li>
-          <li><a href="./html/char.html">C++ char Data Type</a></li>
-          <li><a href="./html/string.html">C++ String</a></li>
-          <li><a href="./html/input-output.html">C++ Basic Input/Output</a></li>
-          <li><a href="./html/type-conversion.html">C++ Type Conversion</a></li>
-          <li><a href="./html/operators.html">C++ Operators</a></li>
-          <li><a href="./html/comments.html">C++ Comments</a></li>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <img src="./ui/icon/icon_1.png" alt="section1" class="section">
+            <span class="link_name">Introduction</span>
+          </a>
+          <img src="./ui/icon/bx-chevron-down.svg" alt="logo" class="arrow">
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Introduction</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/overview.html")'>Overview</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/environment.html")'>Environment</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/basic-syntax.html")'>Basic Syntax & Terms</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/program-structure.html")'>Program Structure</a></li>
         </ul>
-
-        <h2>Flow Control</h2>
-        <ul>
-          <li><a href="./html/if_else.html">C++ Conditional Statement</a></li>
-          <li><a href="./html/switch.html">C++ switch Statement</a></li>
-          <li><a href="./html/while_loop.html">C++ while and do...while Loop</a></li>
-          <li><a href="./html/for_loop.html">C++ for Loop</a></li>
-          <li><a href="./html/break_statement.html">C++ break Statement</a></li>
-          <li><a href="./html/continue_statement.html">C++ continue Statement</a></li>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <img src="./ui/icon/icon_2.png" alt="section2" class="section">
+            <span class="link_name">Basics</span>
+          </a>
+          <img src="./ui/icon/bx-chevron-down.svg" alt="logo" class="arrow">
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Basics</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/variables-literal-constant.html")'>Literals</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/data-types.html")'>Data Types</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/variables-creation.html")'>Variables & Constants</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/char.html")'>char</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/string.html")'>string</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/input-output.html")'>Input/Output</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/type-conversion.html")'>Type Conversion</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/operators.html")'>Operators</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/comments.html")'>Comments</a></li>
         </ul>
-
-        <h2>Arrays</h2>
-        <ul>
-          <li><a href="./html/arrays.html">C++ Arrays</a></li>
-          <li><a href="./html/arrays_multidimension.html">C++ Multidimensional Arrays</a></li>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <img src="./ui/icon/icon_3.png" alt="section3" class="section">
+            <span class="link_name">Flow</span>
+          </a>
+          <img src="./ui/icon/bx-chevron-down.svg" alt="logo" class="arrow">
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Flow</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/if_else.html")'>if...else</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/switch.html")'>switch</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/while_loop.html")'>while Loop</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/for_loop.html")'>for Loop</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/break_statement.html")'>break</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/continue_statement.html")'>continue</a></li>
         </ul>
-
-        <h2>Functions</h2>
-        <ul>
-          <li><a href="./html/function_1.html">C++ Functions</a></li>
-          <li><a href="./html/function_2.html">C++ Function Overloading</a></li>
-          <li><a href="./html/function_3.html">C++ Function Default Arguments</a></li>
-          <li><a href="./html/function_template.html">C++ Function Template</a></li>
-          <li><a href="./html/function_recursion.html">C++ Recursive Function</a></li>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <img src="./ui/icon/icon_4.png" alt="section4" class="section">
+            <span class="link_name">Arrays</span>
+          </a>
+          <img src="./ui/icon/bx-chevron-down.svg" alt="logo" class="arrow">
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Arrays</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/arrays.html")'>Arrays</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/arrays_multidimension.html")'>Multi-D Arrays</a></li>
         </ul>
-
-
-        <h2>Extras</h2>
-        <ul>
-          <li><a href="./html/compiler.html">C++ Build Process</a></li>
-          <li><a href="./html/keywords.html">C++ Keywords and Identifier</a></li>
-          <li><a href="./html/string-int-conversion.html">C++ string - int conversion</a></li>
-          <li><a href="./html/string-double-conversion.html">C++ string - float/double conversion</a></li>
-          <li><a href="./html/bitwise-operators.html">C++ Bitwise Operators</a></li>
-          <li><a href="./html/ternary_operator.html">C++ Ternary Operator</a></li>
-          <li><a href="./html/goto_statement.html">C++ goto Statement</a></li>
-          <li><a href="./html/scope.html">C++ Global & Local Variables</a></li>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <img src="./ui/icon/icon_5.png" alt="section5" class="section">
+            <span class="link_name">Functions</span>
+          </a>
+          <img src="./ui/icon/bx-chevron-down.svg" alt="logo" class="arrow">
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Functions</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/function_1.html")'>Functions</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/function_2.html")'>Function Overloading</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/function_3.html")'>Default Arguments</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/function_template.html")'>Template</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/function_recursion.html")'>Recursion</a></li>
         </ul>
-      </div>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <img src="./ui/icon/icon_0.png" alt="section0" class="section">
+            <span class="link_name">Extras</span>
+          </a>
+          <img src="./ui/icon/bx-chevron-down.svg" alt="logo" class="arrow">
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Extras</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/compiler.html")'>Build Process</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/keywords.html")'>Keywords & Identifier</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/string-int-conversion.html")'>string - int</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/string-double-conversion.html")'>string - float</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/bitwise-operators.html")'>Bitwise Operators</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/ternary_operator.html")'>Ternary Operators</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/goto_statement.html")'>goto</a></li>
+          <li><a class="link_item" href='javascript:;' onclick='load_page_content("./html/scope.html")'>Variables Scope</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <section class="home-section">
+    <div class="home-content">
+      <img src="./ui/icon/bx-menu.svg" alt="menu" class='bx-menu'>
+      <span class="text">C++ Tutorial</span>
     </div>
+    <div class="main-content" id="main-content">
+      <p>Welcome to C++ Programming!</p>
+    </div>
+  </section>
 
-  </main>
-
-  <footer class="footer">
-    <hr>
-    Created by KuanYuee. &copy; 2021
-  </footer>
+  <script src="./ui/sidebar.js"></script>
+  <script src="./ui/load_content.js"></script>
 
 </body>
-<script src="../javascript/pre_indent.js"></script>
 
 </html>
