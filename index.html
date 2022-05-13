@@ -21,54 +21,7 @@
   </div>
 
   <script type="text/javascript" src="login/data.js">// users' login credential</script>
-  <script>
-    // onload initialization
-    document.getElementById("username").value = "";
-
-    // ENTER keypress
-    var input_un = document.getElementById("username");
-    input_un.addEventListener("keypress", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("submit").click();
-      }
-    });
-
-    // ENTER keypress
-    var input_pw = document.getElementById("password");
-    input_pw.addEventListener("keypress", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("submit").click();
-      }
-    });
-
-    function forgotCB() {
-      alert("HAHAHA, ohh poor you");
-    }
-
-    function signinCB() {
-      const uname = document.getElementById("username").value;
-      const pw = document.getElementById("password").value
-      let logged_in = false
-      for (let i = 0; i < users.length; i++) {
-        const user = users[i];
-        if (uname == user.un) {
-          if (pw == user.pw) {
-            logged_in = true;
-            break;
-          }
-        }
-      }
-
-      if (logged_in) {
-        window.location = "ui.html";
-      } else {
-        alert("Denied access");
-      }
-    }
- 
-  </script>
+  <script type="text/javascript" src="login/login.js"></script>
 
 </body>
 
